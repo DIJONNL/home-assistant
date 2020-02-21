@@ -1,0 +1,10 @@
+---
+#
+# 
+#
+# https://www.home-assistant.io/docs/configuration/customizing-devices/
+#
+sensor.xht01_humidity:
+  friendly_name: Living room
+  device_class: humidity
+  icon: mdi:humidity

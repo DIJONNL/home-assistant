@@ -1,0 +1,10 @@
+---
+#
+# 
+#
+# https://www.home-assistant.io/docs/configuration/customizing-devices/
+#
+sensor.xht03_humidity:
+  friendly_name: Master
+  device_class: humidity
+  icon: mdi:humidity

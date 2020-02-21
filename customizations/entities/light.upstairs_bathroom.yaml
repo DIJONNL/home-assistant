@@ -1,0 +1,9 @@
+---
+#
+# 
+#
+# https://www.home-assistant.io/docs/configuration/customizing-devices/
+#
+light.upstairs_bathroom:
+  friendly_name: Bathroom
+  device_class: light

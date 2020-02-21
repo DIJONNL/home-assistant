@@ -1,0 +1,232 @@
+
+camera_yi_dome:
+  hide_if_away: false
+  icon:
+  mac: 44:B2:95:70:16:CA
+  name: YI Dome Camera
+  picture:
+  track: true
+
+84_0d_8e_5d_99_6a:
+  hide_if_away: false
+  icon:
+  mac: 84:0D:8E:5D:99:6A
+  name: 84 0d 8e 5d 99 6a
+  picture:
+  track: true
+
+c4_4f_33_90_79_d5:
+  hide_if_away: false
+  icon:
+  mac: C4:4F:33:90:79:D5
+  name: c4 4f 33 90 79 d5
+  picture:
+  track: true
+
+c4_4f_33_a9_1c_13:
+  hide_if_away: false
+  icon:
+  mac: C4:4F:33:A9:1C:13
+  name: c4 4f 33 a9 1c 13
+  picture:
+  track: true
+
+60_01_94_cd_9c_89:
+  hide_if_away: false
+  icon:
+  mac: 60:01:94:CD:9C:89
+  name: 60 01 94 cd 9c 89
+  picture:
+  track: true
+
+c0_e8_62_3e_e6_23:
+  hide_if_away: false
+  icon:
+  mac: C0:E8:62:3E:E6:23
+  name: c0 e8 62 3e e6 23
+  picture:
+  track: true
+
+5c_f9_38_99_14_aa:
+  hide_if_away: false
+  icon:
+  mac: 5C:F9:38:99:14:AA
+  name: 5c f9 38 99 14 aa
+  picture:
+  track: true
+
+miele_wasmachine:
+  hide_if_away: false
+  icon:
+  mac: 00:1D:63:0A:65:2F
+  name: Miele Wasmachine
+  picture:
+  track: true
+
+e0_b9_ba_83_62_66:
+  hide_if_away: false
+  icon:
+  mac: E0:B9:BA:83:62:66
+  name: e0 b9 ba 83 62 66
+  picture:
+  track: true
+
+84_0d_8e_5d_4b_88:
+  hide_if_away: false
+  icon:
+  mac: 84:0D:8E:5D:4B:88
+  name: 84 0d 8e 5d 4b 88
+  picture:
+  track: true
+
+c4_4f_33_8c_47_65:
+  hide_if_away: false
+  icon:
+  mac: C4:4F:33:8C:47:65
+  name: c4 4f 33 8c 47 65
+  picture:
+  track: true
+
+1c_5a_6b_70_a8_05:
+  hide_if_away: false
+  icon:
+  mac: 1C:5A:6B:70:A8:05
+  name: 1c 5a 6b 70 a8 05
+  picture:
+  track: true
+
+0c_08_b4_13_80_83:
+  hide_if_away: false
+  icon:
+  mac: 0C:08:B4:13:80:83
+  name: 0c 08 b4 13 80 83
+  picture:
+  track: true
+
+4c_6b_e8_cc_ef_c2:
+  hide_if_away: false
+  icon:
+  mac: 4C:6B:E8:CC:EF:C2
+  name: 4c 6b e8 cc ef c2
+  picture:
+  track: true
+
+b8_b2_f8_5d_c9_10:
+  hide_if_away: false
+  icon:
+  mac: B8:B2:F8:5D:C9:10
+  name: b8 b2 f8 5d c9 10
+  picture:
+  track: true
+
+08_e6_89_7c_dc_20:
+  hide_if_away: false
+  icon:
+  mac: 08:E6:89:7C:DC:20
+  name: 08 e6 89 7c dc 20
+  picture:
+  track: true
+
+wifi_extender:
+  hide_if_away: false
+  icon:
+  mac: 84:16:F9:32:13:AB
+  name: Wifi Extender
+  picture:
+  track: false
+
+cc_50_e3_96_12_40:
+  hide_if_away: false
+  icon:
+  mac: CC:50:E3:96:12:40
+  name: cc 50 e3 96 12 40
+  picture:
+  track: true
+
+00_cd_fe_0e_5e_94:
+  hide_if_away: false
+  icon:
+  mac: 00:CD:FE:0E:5E:94
+  name: 00 cd fe 0e 5e 94
+  picture:
+  track: true
+
+00_11_32_11_31_f9:
+  hide_if_away: false
+  icon:
+  mac: 00:11:32:11:31:F9
+  name: 00 11 32 11 31 f9
+  picture:
+  track: true
+
+34_7c_25_c5_b0_f9:
+  hide_if_away: false
+  icon:
+  mac: 34:7C:25:C5:B0:F9
+  name: 34 7c 25 c5 b0 f9
+  picture:
+  track: true
+
+30_ae_a4_99_b0_f4:
+  hide_if_away: false
+  icon:
+  mac: 30:AE:A4:99:B0:F4
+  name: 30 ae a4 99 b0 f4
+  picture:
+  track: true
+
+b4_e6_2d_fa_be_99:
+  hide_if_away: false
+  icon:
+  mac: B4:E6:2D:FA:BE:99
+  name: b4 e6 2d fa be 99
+  picture:
+  track: true
+
+30_cd_a7_8d_73_7d:
+  hide_if_away: false
+  icon:
+  mac: 30:CD:A7:8D:73:7D
+  name: 30 cd a7 8d 73 7d
+  picture:
+  track: true
+
+e4_a4_71_20_99_96:
+  hide_if_away: false
+  icon:
+  mac: E4:A4:71:20:99:96
+  name: e4 a4 71 20 99 96
+  picture:
+  track: true
+
+dc_4f_22_76_87_b1:
+  hide_if_away: false
+  icon:
+  mac: DC:4F:22:76:87:B1
+  name: dc 4f 22 76 87 b1
+  picture:
+  track: true
+
+c4_4f_33_22_0d_e1:
+  hide_if_away: false
+  icon:
+  mac: C4:4F:33:22:0D:E1
+  name: c4 4f 33 22 0d e1
+  picture:
+  track: true
+
+50_7a_c5_61_90_62:
+  hide_if_away: false
+  icon:
+  mac: 50:7A:C5:61:90:62
+  name: 50 7a c5 61 90 62
+  picture:
+  track: true
+
+mediaplayer_sonos_one_livingroom:
+  hide_if_away: false
+  icon: mdi:music
+  mac: 48:A6:B8:D0:B3:4C
+  name: Sonos One Livingroom
+  picture: 
+  track: true

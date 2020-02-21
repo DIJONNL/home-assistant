@@ -1,0 +1,10 @@
+---
+#
+# 
+#
+# https://www.home-assistant.io/docs/configuration/customizing-devices/
+#
+switch.lcs02:
+  friendly_name: Livingroom Light Window
+  device_class: light
+  icon: mdi:spotlight

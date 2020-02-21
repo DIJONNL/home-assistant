@@ -1,0 +1,10 @@
+---
+#
+# 
+#
+# https://www.home-assistant.io/docs/configuration/customizing-devices/
+#
+switch.lcs03:
+  friendly_name: Master Martijn
+  device_class: light
+  icon: mdi:spotlight

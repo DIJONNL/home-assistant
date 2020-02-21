@@ -1,0 +1,15 @@
+#
+#
+# https://www.home-assistant.io/docs/authentication/multi-factor-auth/
+#
+homeassistant:
+  name: Home
+  latitude: !secret zone_home_latitude
+  longitude: !secret zone_home_longitude
+  unit_system: metric
+  time_zone: Europe/Amsterdam
+  whitelist_external_dirs:
+    - /config/tmp
+
+  # Load packages
+  packages: !include_dir_named integrations

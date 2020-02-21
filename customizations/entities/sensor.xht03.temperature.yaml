@@ -1,0 +1,10 @@
+---
+#
+# 
+#
+# https://www.home-assistant.io/docs/configuration/customizing-devices/
+#
+sensor.xht03_temperature:
+  friendly_name: Master 
+  device_class: temperature
+  icon: mdi:temperature

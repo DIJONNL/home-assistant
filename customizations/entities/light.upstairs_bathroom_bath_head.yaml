@@ -1,0 +1,9 @@
+---
+#
+# 
+#
+# https://www.home-assistant.io/docs/configuration/customizing-devices/
+#
+light.0x14b457fffed4b5f0_light:
+  friendly_name: Bathroom Bath Head
+  device_class: light

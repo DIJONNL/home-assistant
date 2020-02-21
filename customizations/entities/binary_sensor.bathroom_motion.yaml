@@ -1,0 +1,9 @@
+---
+#
+# 
+#
+# https://www.home-assistant.io/docs/configuration/customizing-devices/
+#
+binary_sensor.0xec1bbdfffeaf9cf0_occupancy:
+  friendly_name: Bathroom Motion
+  device_class: motion

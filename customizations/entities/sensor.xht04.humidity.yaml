@@ -1,0 +1,10 @@
+---
+#
+# 
+#
+# https://www.home-assistant.io/docs/configuration/customizing-devices/
+#
+sensor.xht04_humidity:
+  friendly_name: Bathroom
+  device_class: humidity
+  icon: mdi:humidity

@@ -1,0 +1,9 @@
+---
+#
+# 
+#
+# https://www.home-assistant.io/docs/configuration/customizing-devices/
+#
+light.0x14b457fffed3b275_light:
+  friendly_name: Bathroom Bath End
+  device_class: light

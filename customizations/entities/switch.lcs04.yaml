@@ -1,0 +1,10 @@
+---
+#
+# 
+#
+# https://www.home-assistant.io/docs/configuration/customizing-devices/
+#
+switch.lcs04:
+  friendly_name: Master Judith
+  device_class: light
+  icon: mdi:spotlight

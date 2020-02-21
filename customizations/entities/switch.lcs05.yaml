@@ -1,0 +1,10 @@
+---
+#
+# 
+#
+# https://www.home-assistant.io/docs/configuration/customizing-devices/
+#
+switch.lcs05:
+  friendly_name: Dining Room Light Cupboard
+  device_class: light
+  icon: mdi:spotlight

@@ -1,0 +1,10 @@
+---
+#
+# 
+#
+# https://www.home-assistant.io/docs/configuration/customizing-devices/
+#
+switch.tuya:
+  friendly_name: Living Room Light
+  device_class: light
+  icon: mdi:lightbulb-outline

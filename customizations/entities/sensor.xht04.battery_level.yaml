@@ -1,0 +1,10 @@
+---
+#
+# 
+#
+# https://www.home-assistant.io/docs/configuration/customizing-devices/
+#
+sensor.xht04_battery_level:
+  friendly_name: Bathroom 
+  device_class: battery
+  icon: mdi:battery

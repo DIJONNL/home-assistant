@@ -1,0 +1,10 @@
+---
+#
+# 
+#
+# https://www.home-assistant.io/docs/configuration/customizing-devices/
+#
+switch.lcs01:
+  friendly_name: Dining Room Light - Babyfoon
+  device_class: light
+  icon: mdi:spotlight

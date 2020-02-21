@@ -1,0 +1,9 @@
+---
+#
+# 
+#
+# https://www.home-assistant.io/docs/configuration/customizing-devices/
+#
+light.0x90fd9ffffe678a86_light:
+  friendly_name: Bathroom Shower
+  device_class: light

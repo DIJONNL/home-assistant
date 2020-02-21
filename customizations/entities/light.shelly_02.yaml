@@ -1,0 +1,10 @@
+---
+#
+# 
+#
+# https://www.home-assistant.io/docs/configuration/customizing-devices/
+#
+light.shelly02_light:
+  friendly_name: Bathroom
+  device_class: ventilator
+  icon: mdi:fan

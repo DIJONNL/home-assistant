@@ -1,0 +1,7 @@
+---
+#
+# https://community.home-assistant.io/t/zigbee2mqtt-show-the-networkmap-in-home-assistant/89116
+# webhook required for networkmap
+# 
+#
+webhook:
