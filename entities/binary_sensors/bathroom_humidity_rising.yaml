@@ -1,0 +1,14 @@
+---
+# 
+# sample_duration: The duration in seconds to store samples for. Samples older than this value will be discarded.
+# 
+# https://www.home-assistant.io/integrations/trend
+#
+platform: trend
+sensors:
+  bathroom_humidity_rising:
+    friendly_name: Humidity
+    entity_id: sensor.xht04_humidity
+    sample_duration: 300
+    min_gradient: 0.5
+    device_class: moisture

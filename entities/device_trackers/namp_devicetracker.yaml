@@ -1,0 +1,13 @@
+---
+# The nmapdevice tracker sensor allows
+# you to get information based on the nmap protocol
+#
+# https://www.home-assistant.io/integrations/nmap_tracker/
+#
+platform: nmap_tracker
+hosts: 192.168.1.0/24
+home_interval: 10
+exclude:
+     - 192.168.1.1
+     - 192.168.1.3
+     - 192.168.1.5

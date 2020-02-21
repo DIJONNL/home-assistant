@@ -1,0 +1,12 @@
+#
+#
+# YI-Dome integration
+# 
+# https://www.home-assistant.io/integrations/yi/
+#
+platform: yi
+name: YIDome
+host: !secret yidome_ipaddress
+password: !secret yidome_password
+path: /tmp/sd/record
+ffmpeg_arguments: '-vf scale=800:450'

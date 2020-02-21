@@ -1,0 +1,7 @@
+bathroom_humidity_humid_threshold:
+  name: BathroomHumidThreshold
+  initial: 80
+  min: 0
+  max: 100
+  step: 1
+

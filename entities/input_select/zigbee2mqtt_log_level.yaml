@@ -1,0 +1,16 @@
+---
+# This is an input select entity to use with automations as part of the zigbee2mqtt integration
+#
+# https://www.zigbee2mqtt.io/integration/home_assistant.html
+#
+#
+# Input select for Zigbee2mqtt debug level
+zigbee2mqtt_log_level:
+  name: Zigbee2mqtt Log Level
+  options:
+    - debug
+    - info
+    - warn
+    - error
+  initial: info
+  icon: mdi:format-list-bulleted

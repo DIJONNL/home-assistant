@@ -1,0 +1,21 @@
+---
+# This automation turn off the master_room light when 
+# the timer is finished.
+#
+alias: turn_off_light_when_timer_finished
+trigger:
+- platform: event
+  event_type: timer.finished
+  event_data:
+    entity_id: timer.master_room
+condition: []
+action:
+- service: homeassistant.turn_off
+  entity_id: group.master_room
+- service: notify.MARTIJN
+  data_template:
+    title: Finished Timer Master
+    message: >-
+      Finished Master Timer
+    notification_id: timer
+ 

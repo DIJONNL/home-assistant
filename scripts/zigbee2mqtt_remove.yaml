@@ -1,0 +1,10 @@
+#
+# https://www.zigbee2mqtt.io/integration/home_assistant.html
+#
+zigbee2mqtt_remove:
+  alias: Zigbee2mqtt Remove
+  sequence:
+    service: mqtt.publish
+    data_template:
+      topic: zigbee2mqtt/bridge/config/remove
+      payload_template: "{{ states.input_text.zigbee2mqtt_remove.state | string }}"

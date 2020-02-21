@@ -1,0 +1,9 @@
+---
+# The blue toothe light device tracker sensor allows
+# you to get the statusus and information from all bleutooth light sensors.
+#
+# https://www.home-assistant.io/integrations/bluetooth_le_tracker/
+#
+platform: bluetooth_le_tracker
+track_new_devices: true
+interval_seconds: 30

@@ -1,0 +1,7 @@
+#
+#
+# Buienradar Camera
+# 
+# https://www.home-assistant.io/integrations/buienradar/
+#
+platform: buienradar

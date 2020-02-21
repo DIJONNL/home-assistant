@@ -1,0 +1,11 @@
+---
+#
+# https://www.home-assistant.io/integrations/group/
+#
+# Example configuration.yaml entry
+dining_room:
+  name: Dining Room
+  icon: mdi:lightbulb-group-outline
+  entities:
+    - switch.lcs01
+    - switch.lcs05

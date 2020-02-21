@@ -1,0 +1,24 @@
+---
+#
+#
+#
+# https://www.zigbee2mqtt.io/integration/home_assistant.html
+#
+# Automation to stop timer when switch turned off and turn off switch when timer finished
+id: zigbee_join_disabled
+alias: Zigbee Join Disabled
+hide_entity: true
+trigger:
+  - platform: event
+    event_type: timer.finished
+    event_data:
+      entity_id: timer.zigbee_permit_join
+  - platform: state
+    entity_id: switch.zigbee2mqtt_main_join
+    to: "off"
+action:
+  - service: timer.cancel
+    data:
+      entity_id: timer.zigbee_permit_join
+  - service: switch.turn_off
+    entity_id: switch.zigbee2mqtt_main_join

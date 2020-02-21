@@ -1,0 +1,10 @@
+---
+#
+# https://www.home-assistant.io/integrations/group/
+#
+# Example configuration.yaml entry
+garden:
+  name: Garden
+  icon: mdi:lightbulb-group-outline
+  entities:
+    - switch.shelly_01

@@ -1,0 +1,5 @@
+name: ALL_DEVICES
+platform: group
+services:
+  - service: mobile_app_iphone_van_martijn
+  - service: mobile_app_iphone_van_judith

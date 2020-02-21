@@ -1,0 +1,80 @@
+#
+# TUYA
+#
+#
+
+substitutions:
+  name_tuya: TUYA
+
+esphome:
+  name: smartplug_toya
+  platform: ESP8266
+  board: esp01_1m
+
+wifi:
+  ssid: !secret wifi_ext_ssid
+  password: !secret wifi_ext_password
+
+captive_portal:
+
+logger:
+
+#not using a password for the API
+api:
+  
+#not using a pwd for OTA
+ota:
+
+web_server:
+  port: 80
+
+# Sync time with Home Assistant
+time:
+  - platform: homeassistant
+    id: homeassistant_time
+
+# Text sensors with general information
+text_sensor:
+  - platform: version
+    name: "$name_tuya version"
+  - platform: wifi_info
+    ip_address:
+      name: "$name_tuya ip"
+    ssid:
+      name: "$name_tuya ssid"
+    bssid:
+      name: "$name_tuya bssid"
+
+binary_sensor:
+- platform: gpio
+  pin:
+    number: GPIO14
+    mode: INPUT_PULLUP
+    inverted: True
+  name: "$name_tuya"
+  on_press:
+   - switch.toggle: relay
+
+sensor:
+  - platform: wifi_signal
+    name: "$name_tuya wifi"
+    update_interval: 10s
+  - platform: uptime
+    name: "$name_tuya uptime"
+
+switch:
+- platform: gpio
+  id: led
+  pin:
+    number: GPIO04
+    inverted: true
+- platform: gpio
+  name: "$name_tuya"
+  pin: GPIO12
+  id: relay
+  # Turns on the LED once the plug is turned on.
+  on_turn_on:
+  - switch.turn_on: led
+  # Turns off the LED once the plug is turned off.
+  on_turn_off:
+  - switch.turn_off: led

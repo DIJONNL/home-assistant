@@ -1,0 +1,8 @@
+---
+# The bluetooth device tracker sensor allows
+# you to get information based on the bluetooth protocol
+#
+# https://www.home-assistant.io/integrations/bluetooth_tracker/
+#
+platform: bluetooth_tracker
+request_rssi: false

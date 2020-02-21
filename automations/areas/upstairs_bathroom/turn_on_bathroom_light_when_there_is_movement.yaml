@@ -1,0 +1,26 @@
+---
+# This automation turns on the light when there is motion in the bathroom
+# Light is only enabled based on sunset / sunrise conditions (replace with a sensor)
+#
+alias: turn_on_bathroom_light_when_there_is_movement
+trigger:
+- platform: state
+  entity_id: binary_sensor.0xec1bbdfffeaf9cf0_occupancy
+  to: 'on'
+condition:
+  #OR statement looks strange but is correct https://home-assistant.io/docs/scripts/conditions/#or-condition
+  #Using "before: sunset" and "after: sunrise" causes light to come on when arriving during the day.
+  #"after_offset:" appears to have to be used with "after:" and "before_offset:" appears to have to be used with "before:" since the trigger doesn't fire correctly using "after: ... before_offset: ..." or "before: ... after_offset: ..." in my experience. Positive or negative offset values only seem to matter on the after_offset (but produce the same outcomes for the before_offset).
+  condition: or
+  conditions:
+  #Condition beginning 1 hour and 30 min after sunset (and including after sunset): https://home-assistant.io/docs/scripts/conditions/#sun-condition
+    - condition: sun
+      after: sunset
+      after_offset: "+01:30:00"
+  #Condition ending 30 min after sunrise (and including before sunrise)
+    - condition: sun
+      before: sunrise
+      before_offset: "01:30:00"
+action:
+- service: light.turn_on
+  entity_id: light.upstairs_bathroom

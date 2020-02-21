@@ -1,0 +1,20 @@
+---
+# This automation starts the master_room timer when 
+# the light is enabled.
+#
+alias: start_timer_on_turn_on_light_at_master
+trigger:
+- platform: state
+  entity_id: group.master_room
+  to: 'on'
+condition: []
+action:
+- service: timer.start
+  entity_id: timer.master_room
+- service: notify.MARTIJN
+  data_template:
+    title: Start Timer Master
+    message: >-
+      Start Master Timer
+      Timer set on  {{ state_attr('timer.master_room','duration') }} minutes
+    notification_id: timer

@@ -1,0 +1,18 @@
+---
+# This automation turns on the light in the living room at sunset
+# of Home Assistant for Hass.io is released.
+#
+alias: living_room_turn_on_light_at_sunset
+trigger:
+  platform: sun
+  event: sunset
+  offset: "-00:20:00"
+condition: []
+action:
+- service: homeassistant.turn_on
+  entity_id: group.living_room
+- service: notify.MARTIJN
+  data_template:
+    title: Turn-On Light@Sunset
+    message: Turn On Living Room Light
+    notification_id: light_on

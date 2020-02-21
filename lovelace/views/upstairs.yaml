@@ -1,0 +1,167 @@
+---
+path: upstairs
+title: Upstairs
+icon: mdi:stairs
+cards:
+  - type: custom:vertical-stack-in-card
+    title: Master bedroom
+    cards:
+      - type: glance
+        entities:
+          - timer.master_room
+      - type: horizontal-stack
+        cards:
+          - type: "custom:button-card"
+            entity: switch.lcs03 
+            show_state: false
+            show_name: true
+            show_label: true 
+          - type: "custom:button-card"
+            entity: switch.lcs04 
+            show_state: false
+            show_name: true
+            show_label: true 
+      - type: horizontal-stack
+        cards:            
+          - type: custom:mini-graph-card
+            name: Temperature
+            entities:
+              - sensor.xht03_temperature
+            location_icon: left
+            location_state: center
+            show:
+              fill: fade
+              extrema: true
+            height: 75
+            animate: true
+            hour24: true
+            line_color: var(--primary-color)
+            color_thresholds:
+              - value: 22
+                color: red
+              - value: 17
+                color: white
+          - type: custom:mini-graph-card
+            name: Humidity
+            entities:
+              - sensor.xht03_humidity
+            location_icon: left
+            location_state: center
+            show:
+              fill: fade
+              extrema: true
+            height: 75
+            animate: true
+            hour24: true
+            line_color: var(--primary-color)
+            color_thresholds:
+              - value: 70
+                color: red
+              - value: 55
+                color: white  
+  - type: custom:vertical-stack-in-card
+    title: Floor bedroom
+    cards:
+      - type: glance
+        entities: []
+      - type: horizontal-stack
+        cards:            
+          - type: custom:mini-graph-card
+            name: Temperature
+            entities:
+              - sensor.xht02_temperature
+            location_icon: left
+            location_state: center
+            show:
+              fill: fade
+              extrema: true
+            height: 75
+            animate: true
+            hour24: true
+            line_color: var(--primary-color)
+            color_thresholds:
+              - value: 22
+                color: red
+              - value: 17
+                color: white
+          - type: custom:mini-graph-card
+            name: Humidity
+            entities:
+              - sensor.xht02_humidity
+            location_icon: left
+            location_state: center
+            show:
+              fill: fade
+              extrema: true
+            height: 75
+            animate: true
+            hour24: true
+            line_color: var(--primary-color)
+            color_thresholds:
+              - value: 70
+                color: red
+              - value: 55
+                color: white  
+  - type: custom:vertical-stack-in-card
+    title: Bathroom
+    cards:
+      - type: glance
+        entities:
+          - binary_sensor.0xec1bbdfffeaf9cf0_occupancy
+          - light.upstairs_bathroom
+          - sensor.bathroom_humidity_category
+      - type: horizontal-stack
+        cards:            
+          - type: custom:mini-graph-card
+            name: Temperature
+            entities:
+              - sensor.xht04_temperature
+            location_icon: left
+            location_state: center
+            show:
+              fill: fade
+              extrema: true
+            height: 75
+            animate: true
+            hour24: true
+            update_interval: 10
+            line_color: var(--primary-color)
+            color_thresholds:
+              - value: 22
+                color: red
+              - value: 17
+                color: white
+          - type: custom:mini-graph-card
+            name: Humidity
+            entities:
+              - sensor.xht04_humidity
+            location_icon: left
+            location_state: center
+            show:
+              fill: fade
+              extrema: true
+            height: 75
+            animate: true
+            hour24: true
+            update_interval: 10
+            line_color: var(--primary-color)
+            color_thresholds:
+              - value: 80
+                color: red
+              - value: 50
+                color: white  
+      - type: horizontal-stack
+        cards:
+          - type: light
+            entity: light.0x90fd9ffffe678a86_light
+          - type: light
+            entity: light.0x14b457fffed4b5f0_light
+      - type: horizontal-stack
+        cards:
+          - type: light
+            entity: light.0x14b457fffed3b275_light
+          - type: "custom:button-card"
+            entity: light.shelly02_light
+            show_state: false
+            show_name: true
+            show_label: true

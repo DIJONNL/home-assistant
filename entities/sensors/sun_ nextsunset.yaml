@@ -1,0 +1,13 @@
+---
+#
+#
+#
+#
+platform: template
+sensors:
+  nextsunset:
+    entity_id: sun.sun
+    friendly_name: 'Next Sunset'
+    value_template: >
+      {{ as_timestamp(states.sun.sun.attributes.next_setting) | timestamp_custom(' %I:%M %p') | replace(" 0", "") }}
+    icon_template: mdi:weather-sunset-down

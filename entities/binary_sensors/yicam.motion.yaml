@@ -1,0 +1,12 @@
+---
+#
+# https://github.com/TheCrypt0/yi-hack-v4/wiki/Home-Assistant-RTSP-configuration
+#
+# https://www.home-assistant.io/integrations/binary_sensor.mqtt/
+#
+platform: mqtt
+state_topic: "yicam/motion"
+name: "yicam_motion_sensor"
+payload_on: "motion_start"
+payload_off: "motion_stop"
+device_class: motion

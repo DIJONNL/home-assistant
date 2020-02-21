@@ -1,0 +1,11 @@
+---
+#
+#
+#
+# https://www.zigbee2mqtt.io/integration/home_assistant.html
+# Sensor for Showing the Coordinator Version
+platform: mqtt
+name: Coordinator Version
+state_topic: "zigbee2mqtt/bridge/config"
+value_template: "{{ value_json.coordinator }}"
+icon: mdi:chip

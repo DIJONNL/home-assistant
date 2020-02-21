@@ -1,0 +1,24 @@
+---
+# This automation turns on the ventilator when the humidity is above
+# a certain vaue
+#
+alias: turn_on_ventilator_when_above_threshold
+trigger:
+- platform: state
+  entity_id: sensor.bathroom_humidity_category
+  from: 'humid'
+  to: 'wet'
+- platform: state
+  entity_id: sensor.bathroom_humidity_category
+  from: 'normal'
+  to: 'wet'
+condition: []
+action:
+- service: notify.telegram_martijn
+  data_template:
+    title: Bathroom is wet
+    message: >-
+      The humidity in the bathroom is classified as {{ states('sensor.bathroom_humidity_category') }}!
+      The Ventilator will be switched to on.
+- service: light.turn_on
+  entity_id: light.shelly02_light

@@ -1,0 +1,20 @@
+---
+#
+# https://www.home-assistant.io/integrations/proximity/
+#
+#proximity: !include_dir_named ../entities/proximity
+
+# Example configuration.yaml entry
+proximity:
+  home_for_martijn:
+    devices:
+      - device_tracker.iphone_van_martijn
+    tolerance: 50
+    unit_of_measurement: m
+  home_for_judith:
+    devices:
+      - device_tracker.iphone_van_judith
+    tolerance: 50
+    unit_of_measurement: m
+
+      

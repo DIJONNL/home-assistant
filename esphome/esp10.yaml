@@ -1,0 +1,87 @@
+# esp32: Ground Floor Hardware
+#
+# This is my ESPHome ESP32 Extender downstairs, using an ESP32. Mainly used 
+# for using the Xiaomi Temperature and Humidity Sensors for which seems to be
+# instable over the Bluetooth over the Pi.
+#
+substitutions:
+ name_xiaomi_01: XHT01
+ esp32: ESP32DS
+
+esphome:
+  name: esp32_groundfloor
+  platform: ESP32
+  board: esp32dev
+
+wifi:
+  networks:
+  - ssid: !secret wifi_ext_ssid
+    password: !secret wifi_ext_password
+  - ssid: !secret wifi_ssid
+    password: !secret wifi_password
+
+captive_portal:
+
+logger:
+
+#not using a password for the API
+api:
+  
+#not using a pwd for OTA
+ota:
+
+web_server:
+  port: 80
+
+sensor:
+  - platform: wifi_signal
+    name: "$esp32 Wifi"
+    update_interval: 10s
+  - platform: uptime
+    name: "$esp32 Uptime"
+  - platform: sun
+    name: "$esp32 Elevation"
+    type: elevation
+  - platform: xiaomi_lywsdcgq
+    mac_address: 58:2D:34:35:CB:C2
+    temperature:
+      name: $name_xiaomi_01 Temperature
+    humidity:
+      name: $name_xiaomi_01 Humidity
+    battery_level:
+      name: $name_xiaomi_01 Battery Level
+ 
+switch:
+  - platform: restart
+    name: "$esp32 Restart"
+
+# Sync time with Home Assistant
+time:
+  - platform: homeassistant
+    id: homeassistant_time
+
+# Text sensors with general information
+text_sensor:
+  - platform: version
+    name: "$esp32 Version"
+  - platform: wifi_info
+    ip_address:
+      name: "$esp32 IP"
+    ssid:
+      name: "$esp32 SSID"
+    bssid:
+      name: "$esp32 BSSID"
+      
+esp32_ble_tracker:
+
+sun:
+  latitude: !secret zone_home_latitude
+  longitude: !secret zone_home_longitude
+
+  on_sunrise:
+    - then:
+        - logger.log: Good morning!
+  on_sunset:
+    - then:
+        - logger.log: Good evening!
+        

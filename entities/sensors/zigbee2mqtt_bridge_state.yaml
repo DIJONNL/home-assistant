@@ -1,0 +1,10 @@
+---
+#
+#
+#
+# https://www.zigbee2mqtt.io/integration/home_assistant.html
+# Sensor for monitoring the bridge state
+platform: mqtt
+name: Zigbee2mqtt Bridge state
+state_topic: "zigbee2mqtt/bridge/state"
+icon: mdi:router-wireless

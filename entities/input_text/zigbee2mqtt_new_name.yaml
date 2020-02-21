@@ -1,0 +1,9 @@
+---
+# This is an input text entity to use with automations as part of the zigbee2mqtt integration
+#
+# https://www.zigbee2mqtt.io/integration/home_assistant.html
+#
+#
+# Input text to input Zigbee2mqtt friendly_name for scripts
+zigbee2mqtt_new_name:
+  name: Zigbee2mqtt New Name

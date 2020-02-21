@@ -1,0 +1,11 @@
+---
+#
+# https://www.home-assistant.io/integrations/group/
+#
+# Example configuration.yaml entry
+living_room:
+  name: Living Room
+  icon: mdi:lightbulb-group-outline
+  entities:
+    - switch.lcs02
+    - switch.tuya

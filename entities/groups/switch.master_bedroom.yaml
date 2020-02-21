@@ -1,0 +1,11 @@
+---
+#
+# https://www.home-assistant.io/integrations/group/
+#
+# Example configuration.yaml entry
+master_room:
+  name: Master Room
+  icon: mdi:lightbulb-group-outline
+  entities:
+    - switch.lcs03
+    - switch.lcs04

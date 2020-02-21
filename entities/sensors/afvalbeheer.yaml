@@ -1,0 +1,14 @@
+#
+#
+#
+platform: afvalbeheer
+wastecollector: !secret home_wastecollector
+resources:
+  - gft
+  - papier
+postcode: !secret home_postcode
+streetnumber: !secret home_streetnumber
+nameprefix: 0
+dutch: 1
+builtinicons: 1
+dateonly: 0

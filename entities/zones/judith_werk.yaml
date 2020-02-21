@@ -1,0 +1,11 @@
+---
+#
+# Defines Judith's Work Location 
+#
+# https://www.home-assistant.io/integrations/zone/
+#
+name: !secret werk_judith_name
+latitude: !secret werk_judith_latitude
+longitude: !secret werk_judith_longitude
+radius: 250
+passive: false

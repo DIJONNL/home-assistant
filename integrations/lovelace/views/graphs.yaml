@@ -1,0 +1,32 @@
+---
+path: graphs
+title: History Graphs
+icon: mdi:graph
+cards:
+  - type: history-graph
+    hours_to_show: 80
+    refresh_interval: 60
+    entities:
+      - sensor.xht01_humidity
+      - sensor.xht02_humidity
+      - sensor.xht03_humidity
+      - sensor.xht04_humidity
+      - sensor.voorschoten_humidity
+      - sensor.xht01_temperature
+      - sensor.xht02_temperature
+      - sensor.xht03_temperature
+      - sensor.xht04_temperature
+      - sensor.voorschoten_temperature
+      - light.0x14b457fffed3b275_light
+      - light.0x14b457fffed4b5f0_light
+      - light.0x90fd9ffffe678a86_light
+      - switch.lcs01
+      - switch.lcs02
+      - switch.lcs03
+      - switch.lcs04
+      - switch.lcs05
+      - switch.tuya
+      - switch.shelly_01
+      - switch.shelly_02
+      - binary_sensor.people_home
+      - binary_sensor.bathroom_motion

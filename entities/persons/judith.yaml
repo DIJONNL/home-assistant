@@ -1,0 +1,6 @@
+---
+name: Judith
+id: judith
+user_id: !secret user_id_judith
+device_trackers:
+  - device_tracker.iphone_van_judith

@@ -1,0 +1,22 @@
+---
+# This automation turns off the ventilator when the humidity is below
+# a certain vaue
+#
+alias: turn_off_ventilator_when_below_threshold
+trigger:
+- platform: state
+  entity_id: sensor.bathroom_humidity_category
+  from: 'wet'
+  to: 'humid'
+  for:
+    minutes: 10
+condition: []
+action:
+- service: notify.telegram_martijn
+  data_template:
+    title: Bathroom is not wet
+    message: >-
+      The humidity in the bathroom is classified as {{ states('sensor.bathroom_humidity_category') }}!
+      The Ventilator will be switched to off
+- service: light.turn_off
+  entity_id: light.shelly02_light

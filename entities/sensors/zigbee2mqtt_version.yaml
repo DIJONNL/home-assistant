@@ -1,0 +1,11 @@
+---
+#
+#
+#
+# https://www.zigbee2mqtt.io/integration/home_assistant.html
+# Sensor for Showing the Zigbee2mqtt Version
+platform: mqtt
+name: Zigbee2mqtt Version
+state_topic: "zigbee2mqtt/bridge/config"
+value_template: "{{ value_json.version }}"
+icon: mdi:zigbee

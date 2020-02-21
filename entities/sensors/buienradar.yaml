@@ -1,0 +1,10 @@
+platform: buienradar
+name: !secret buienradar_station
+latitude: !secret zone_home_latitude
+longitude: !secret zone_home_longitude
+monitored_conditions:
+  - symbol
+  - humidity
+  - temperature
+  - windspeed
+  - pressure

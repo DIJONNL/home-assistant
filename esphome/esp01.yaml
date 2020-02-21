@@ -1,0 +1,106 @@
+# esp32: Development
+#
+# This is my ESPHome Raspberry PI Extender, using an ESP32. Mainly used 
+# for using the Xiaomi Temperature and Humidity Sensors which seems to be
+# instable over the Bluetooth over the Pi.
+#
+substitutions:
+ name_xiaomi_02: XHT02
+ name_xiaomi_03: XHT03
+ name_xiaomi_04: XHT04
+
+esphome:
+  name: esp32
+  platform: ESP32
+  board: esp32dev
+
+wifi:
+  networks:
+  - ssid: !secret wifi_ext_ssid
+    password: !secret wifi_ext_password
+  - ssid: !secret wifi_ssid
+    password: !secret wifi_password
+
+captive_portal:
+
+logger:
+
+#not using a password for the API
+api:
+  
+#not using a pwd for OTA
+ota:
+
+web_server:
+  port: 80
+
+sensor:
+  - platform: wifi_signal
+    name: esphome_esp01_wifi_signal
+    update_interval: 10s
+  - platform: uptime
+    name: esphome_esp01_uptime
+  - platform: sun
+    name: esphome_esp01_sun_elevation
+    type: elevation
+  - platform: xiaomi_lywsdcgq
+    mac_address: 58:2D:34:35:CC:76
+    temperature:
+      name: $name_xiaomi_02 Temperature
+    humidity:
+      name: $name_xiaomi_02 Humidity
+    battery_level:
+      name: $name_xiaomi_02 Battery Level
+  - platform: xiaomi_lywsdcgq
+    mac_address: 58:2D:34:35:D0:91
+    temperature:
+      name: $name_xiaomi_03 Temperature
+    humidity:
+      name: $name_xiaomi_03 Humidity
+    battery_level:
+      name: $name_xiaomi_03 Battery Level
+  - platform: xiaomi_lywsdcgq
+    mac_address: 58:2D:34:35:CC:4A
+    temperature:
+      name: $name_xiaomi_04 Temperature
+    humidity:
+      name: $name_xiaomi_04 Humidity
+    battery_level:
+      name: $name_xiaomi_04 Battery Level
+ 
+switch:
+  - platform: restart
+    name: esphome_esp01_restart
+
+# Sync time with Home Assistant
+time:
+  - platform: homeassistant
+    id: homeassistant_time
+
+# Text sensors with general information
+text_sensor:
+  - platform: version
+    name: esphome_esp01_version
+  - platform: wifi_info
+    ip_address:
+      name: esphome_esp01_ip
+      icon: "mdi:ip"
+    ssid:
+      name: esphome_esp01_ssid
+    bssid:
+      name: esphome_esp01_bssid
+      
+esp32_ble_tracker:
+
+
+sun:
+  latitude: !secret zone_home_latitude
+  longitude: !secret zone_home_longitude
+
+  on_sunrise:
+    - then:
+        - logger.log: Good morning!
+  on_sunset:
+    - then:
+        - logger.log: Good evening!
+        

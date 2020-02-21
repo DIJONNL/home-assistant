@@ -1,0 +1,17 @@
+---
+# This automation turns off the light when there is no motion in the bathroom for 5 minutes
+#
+alias: turn_off_bathroom_light_in_the_morning_when_there_is_nomovement
+trigger:
+- platform: state
+  entity_id: binary_sensor.0xec1bbdfffeaf9cf0_occupancy
+  to: 'off'
+  for:
+    minutes: 7
+condition:
+  - condition: time
+    after: '05:00:00'
+    before: '12:00:00'
+action:
+- service: light.turn_off
+  entity_id: light.upstairs_bathroom

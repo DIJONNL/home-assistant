@@ -1,0 +1,14 @@
+---
+#
+#
+# https://www.zigbee2mqtt.io/integration/home_assistant.html
+# Timer for joining time remaining (120 sec = 2 min)
+# Master time that the light is turned-on (900 = 15min)
+timer:
+  zigbee_permit_join:
+    name: Time remaining
+    duration: 120
+  master_room:
+    name: Master 
+    duration: 900
+
