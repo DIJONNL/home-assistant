@@ -7,6 +7,9 @@ Inspired by the components defined in the GIThub from https://github.com/frenck
 
 Integration: ESPHOME : https://github.com/esphome/hassio 
 
+Home Assistant Integration
+	- MQTT
+
 
 HACS
 	- integrations
@@ -32,7 +35,6 @@ Add-ons
 	- ESPHome (https://github.com/esphome/hassio)
 	- Visual Studio Code
 	- Git pull
-	- Log Viewer
 	- MQTT Server & Web client
 	- SSH Server
 	- zigbee2mqtt (https://github.com/danielwelch/hassio-zigbee2mqtt)
