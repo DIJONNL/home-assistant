@@ -1,0 +1,81 @@
+---
+path: downstairs
+title: Downstairs
+icon: mdi:sofa
+cards:
+  - type: custom:vertical-stack-in-card
+    title: Living room
+    cards:
+      - type: horizontal-stack
+        cards:
+        - type: "custom:button-card"
+          entity: switch.lcs02
+          show_state: false
+          show_name: true
+          show_label: true
+        - type: "custom:button-card"
+          entity: switch.tuya
+          show_state: false
+          show_name: true
+          show_label: true
+      - type: horizontal-stack
+        cards:
+        - type: custom:mini-graph-card
+          name: Temperature
+          entities:
+            - sensor.xht01_temperature
+          location_icon: left
+          location_state: center
+          show:
+            fill: fade
+            extrema: true
+          height: 75
+          animate: true
+          hour24: true
+          line_color: var(--primary-color)
+          color_thresholds:
+            - value: 21
+              color: red
+            - value: 17
+              color: white
+        - type: custom:mini-graph-card
+          name: Humidity
+          entities:
+            - sensor.xht01_humidity
+          location_icon: left
+          location_state: center
+          show:
+            fill: fade
+            extrema: true
+          height: 75 
+          animate: true
+          hour24: true
+          line_color: var(--primary-color)
+          color_thresholds:
+            - value: 70
+              color: red
+            - value: 55
+              color: white 
+  - type: custom:vertical-stack-in-card
+    title: Dining room
+    cards: 
+      - type: horizontal-stack
+        cards:
+        - type: "custom:button-card"
+          entity: switch.lcs01
+          show_state: false
+          show_name: true
+          show_label: true
+        - type: "custom:button-card"
+          entity: switch.lcs05
+          show_state: false
+          show_name: true
+          show_label: true
+  - type: custom:vertical-stack-in-card
+    title: Front Yard
+    cards: 
+      - type: horizontal-stack
+        cards:
+        - type: "picture-entity"
+          title: "Front Yard"
+          entity: camera.yidome
