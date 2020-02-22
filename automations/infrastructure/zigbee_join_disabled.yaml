@@ -7,7 +7,6 @@
 # Automation to stop timer when switch turned off and turn off switch when timer finished
 id: zigbee_join_disabled
 alias: Zigbee Join Disabled
-hide_entity: true
 trigger:
   - platform: event
     event_type: timer.finished
