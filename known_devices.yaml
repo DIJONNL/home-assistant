@@ -201,3 +201,10 @@ mediaplayer_sonos_one_livingroom:
   name: Sonos One Livingroom
   picture: 
   track: true
+
+10_29_59_b2_68_10:
+  icon:
+  mac: 10:29:59:B2:68:10
+  name: 10 29 59 b2 68 10
+  picture:
+  track: true

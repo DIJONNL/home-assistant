@@ -9,7 +9,8 @@ Integration: ESPHOME : https://github.com/esphome/hassio
 
 Home Assistant Integration
 	- MQTT
-
+	- Ad-Guard Home (provides sensors and available after HACS plugin installation)
+	- Home Assistant Community Store (https://hacs.xyz/)
 
 HACS
 	- integrations

@@ -6,5 +6,5 @@
 secrets.yaml
 home-assistant.log
 home-assistant_v2.db
-
 appdaemon/apps/__pycache__/hello.cpython-38.pyc
+custom_components/hacs
