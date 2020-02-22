@@ -71,11 +71,3 @@ cards:
           show_state: false
           show_name: true
           show_label: true
-  - type: custom:vertical-stack-in-card
-    title: Front Yard
-    cards: 
-      - type: horizontal-stack
-        cards:
-        - type: "picture-entity"
-          title: "Front Yard"
-          entity: camera.yidome

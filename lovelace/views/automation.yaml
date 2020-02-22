@@ -4,7 +4,6 @@ title: Automation
 icon: mdi:home-automation
 cards:
   - type: vertical-stack
-    title: Living Room
     cards:
       - type: entities
         show_header_toggle: false
@@ -12,7 +11,6 @@ cards:
             - automation.living_room_turn_on_light_at_sunset
             - automation.living_room_turn_off_light_at_silent_hour
   - type: vertical-stack
-    title: Dining Room
     cards:
       - type: entities
         show_header_toggle: false
@@ -20,7 +18,6 @@ cards:
             - automation.dining_room_turn_on_light_at_sunset
             - automation.dining_room_turn_off_light_at_silent_hour
   - type: vertical-stack
-    title: Master
     cards:
       - type: entities
         show_header_toggle: false
@@ -28,7 +25,6 @@ cards:
             - automation.start_timer_on_turn_on_light_at_master
             - automation.turn_off_light_when_timer_finished
   - type: vertical-stack
-    title: Bathroom
     cards:
       - type: entities
         show_header_toggle: false
@@ -41,21 +37,18 @@ cards:
             - input_number.bathroom_humidity_wet_threshold
             - input_number.bathroom_humidity_humid_threshold
   - type: vertical-stack
-    title: Front Yard
     cards:
       - type: entities
         show_header_toggle: false
         entities:
             - automation.frontyard_snapshot_motion
   - type: vertical-stack
-    title: Outside
     cards:
       - type: entities
         show_header_toggle: false
         entities:
             - automation.stookalert_notification
   - type: vertical-stack
-    title: System
     cards:
       - type: entities
         show_header_toggle: false
@@ -65,6 +58,3 @@ cards:
             - automation.system_low_battery_alert
             - entity: input_datetime.house_silent_hours_start
             - entity: input_datetime.house_silent_hours_end
-
-
-          
