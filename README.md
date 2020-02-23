@@ -11,6 +11,8 @@ Home Assistant Integration
 	- MQTT
 	- Ad-Guard Home (provides sensors and available after HACS plugin installation)
 	- Home Assistant Community Store (https://hacs.xyz/)
+	- Sonos (to identify the media_player entities)
+	- Home Assistant iOS
 
 HACS
 	- integrations

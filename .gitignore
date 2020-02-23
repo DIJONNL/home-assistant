@@ -3,6 +3,7 @@
 .storage
 .cloud
 .HA_VERSION
+.pip_progress
 secrets.yaml
 home-assistant.log
 home-assistant_v2.db
@@ -10,5 +11,7 @@ home-assistant_v2.db-wal
 custom_components/hacs
 home-assistant_v2.db-shm
 custom_components/hacs
+custom_components/zigbee2mqtt_networkmap/
 appdaemon/apps/controllerx/
 appdaemon/apps/__pycache__
+

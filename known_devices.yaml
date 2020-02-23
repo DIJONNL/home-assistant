@@ -41,10 +41,10 @@ c0_e8_62_3e_e6_23:
   picture:
   track: true
 
-5c_f9_38_99_14_aa:
+macbook_air:
   icon:
   mac: 5C:F9:38:99:14:AA
-  name: 5c f9 38 99 14 aa
+  name: MacBook Air
   picture:
   track: true
 
@@ -55,10 +55,10 @@ miele_wasmachine:
   picture:
   track: true
 
-e0_b9_ba_83_62_66:
+ipad_floor:
   icon:
   mac: E0:B9:BA:83:62:66
-  name: e0 b9 ba 83 62 66
+  name: iPad Floor
   picture:
   track: true
 
