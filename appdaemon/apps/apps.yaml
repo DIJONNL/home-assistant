@@ -2,3 +2,10 @@
 hello_world:
   module: hello
   class: HelloWorld
+
+livingroom_controller:
+  module: controllerx
+  class: E1810Controller
+  controller: sensor.0xccccccfffea59b57_action
+  integration: z2m
+  light: light.upstairs_bathroom
