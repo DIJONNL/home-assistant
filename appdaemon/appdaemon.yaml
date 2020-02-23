@@ -1,15 +1,38 @@
----
 secrets: /config/secrets.yaml
+
+logs: 
+  access_log: 
+    name: Access
+    filename: /config/appdaemon/log/access.log
+  error_log:
+    name: Error
+    filename: /config/appdaemon/log/error.log
+  main_log:
+    name: Log
+    filename: /config/appdaemon/log/appdaemon.log
+    log_generations: 1
+    log_size: 1024000
+  diag_log:
+    name: Diag
+    filename: /config/appdaemon/log/diag.log
+    log_generations: 1
+    log_size: 1024000
+
 appdaemon:
-  latitude: 52.379189
-  longitude: 4.899431
-  elevation: 2
-  time_zone: Europe/Amsterdam
+  latitude: !secret zone_home_latitude
+  longitude: !secret zone_home_longitude
+  elevation: !secret zone_home_elevation
+  time_zone: !secret zone_home_timezone
   plugins:
     HASS:
       type: hass
 http:
   url: http://127.0.0.1:5050
-admin:
-api:
+
 hadashboard:
+
+admin:
+
+api:
+
+
