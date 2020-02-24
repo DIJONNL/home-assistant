@@ -4,7 +4,7 @@
 #
 # https://www.home-assistant.io/integrations/zone/
 #
-name: !secret creche_name
+name: creche
 latitude: !secret creche_latitude
 longitude: !secret creche_longitude
 radius: 100

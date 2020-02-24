@@ -146,11 +146,11 @@ cc_50_e3_96_12_40:
   picture:
   track: true
 
-30_ae_a4_99_b0_f4:
+esp32_groundfloor:
   icon:
   mac: 30:AE:A4:99:B0:F4
-  name: 30 ae a4 99 b0 f4
-  picture:
+  name: esp32_groundfloor
+  picture: 
   track: true
 
 b4_e6_2d_fa_be_99:
@@ -206,5 +206,13 @@ mediaplayer_sonos_one_livingroom:
   icon:
   mac: 10:29:59:B2:68:10
   name: 10 29 59 b2 68 10
+  picture:
+  track: true
+
+30_ae_a4_9c_0b_04:
+  hide_if_away: false
+  icon:
+  mac: 30:AE:A4:9C:0B:04
+  name: 30 ae a4 9c 0b 04
   picture:
   track: true

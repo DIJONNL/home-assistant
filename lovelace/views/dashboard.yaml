@@ -13,6 +13,8 @@ cards:
           - proximity.home_for_judith
           - person.judith
           - sensor.hacs
+          - entity: binary_sensor.people_home
+            name: People@Home
       - type: entities
         show_header_toggle: false
         entities:

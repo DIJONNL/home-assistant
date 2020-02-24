@@ -47,6 +47,13 @@ cards:
       - type: entities
         show_header_toggle: false
         entities:
+            - automation.leave_creche_in_the_morning
+            - automation.enter_creche_in_the_afternoon
+  - type: vertical-stack
+    cards:
+      - type: entities
+        show_header_toggle: false
+        entities:
             - automation.stookalert_notification
   - type: vertical-stack
     cards:
