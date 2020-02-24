@@ -29,7 +29,7 @@ HACS
 		- HACS: /config/www/community/weather-card 
 	- AppDaemon Apps
 		- ControllerX
-		- ...
+	
 
 Add-ons
 	- Adguard Home
