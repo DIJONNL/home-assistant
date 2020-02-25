@@ -12,8 +12,12 @@ esphome:
   board: esp01_1m
 
 wifi:
-  ssid: !secret wifi_ext_ssid
-  password: !secret wifi_ext_password
+  networks:
+    - ssid: !secret wifi_ssid
+      password: !secret wifi_password
+    - ssid: !secret wifi_ext_ssid
+      password: !secret wifi_ext_password
+  
 
 captive_portal:
 
@@ -56,13 +60,13 @@ sensor:
     update_interval: 10s
   - platform: uptime
     name: "$name_shelly uptime"
-                                       
+
 light:                                 
   - platform: binary                   
     name: "$name_shelly light"              
     output: shelly_relay                     
     id: lightid                        
-                                       
+
 binary_sensor:                         
   - platform: gpio                     
     pin:                               
