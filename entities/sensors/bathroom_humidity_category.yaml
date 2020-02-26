@@ -7,9 +7,7 @@ sensors:
   bathroom_humidity_category:
     friendly_name: "Bathroom Humidity"
     value_template: >-
-      {% if states("sensor.xht04_humidity") | float > states("input_number.bathroom_humidity_wet_threshold") | float %}
-        wet
-      {% elif states("sensor.xht04_humidity") | float > states("input_number.bathroom_humidity_humid_threshold") | float  %}
+      {% if states("sensor.xht04_humidity") | float > states("input_number.bathroom_humidity_humid_threshold") | float  %}
         humid
       {% else %}
         normal

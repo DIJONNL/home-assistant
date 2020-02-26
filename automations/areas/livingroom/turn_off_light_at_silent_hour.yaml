@@ -13,5 +13,5 @@ trigger:
         states('sensor.time')+":00"
       }}
 action:
-  service: homeassistant.turn_off
-  entity_id: group.living_room
+  - service: homeassistant.turn_off
+    entity_id: group.living_room

@@ -1,0 +1,48 @@
+---
+#
+# When
+# 1. people ar at home
+# 2. time is between start and end of silent hours
+# 
+#
+alias: zone_state_changed_tts
+trigger:
+  platform: state
+  entity_id: device_tracker.iphone_van_martijn, device_tracker.iphone_van_judith
+  # Optional
+  to: "not_home"
+condition:
+  condition: and
+  conditions:
+    - condition: template
+      value_template: "{{ trigger.to_state.state != trigger.from_state.state }}"
+    - condition: state
+      entity_id: binary_sensor.people_home
+      state: 'on'
+    - condition: template
+      value_template: >-
+        {{
+          states('input_datetime.house_silent_hours_start')
+          <
+          states('sensor.time')+":00"
+        }}
+    - condition: template
+      value_template: >-
+        {{
+          states('input_datetime.house_silent_hours_end')
+          >
+          states('sensor.time')+":00"
+        }}
+action:
+  - service: script.sonos_say
+    data:
+      sonos_entity: media_player.woonkamer
+      message: 'TEST'
+      enabled: 0
+      delay: '00:00:05'
+  - service: notify.martijn
+    data:
+      title: "State Changed"
+      message: "{{ trigger.to_state.state }} to {{ trigger.from_state.state }}"
+      data:
+        sticky: 'false' # or 'false'

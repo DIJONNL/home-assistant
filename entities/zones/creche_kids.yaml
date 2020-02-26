@@ -7,5 +7,5 @@
 name: creche
 latitude: !secret creche_latitude
 longitude: !secret creche_longitude
-radius: 100
+radius: 75
 passive: false

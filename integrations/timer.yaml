@@ -11,4 +11,6 @@ timer:
   master_room:
     name: Master 
     duration: 900
-
+  bathroom_ventilator:
+    name: Bathroom 
+    duration: 900

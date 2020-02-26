@@ -12,6 +12,6 @@ action:
       service: notify.all_devices
       data:
         title: "Kids@Creche"
-        message: "Kids are picked-up at the creche @ {{ states('sensor.date_time') }}"
+        message: "Kids are being picked-up at the creche @ {{ states('sensor.date_time') }}"
         data:
           sticky: 'false' # or 'false'

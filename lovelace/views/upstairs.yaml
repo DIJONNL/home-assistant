@@ -110,6 +110,7 @@ cards:
           - binary_sensor.0xec1bbdfffeaf9cf0_occupancy
           - light.upstairs_bathroom
           - sensor.bathroom_humidity_category
+          - timer.bathroom_ventilator
       - type: horizontal-stack
         cards:            
           - type: custom:mini-graph-card

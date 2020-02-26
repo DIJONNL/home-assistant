@@ -33,8 +33,7 @@ cards:
             - automation.turn_off_bathroom_light_in_the_morning_when_there_is_nomovement
             - automation.turn_off_bathroom_light_in_the_afternoon_when_there_is_nomovement
             - automation.turn_on_ventilator_when_above_threshold
-            - automation.turn_off_ventilator_when_below_threshold
-            - input_number.bathroom_humidity_wet_threshold
+            - automation.turn_off_ventilator_when_timer_finished
             - input_number.bathroom_humidity_humid_threshold
   - type: vertical-stack
     cards:
@@ -49,6 +48,7 @@ cards:
         entities:
             - automation.leave_creche_in_the_morning
             - automation.enter_creche_in_the_afternoon
+            - automation.zone_state_changed_tts
   - type: vertical-stack
     cards:
       - type: entities

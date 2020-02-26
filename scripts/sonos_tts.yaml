@@ -1,0 +1,27 @@
+---
+#
+# https://www.home-assistant.io/cookbook/sonos_say/
+#
+sonos_say:
+  alias: "Sonos TTS script"
+  sequence:
+  - condition: template
+    value_template: "{{ enabled if enabled else 1 == 1}}"
+  - service: sonos.snapshot
+    data_template:
+      entity_id: "{{ sonos_entity }}"
+  - service: sonos.unjoin
+    data_template:
+      entity_id: "{{ sonos_entity }}"
+  - service: media_player.volume_set
+    data_template:
+      entity_id: "{{ sonos_entity }}"
+      volume_level: "{{ volume if volume else 0.3 }}" 
+  - service: tts.google_translate_say
+    data_template:
+      entity_id: "{{ sonos_entity }}"
+      message: "{{ message }}"
+  - delay: "{{ delay }}"
+  - service: sonos.restore
+    data_template:
+      entity_id: "{{ sonos_entity }}"

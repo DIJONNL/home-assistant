@@ -5,13 +5,14 @@ icon: mdi:nature-people
 cards:
   - type: glance
     entities:
-      - binary_sensor.stookalert
+      - entity: binary_sensor.stookalert
   - type: custom:weather-card
     entity: weather.dark_sky
     icons: "/community_plugin/weather-card/icons/"
     details: true
     forecast: true
   - type: picture-entity
+    state_filter: []
     entity: camera.buienradar_loop
   - type: entities
     entities:

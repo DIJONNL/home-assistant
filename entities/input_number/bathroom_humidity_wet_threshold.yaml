@@ -1,7 +1,0 @@
-bathroom_humidity_wet_threshold:
-  name: BathroomWetThreshold
-  initial: 90
-  min: 0
-  max: 100
-  step: 1
-
