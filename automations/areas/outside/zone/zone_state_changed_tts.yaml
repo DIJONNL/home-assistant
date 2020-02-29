@@ -1,21 +1,29 @@
 ---
 #
 # When
-# 1. people ar at home
-# 2. time is between start and end of silent hours
+# 1. in case of a state change on one of the iphones,
+#    which is to the state 'not_home'
 # 
+# Condition:
+# 1. the state change from AND to is different
+#    and the FROM is NOT home
+# 2. People are at home
+# 3. time between NONE silent hours
+#
+# Then
+# 1. Do a TTS and sent and sent notification when: 
 #
 alias: zone_state_changed_tts
 trigger:
-  platform: state
-  entity_id: device_tracker.iphone_van_martijn, device_tracker.iphone_van_judith
-  # Optional
-  to: "not_home"
+  - platform: state
+    entity_id: device_tracker.iphone_van_martijn, device_tracker.iphone_van_judith
+    to: 'not_home'
 condition:
   condition: and
   conditions:
     - condition: template
-      value_template: "{{ trigger.to_state.state != trigger.from_state.state }}"
+      value_template: "{{ trigger.to_state.state != trigger.from_state.state and 
+                          trigger.from_state.state != 'home'}}"
     - condition: state
       entity_id: binary_sensor.people_home
       state: 'on'
@@ -23,26 +31,25 @@ condition:
       value_template: >-
         {{
           states('input_datetime.house_silent_hours_start')
-          <
+          >
           states('sensor.time')+":00"
         }}
     - condition: template
       value_template: >-
         {{
           states('input_datetime.house_silent_hours_end')
-          >
+          <
           states('sensor.time')+":00"
         }}
 action:
   - service: script.sonos_say
     data:
       sonos_entity: media_player.woonkamer
-      message: 'TEST'
-      enabled: 0
+      message: "{{ trigger.from_state.state }} is verlaten door {{ trigger.entity_id.split('_')[-1] }} om states('sensor.time')."
       delay: '00:00:05'
   - service: notify.martijn
-    data:
-      title: "State Changed"
-      message: "{{ trigger.to_state.state }} to {{ trigger.from_state.state }}"
+    data_template:
+      title: "Zone Changed"
+      message: "{{ trigger.entity_id.split('_')[-1] }} left {{ trigger.from_state.state }} om states('sensor.time')."
       data:
-        sticky: 'false' # or 'false'
+        sticky: 'true' # or 'false'

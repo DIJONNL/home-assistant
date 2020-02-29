@@ -1,0 +1,24 @@
+---
+#
+# When nobody is at home make sure that:
+#
+# 1. The Media Player is disabled 
+# 2. Turn of the Ventilator on the Bathroom
+# 
+#
+alias: people_not_at_home
+trigger:
+  - platform: state
+    entity_id: binary_sensor.people_home
+    to: "off"
+action:
+  - service: switch.turn_off
+    data:
+      entity_id: media_player.woonkamer
+  - service: switch.turn_off
+    data:
+      entity_id: light.shelly02_light
+  - service: notify.martijn
+    data_template:
+      title: "People Not@Home"
+      message: "Nobody@home"

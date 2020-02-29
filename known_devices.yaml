@@ -1,11 +1,3 @@
-
-camera_yi_dome:
-  icon:
-  mac: 44:B2:95:70:16:CA
-  name: YI Dome Camera
-  picture:
-  track: true
-
 84_0d_8e_5d_99_6a:
   icon:
   mac: 84:0D:8E:5D:99:6A
@@ -42,24 +34,24 @@ c0_e8_62_3e_e6_23:
   track: true
 
 macbook_air:
-  icon:
+  icon: mdi:laptop-chromebook
   mac: 5C:F9:38:99:14:AA
   name: MacBook Air
-  picture:
+  picture: 
   track: true
 
 miele_wasmachine:
-  icon:
+  icon: mdi:washing-machine
   mac: 00:1D:63:0A:65:2F
   name: Miele Wasmachine
-  picture:
+  picture: 
   track: true
 
 ipad_floor:
-  icon:
+  icon: mdi:tablet-ipad
   mac: E0:B9:BA:83:62:66
   name: iPad Floor
-  picture:
+  picture: 
   track: true
 
 84_0d_8e_5d_4b_88:
@@ -76,11 +68,11 @@ c4_4f_33_8c_47_65:
   picture:
   track: true
 
-1c_5a_6b_70_a8_05:
-  icon:
+philips_television:
+  icon: mdi:television-classic
   mac: 1C:5A:6B:70:A8:05
-  name: 1c 5a 6b 70 a8 05
-  picture:
+  name: Philips TV
+  picture: 
   track: true
 
 0c_08_b4_13_80_83:
@@ -112,10 +104,10 @@ b8_b2_f8_5d_c9_10:
   track: true
 
 wifi_extender:
-  icon:
+  icon: mdi:wifi
   mac: 84:16:F9:32:13:AB
   name: Wifi Extender
-  picture:
+  picture: 
   track: false
 
 cc_50_e3_96_12_40:
@@ -147,7 +139,7 @@ cc_50_e3_96_12_40:
   track: true
 
 esp32_groundfloor:
-  icon:
+  icon: mdi:chip
   mac: 30:AE:A4:99:B0:F4
   name: esp32_groundfloor
   picture: 

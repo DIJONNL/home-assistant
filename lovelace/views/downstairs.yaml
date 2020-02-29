@@ -6,6 +6,10 @@ cards:
   - type: custom:vertical-stack-in-card
     title: Living room
     cards:
+      - type: glance
+        entities:
+          - device_tracker.mediaplayer_sonos_one_livingroom
+          - device_tracker.philips_television
       - type: horizontal-stack
         cards:
         - type: "custom:button-card"

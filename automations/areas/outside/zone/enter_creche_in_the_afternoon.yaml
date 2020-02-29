@@ -9,9 +9,9 @@ condition:
     after: '12:00:00'
     before: '19:00:00'
 action:
-      service: notify.all_devices
+  - service: notify.all_devices
+    data:
+      title: "Kids@Creche"
+      message: "Kids are being picked-up at the creche @ {{ states('sensor.date_time') }}"
       data:
-        title: "Kids@Creche"
-        message: "Kids are being picked-up at the creche @ {{ states('sensor.date_time') }}"
-        data:
-          sticky: 'false' # or 'false'
+        sticky: 'false' # or 'false'
