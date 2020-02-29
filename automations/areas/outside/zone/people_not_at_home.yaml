@@ -12,10 +12,10 @@ trigger:
     entity_id: binary_sensor.people_home
     to: "off"
 action:
-  - service: switch.turn_off
+  - service: homeassistant.turn_off
     data:
       entity_id: media_player.woonkamer
-  - service: switch.turn_off
+  - service: light.turn_off
     data:
       entity_id: light.shelly02_light
   - service: notify.martijn
