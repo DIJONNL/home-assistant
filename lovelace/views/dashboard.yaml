@@ -13,8 +13,12 @@ cards:
           - proximity.home_for_judith
           - person.judith
           - sensor.hacs
+          - entity: input_boolean.guest_mode
+            name: GuestMode
+            show_state: false
           - entity: binary_sensor.people_home
             name: People@Home
+            show_state: false
       - type: entities
         show_header_toggle: false
         entities:
@@ -122,3 +126,44 @@ cards:
           entity: weather.dark_sky
           icons: "/community_plugin/weather-card/icons/"
           details: false
+  - type: custom:vertical-stack-in-card
+    title: Corona (COVID-19)
+    cards:
+      - type: horizontal-stack
+        show_icon: true
+        show_name: true
+        show_state: true
+        title: Netherlands
+        type: glance
+        entities:
+          - entity: sensor.netherlands_confirmed
+            icon: 'mdi:emoticon-neutral-outline'
+            name: Confirmed
+          - entity: sensor.netherlands_current
+            icon: 'mdi:emoticon-frown-outline'
+            name: Current
+          - entity: sensor.netherlands_recovered
+            icon: 'mdi:emoticon-happy-outline'
+            name: Recovered
+          - entity: sensor.netherlands_deaths
+            icon: 'mdi:emoticon-dead-outline'
+            name: Deaths
+      - type: horizontal-stack
+        show_icon: true
+        show_name: true
+        show_state: true
+        title: Worldwide
+        type: glance
+        entities:
+          - entity: sensor.worldwide_confirmed
+            icon: 'mdi:emoticon-neutral-outline'
+            name: Confirmed
+          - entity: sensor.worldwide_current
+            icon: 'mdi:emoticon-frown-outline'
+            name: Current
+          - entity: sensor.worldwide_recovered
+            icon: 'mdi:emoticon-happy-outline'
+            name: Recovered
+          - entity: sensor.worldwide_deaths
+            icon: 'mdi:emoticon-dead-outline'
+            name: Deaths

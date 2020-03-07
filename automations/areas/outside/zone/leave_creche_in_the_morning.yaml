@@ -3,7 +3,7 @@ trigger:
   - platform: zone
     entity_id: device_tracker.iphone_van_judith, device_tracker.iphone_van_martijn
     zone: zone.creche
-    event: "leave" #or enter
+    event: "leave"
 condition:
   - condition: time
     after: '07:00:00'
@@ -14,4 +14,4 @@ action:
       title: "Kids@Creche"
       message: "Kids at the creche @ {{ states('sensor.date_time') }}"
       data:
-        sticky: 'false' # or 'false'
+        sticky: 'false'

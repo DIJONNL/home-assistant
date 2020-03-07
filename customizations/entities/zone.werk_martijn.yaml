@@ -1,0 +1,2 @@
+zone.werk_martijn:
+  friendly_name: !secret werk_martijn_name

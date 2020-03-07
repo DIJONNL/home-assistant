@@ -1,5 +1,4 @@
 
-.DS_Store
 .storage
 .cloud
 .HA_VERSION
@@ -19,3 +18,5 @@ appdaemon/apps/__pycache__
 appdaemon/log/
 *google_translate.mp3
 www/community/zigbee2mqtt_networkmap/source.js
+
+

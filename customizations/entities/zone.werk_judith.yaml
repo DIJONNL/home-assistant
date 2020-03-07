@@ -1,0 +1,2 @@
+zone.werk_judith:
+  friendly_name: !secret werk_judith_name

@@ -208,3 +208,19 @@ mediaplayer_sonos_one_livingroom:
   name: 30 ae a4 9c 0b 04
   picture:
   track: true
+
+hostone:
+  hide_if_away: false
+  icon:
+  mac:
+  name: hostone
+  picture:
+  track: true
+
+oppas_kinderen:
+  hide_if_away: true
+  icon:
+  mac: 60:AB:67:8E:F6:9F
+  name: Oppas Kinderen
+  picture:
+  track: true

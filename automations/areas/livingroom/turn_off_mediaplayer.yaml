@@ -1,0 +1,14 @@
+---
+# This automation turns off mediaplayer when:
+#
+# 1. the television is turned-on
+#
+#
+alias: turn_off_mediaplayer
+trigger:
+  - platform: state
+    entity_id: device_tracker.philips_television
+    to: 'home'
+action:
+  - service: media_player.media_stop
+    entity_id: media_player.woonkamer

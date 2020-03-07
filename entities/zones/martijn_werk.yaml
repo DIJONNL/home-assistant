@@ -4,7 +4,7 @@
 #
 # https://www.home-assistant.io/integrations/zone/
 #
-name: !secret werk_martijn_name
+name: werk_martijn
 latitude: !secret werk_martijn_latitude
 longitude: !secret werk_martijn_longitude
 radius: 175

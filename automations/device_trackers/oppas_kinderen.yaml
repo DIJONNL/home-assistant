@@ -1,0 +1,25 @@
+---
+#
+#
+#
+# https://www.zigbee2mqtt.io/integration/home_assistant.html
+#
+# Automation to start timer when enable join is turned on
+id: device_tracker_oppas_kinderen
+alias: Oppas kinderen
+trigger:
+- platform: state
+  entity_id: device_tracker.oppas_kinderen
+  from: "home" 
+  to: "not_home"
+- platform: state
+  entity_id: device_tracker.oppas_kinderen
+  from: "not_home"
+  to: "home"
+condition: []
+action:
+- service: notify.telegram_martijn
+  data_template:
+    title: Oppas State Changed
+    message: >-
+      Oppas state changed: {{ states("device_tracker.oppas_kinderen") }}

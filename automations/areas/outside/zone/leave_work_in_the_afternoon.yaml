@@ -1,0 +1,23 @@
+alias: leave_work_in_the_afternoon
+trigger:
+  - platform: zone
+    entity_id: device_tracker.iphone_van_martijn
+    zone: zone.werk_martijn
+    event: "leave"
+  - platform: zone
+    entity_id: device_tracker.iphone_van_judith
+    zone: zone.werk_judith
+    event: "leave"
+condition:
+  condition: and
+  conditions:
+    - condition: time
+      after: '15:30:00'
+      before: '19:00:00'
+action:
+  - service: notify.all_devices
+    data:
+      title: "{{ trigger.entity_id.split('_')[-1] }} left work"
+      message: "{{ trigger.entity_id.split('_')[-1] }} left work at {{ states('sensor.date_time') }}."
+      data:
+        sticky: 'false'

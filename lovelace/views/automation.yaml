@@ -10,6 +10,8 @@ cards:
         entities:
             - automation.living_room_turn_on_light_at_sunset
             - automation.living_room_turn_off_light_at_silent_hour
+            - automation.turn_on_mediaplayer
+            - automation.turn_off_mediaplayer
   - type: vertical-stack
     cards:
       - type: entities
@@ -40,15 +42,11 @@ cards:
       - type: entities
         show_header_toggle: false
         entities:
-            - automation.frontyard_snapshot_motion
-  - type: vertical-stack
-    cards:
-      - type: entities
-        show_header_toggle: false
-        entities:
             - automation.leave_creche_in_the_morning
             - automation.enter_creche_in_the_afternoon
             - automation.zone_state_changed_tts
+            - automation.leave_work_in_the_afternoon
+            - automation.people_not_at_home
   - type: vertical-stack
     cards:
       - type: entities

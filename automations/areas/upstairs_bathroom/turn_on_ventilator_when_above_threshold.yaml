@@ -8,7 +8,16 @@ trigger:
   entity_id: sensor.bathroom_humidity_category
   from: 'normal'
   to: 'humid'
-condition: []
+- platform: state
+  entity_id: light.shelly02_light
+  from: 'off'
+  to: 'on'
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: binary_sensor.people_home
+      state: 'on'
 action:
 - service: notify.telegram_martijn
   data_template:

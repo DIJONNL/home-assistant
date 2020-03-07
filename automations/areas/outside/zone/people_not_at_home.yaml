@@ -18,7 +18,7 @@ action:
   - service: light.turn_off
     data:
       entity_id: light.shelly02_light
-  - service: notify.martijn
+  - service: notify.all_devices
     data_template:
       title: "People Not@Home"
-      message: "Nobody@home"
+      message: "Nobody@home {{ states('sensor.date_time') }}"

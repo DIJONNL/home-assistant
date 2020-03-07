@@ -11,7 +11,7 @@
 # 3. time between NONE silent hours
 #
 # Then
-# 1. Do a TTS and sent and sent notification when: 
+# 1. Do a TTS and sent and sent notification 
 #
 alias: zone_state_changed_tts
 trigger:
@@ -24,9 +24,9 @@ condition:
     - condition: template
       value_template: "{{ trigger.to_state.state != trigger.from_state.state and 
                           trigger.from_state.state != 'home'}}"
-    - condition: state
-      entity_id: binary_sensor.people_home
-      state: 'on'
+    #- condition: state
+    #  entity_id: binary_sensor.people_home
+    #  state: 'on'
     - condition: template
       value_template: >-
         {{
@@ -51,5 +51,3 @@ action:
     data_template:
       title: "Zone Changed"
       message: "{{ trigger.entity_id.split('_')[-1] }} left {{ trigger.from_state.state }} om states('sensor.time')."
-      data:
-        sticky: 'true' # or 'false'
