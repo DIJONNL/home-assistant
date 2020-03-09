@@ -18,6 +18,8 @@ action:
   - service: light.turn_off
     data:
       entity_id: light.shelly02_light
+  - service: homeassistant.turn_off
+    entity_id: group.master_room
   - service: notify.all_devices
     data_template:
       title: "People Not@Home"

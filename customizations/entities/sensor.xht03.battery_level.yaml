@@ -7,4 +7,3 @@
 sensor.xht03_battery_level:
   friendly_name: Master 
   device_class: battery
-  icon: mdi:battery

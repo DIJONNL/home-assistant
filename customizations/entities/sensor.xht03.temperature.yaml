@@ -7,4 +7,3 @@
 sensor.xht03_temperature:
   friendly_name: Master 
   device_class: temperature
-  icon: mdi:temperature

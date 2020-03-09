@@ -5,10 +5,17 @@
   picture:
   track: true
 
-c4_4f_33_90_79_d5:
+smartplug_lcs_01:
   icon:
   mac: C4:4F:33:90:79:D5
-  name: c4 4f 33 90 79 d5
+  name: smartplug_lcs_01
+  picture:
+  track: true
+
+smartplug_lcs_02:
+  icon:
+  mac: C4:4F:33:8C:47:65
+  name: smartplug_lcs_02
   picture:
   track: true
 
@@ -61,46 +68,11 @@ ipad_floor:
   picture:
   track: true
 
-c4_4f_33_8c_47_65:
-  icon:
-  mac: C4:4F:33:8C:47:65
-  name: c4 4f 33 8c 47 65
-  picture:
-  track: true
-
 philips_television:
   icon: mdi:television-classic
   mac: 1C:5A:6B:70:A8:05
   name: Philips TV
   picture: 
-  track: true
-
-0c_08_b4_13_80_83:
-  icon:
-  mac: 0C:08:B4:13:80:83
-  name: 0c 08 b4 13 80 83
-  picture:
-  track: true
-
-4c_6b_e8_cc_ef_c2:
-  icon:
-  mac: 4C:6B:E8:CC:EF:C2
-  name: 4c 6b e8 cc ef c2
-  picture:
-  track: true
-
-b8_b2_f8_5d_c9_10:
-  icon:
-  mac: B8:B2:F8:5D:C9:10
-  name: b8 b2 f8 5d c9 10
-  picture:
-  track: true
-
-08_e6_89_7c_dc_20:
-  icon:
-  mac: 08:E6:89:7C:DC:20
-  name: 08 e6 89 7c dc 20
-  picture:
   track: true
 
 wifi_extender:
@@ -110,34 +82,6 @@ wifi_extender:
   picture: 
   track: false
 
-cc_50_e3_96_12_40:
-  icon:
-  mac: CC:50:E3:96:12:40
-  name: cc 50 e3 96 12 40
-  picture:
-  track: true
-
-00_cd_fe_0e_5e_94:
-  icon:
-  mac: 00:CD:FE:0E:5E:94
-  name: 00 cd fe 0e 5e 94
-  picture:
-  track: true
-
-00_11_32_11_31_f9:
-  icon:
-  mac: 00:11:32:11:31:F9
-  name: 00 11 32 11 31 f9
-  picture:
-  track: true
-
-34_7c_25_c5_b0_f9:
-  icon:
-  mac: 34:7C:25:C5:B0:F9
-  name: 34 7c 25 c5 b0 f9
-  picture:
-  track: true
-
 esp32_groundfloor:
   icon: mdi:chip
   mac: 30:AE:A4:99:B0:F4
@@ -145,7 +89,35 @@ esp32_groundfloor:
   picture: 
   track: true
 
-b4_e6_2d_fa_be_99:
+mediaplayer_sonos_one_livingroom:
+  icon: mdi:music
+  mac: 48:A6:B8:D0:B3:4C
+  name: Sonos One Livingroom
+  picture: 
+  track: true
+
+hostone:
+  icon:
+  mac:
+  name: hostone
+  picture:
+  track: true
+
+oppas_kinderen:
+  icon:
+  mac: 60:AB:67:8E:F6:9F
+  name: Oppas
+  picture:
+  track: true
+
+10_29_59_b2_68_10:
+  icon:
+  mac: 10:29:59:B2:68:10
+  name: 10 29 59 b2 68 10
+  picture:
+  track: true
+
+  b4_e6_2d_fa_be_99:
   icon:
   mac: B4:E6:2D:FA:BE:99
   name: b4 e6 2d fa be 99
@@ -187,40 +159,65 @@ c4_4f_33_22_0d_e1:
   picture:
   track: true
 
-mediaplayer_sonos_one_livingroom:
-  icon: mdi:music
-  mac: 48:A6:B8:D0:B3:4C
-  name: Sonos One Livingroom
-  picture: 
+cc_50_e3_96_12_40:
+  icon:
+  mac: CC:50:E3:96:12:40
+  name: cc 50 e3 96 12 40
+  picture:
   track: true
 
+00_cd_fe_0e_5e_94:
+  icon:
+  mac: 00:CD:FE:0E:5E:94
+  name: 00 cd fe 0e 5e 94
+  picture:
+  track: true
+
+00_11_32_11_31_f9:
+  icon:
+  mac: 00:11:32:11:31:F9
+  name: 00 11 32 11 31 f9
+  picture:
+  track: true
+
+0c_08_b4_13_80_83:
+  icon:
+  mac: 0C:08:B4:13:80:83
+  name: 0c 08 b4 13 80 83
+  picture:
+  track: true
+
+4c_6b_e8_cc_ef_c2:
+  icon:
+  mac: 4C:6B:E8:CC:EF:C2
+  name: 4c 6b e8 cc ef c2
+  picture:
+  track: true
+
+b8_b2_f8_5d_c9_10:
+  icon:
+  mac: B8:B2:F8:5D:C9:10
+  name: b8 b2 f8 5d c9 10
+  picture:
+  track: true
+
+08_e6_89_7c_dc_20:
+  icon:
+  mac: 08:E6:89:7C:DC:20
+  name: 08 e6 89 7c dc 20
+  picture:
+  track: true
+
+34_7c_25_c5_b0_f9:
+  icon:
+  mac: 34:7C:25:C5:B0:F9
+  name: 34 7c 25 c5 b0 f9
+  picture:
+  track: true
 10_29_59_b2_68_10:
+  hide_if_away: false
   icon:
   mac: 10:29:59:B2:68:10
-  name: 10 29 59 b2 68 10
-  picture:
-  track: true
-
-30_ae_a4_9c_0b_04:
-  hide_if_away: false
-  icon:
-  mac: 30:AE:A4:9C:0B:04
-  name: 30 ae a4 9c 0b 04
-  picture:
-  track: true
-
-hostone:
-  hide_if_away: false
-  icon:
-  mac:
-  name: hostone
-  picture:
-  track: true
-
-oppas_kinderen:
-  hide_if_away: true
-  icon:
-  mac: 60:AB:67:8E:F6:9F
-  name: Oppas Kinderen
+  name: 10_29_59_b2_68_10
   picture:
   track: true

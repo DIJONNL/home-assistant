@@ -11,8 +11,3 @@ condition: []
 action:
 - service: homeassistant.turn_on
   entity_id: group.dining_room
-- service: notify.MARTIJN
-  data_template:
-    title: Turn-On Light@Sunset
-    message: Turn On Dining Room Light
-    notification_id: light_on

@@ -13,15 +13,16 @@ sonos_say:
   - service: sonos.unjoin
     data_template:
       entity_id: "{{ sonos_entity }}"
+  - delay: "{{ pre_delay if pre_delay else 0.0 }}"
   - service: media_player.volume_set
     data_template:
       entity_id: "{{ sonos_entity }}"
-      volume_level: "{{ volume if volume else 0.3 }}" 
+      volume_level: "{{ volume if volume else 0.4 }}" 
   - service: tts.google_translate_say
     data_template:
       entity_id: "{{ sonos_entity }}"
       message: "{{ message }}"
-  - delay: "{{ delay }}"
+  - delay: "{{ post_delay if post_delay else 0.0 }}"
   - service: sonos.restore
     data_template:
       entity_id: "{{ sonos_entity }}"

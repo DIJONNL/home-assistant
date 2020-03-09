@@ -5,16 +5,16 @@
 alias: start_timer_on_turn_on_light_at_master
 trigger:
 - platform: state
-  entity_id: group.master_room
+  entity_id: group.master_room, switch.lcs03, switch.lcs04
+  from: 'off'
   to: 'on'
 condition: []
 action:
 - service: timer.start
   entity_id: timer.master_room
-- service: notify.MARTIJN
+- service: notify.all_devices
   data_template:
     title: Start Timer Master
     message: >-
-      Start Master Timer
-      Timer set on  {{ state_attr('timer.master_room','duration') }} minutes
-    notification_id: timer
+      Master Timer
+      Timer set for {{ state_attr('timer.master_room','duration') }} minutes.

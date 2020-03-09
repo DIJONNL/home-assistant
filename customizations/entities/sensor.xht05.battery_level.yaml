@@ -4,6 +4,6 @@
 #
 # https://www.home-assistant.io/docs/configuration/customizing-devices/
 #
-sensor.xht02_humidity:
-  friendly_name: Floor
-  device_class: humidity
+sensor.xht05_battery_level:
+  friendly_name: Diningroom 
+  device_class: battery

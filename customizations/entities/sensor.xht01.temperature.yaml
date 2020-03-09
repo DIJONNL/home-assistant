@@ -7,4 +7,3 @@
 sensor.xht01_temperature:
   friendly_name: Living room 
   device_class: temperature
-  icon: mdi:temperature

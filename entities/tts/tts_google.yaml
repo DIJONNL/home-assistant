@@ -1,8 +1,10 @@
 #
 #
 # https://www.home-assistant.io/integrations/tts/
+#
+#
 platform: google_translate
 language: 'nl'
-time_memory: 57600
+time_memory: 300
 cache: true
 base_url: !secret http_fullurl

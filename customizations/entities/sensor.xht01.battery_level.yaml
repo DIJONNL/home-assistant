@@ -7,4 +7,3 @@
 sensor.xht01_battery_level:
   friendly_name: Living room 
   device_class: battery
-  icon: mdi:battery

@@ -45,9 +45,4 @@ action:
       entity_id: media_player.woonkamer
       source: NPO Radio 2
       volume_level: 0.3
-  - service: notify.martijn
-    data_template:
-      title: "Media Player"
-      message: "{{ trigger.entity_id }} enabled the media player at states('sensor.time')."
-      data:
-        sticky: 'false'
+

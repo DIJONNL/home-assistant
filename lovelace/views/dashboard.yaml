@@ -22,16 +22,19 @@ cards:
         entities:
           - sensor.nextsunrise
           - sensor.nextsunset
-      - type: entity-filter
-        entities:
-          - person.martijn
-          - person.judith
-          - device_tracker.oppas_kinderen
-        state_filter:
-          - home
+      - type: custom:auto-entities
+        show_empty: false
         card:
           type: glance
-          title: People at home
+          title: People in Zone
+        filter:
+          include: []
+          exclude:
+            - state: not_home
+        entities:
+            - person.martijn
+            - person.judith
+            - device_tracker.oppas_kinderen
   - type: custom:vertical-stack-in-card
     title: Lights
     cards:
@@ -78,6 +81,7 @@ cards:
               - sensor.xht02_temperature
               - sensor.xht03_temperature
               - sensor.xht04_temperature
+              - sensor.xht05_temperature
             location_icon: left
             location_state: center
             show:
@@ -99,6 +103,7 @@ cards:
               - sensor.xht02_humidity
               - sensor.xht03_humidity
               - sensor.xht04_humidity
+              - sensor.xht05_humidity
             location_icon: left
             location_state: center
             show:

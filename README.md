@@ -26,6 +26,7 @@ HACS
 		- HACS: /config/www/community/mini-graph-card
 		- HACS: /config/www/community/mini-media-player
 		- HACS: /config/www/community/vertical-stack-in-card
+		- HACS: /config/www/auto-entities
 		- HACS: /config/www/community/weather-card 
 	- AppDaemon Apps
 		- ControllerX

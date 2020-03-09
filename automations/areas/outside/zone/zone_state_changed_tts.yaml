@@ -43,11 +43,12 @@ condition:
         }}
 action:
   - service: script.sonos_say
-    data:
+    data_template:
       sonos_entity: media_player.woonkamer
-      message: "{{ trigger.from_state.state }} is verlaten door {{ trigger.entity_id.split('_')[-1] }} om states('sensor.time')."
-      delay: '00:00:05'
+      message: "{{ trigger.from_state.state }} is verlaten om {{ states('sensor.time') }} door {{ trigger.entity_id.split('_')[-1] }}."
+      pre_delay: '00:00:05'
+      post_delay: '00:00:20'
   - service: notify.martijn
     data_template:
       title: "Zone Changed"
-      message: "{{ trigger.entity_id.split('_')[-1] }} left {{ trigger.from_state.state }} om states('sensor.time')."
+      message: "{{ trigger.entity_id.split('_')[-1] }} left {{ trigger.from_state.state }} om {{ states('sensor.time') }}."

@@ -7,4 +7,3 @@
 sensor.xht02_battery_level:
   friendly_name: Floor 
   device_class: battery
-  icon: mdi:battery

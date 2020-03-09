@@ -7,4 +7,3 @@
 sensor.xht04_temperature:
   friendly_name: Bathroom 
   device_class: temperature
-  icon: mdi:temperature

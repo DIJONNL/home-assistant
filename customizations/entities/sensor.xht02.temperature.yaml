@@ -7,4 +7,3 @@
 sensor.xht02_temperature:
   friendly_name: Floor 
   device_class: temperature
-  icon: mdi:temperature

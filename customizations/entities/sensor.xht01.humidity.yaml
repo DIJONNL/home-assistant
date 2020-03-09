@@ -7,4 +7,3 @@
 sensor.xht01_humidity:
   friendly_name: Living room
   device_class: humidity
-  icon: mdi:water-percent 
