@@ -1,7 +1,7 @@
 """
 Sensor component for waste pickup dates from dutch waste collectors (using the http://www.opzet.nl app)
 Original Author: Pippijn Stortelder
-Current Version: 2.5.12 20200205 - Pippijn Stortelder
+Current Version: 3.0.4 20200403 - Pippijn Stortelder
 20200108 - Added waste collector Purmerend
 20190116 - Merged different waste collectors into 1 component
 20190119 - Added an option to change date format and fixed spelling mistakes
@@ -31,9 +31,16 @@ Current Version: 2.5.12 20200205 - Pippijn Stortelder
 20200204 - Fixed wrong date
 20200204 - Removed ROVA from docs, due to ROVA closing API
 20200205 - Added Alkmaar
+20200326 - Added Suez
+20200326 - Support for mijnafvalwijzer and afvalstoffendienstkalender
+20200327 - Beta fix
+20200330 - Release 3.0.2
+20200401 - Add warning for Cure users
+20200403 - Add ximmio waste collector (credits to https://github.com/basschipper)
 
 Description:
   Provides sensors for the following Dutch waste collectors;
+  - Afvalstoffendienstkalender
   - Alkmaar
   - AlphenAanDenRijn
   - Avalex
@@ -48,11 +55,13 @@ Description:
   - GAD
   - HVC
   - Meerlanden
+  - Mijnafvalwijzer
   - Montfoort
   - PeelEnMaas
   - Purmerend
   - RMN
   - Spaarnelanden
+  - Suez
   - Venray
   - Waalre
   - ZRD
@@ -96,6 +105,7 @@ Configuration.yaml:
       builtinicons: 0                  (optional)
 """
 
+import abc
 import logging
 from datetime import datetime
 from datetime import timedelta
@@ -114,6 +124,7 @@ MIN_TIME_BETWEEN_UPDATES = timedelta(hours=1)
 CONF_WASTE_COLLECTOR = 'wastecollector'
 CONF_POSTCODE = 'postcode'
 CONF_STREET_NUMBER = 'streetnumber'
+CONF_SUFFIX = 'suffix'
 CONF_DATE_FORMAT = 'dateformat'
 CONF_TODAY_TOMORROW = 'upcomingsensor'
 CONF_DATE_ONLY = 'dateonly'
@@ -138,7 +149,6 @@ COLLECTOR_URL = {
     'blink': 'https://mijnblink.nl',
     'circulus-berkel': 'https://afvalkalender.circulus-berkel.nl',
     'cranendonck': 'https://afvalkalender.cranendonck.nl',
-    'cure': 'https://afvalkalender.cure-afvalbeheer.nl',
     'cyclus': 'https://afvalkalender.cyclusnv.nl',
     'dar': 'https://afvalkalender.dar.nl',
     'denhaag': 'https://huisvuilkalender.denhaag.nl',
@@ -150,6 +160,7 @@ COLLECTOR_URL = {
     'purmerend': 'https://afvalkalender.purmerend.nl',
     'rmn': 'https://inzamelschema.rmn.nl',
     'spaarnelanden': 'https://afvalwijzer.spaarnelanden.nl',
+    'suez': 'https://inzamelwijzer.suez.nl',
     'venray': 'https://afvalkalender.venray.nl',
     'waalre': 'https://afvalkalender.waalre.nl',
     'zrd': 'https://afvalkalender.zrd.nl',
@@ -172,6 +183,10 @@ RENAME_TITLES = {
     'textiel': 'textiel',
     'kerstbo': 'kerstbomen',
     'snoeiafval': 'snoeiafval',
+    'green': 'gft',
+    'textile': 'textiel',
+    'grey': 'restafval',
+    'branches': 'snoeiafval',
 }
 
 FRACTION_ICONS = {
@@ -200,6 +215,7 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
     vol.Required(CONF_RESOURCES, default=[]): cv.ensure_list,
     vol.Required(CONF_POSTCODE, default='1111AA'): cv.string,
     vol.Required(CONF_STREET_NUMBER, default='1'): cv.string,
+    vol.Optional(CONF_SUFFIX, default=''): cv.string,
     vol.Optional(CONF_WASTE_COLLECTOR, default='Cure'): cv.string,
     vol.Optional(CONF_DATE_FORMAT, default='%d-%m-%Y'): cv.string,
     vol.Optional(CONF_TODAY_TOMORROW, default=False): cv.boolean,
@@ -217,6 +233,7 @@ def setup_platform(hass, config, add_entities, discovery_info=None):
 
     postcode = config.get(CONF_POSTCODE)
     street_number = config.get(CONF_STREET_NUMBER)
+    suffix = config.get(CONF_SUFFIX)
     waste_collector = config.get(CONF_WASTE_COLLECTOR).lower()
     date_format = config.get(CONF_DATE_FORMAT)
     sensor_today = config.get(CONF_TODAY_TOMORROW)
@@ -227,8 +244,15 @@ def setup_platform(hass, config, add_entities, discovery_info=None):
     disable_icons = config.get(CONF_DISABLE_ICONS)
     dutch_days = config.get(CONF_TRANSLATE_DAYS)
 
+    if waste_collector == "cure":
+        _LOGGER.error("Afvalbeheer - Update your config to use Mijnafvalwijzer! You are still using Cure as a wast collector, which is deprecated. It's from now on; Mijnafvalwijzer. Check your automations and lovelace config, as the sensor names may also be changed!")
+        waste_collector = "mijnafvalwijzer"
+    elif waste_collector == "meerlanden":
+        _LOGGER.error("Meerlanden - Update your config to use Ximmio! You are still using Meerlanden as a wast collector, which is deprecated. It's from now on; Ximmio. Check your automations and lovelace config, as the sensor names may also be changed!")
+        waste_collector = "ximmio"
+
     try:
-        data = WasteData(postcode, street_number, waste_collector)
+        data = WasteData(waste_collector, postcode, street_number, suffix)
     except requests.exceptions.HTTPError as error:
         _LOGGER.error(error)
         return False
@@ -248,14 +272,93 @@ def setup_platform(hass, config, add_entities, discovery_info=None):
 
 class WasteData(object):
 
-    def __init__(self, postcode, street_number, waste_collector):
-        self.data = None
+    def __init__(self, waste_collector, postcode, street_number, suffix):
+        self.waste_collector = waste_collector
         self.postcode = postcode
         self.street_number = street_number
+        self.suffix = suffix
+        self.collector = None
+        self.__select_collector()
+
+    def __select_collector(self):
+        if self.waste_collector == "ximmio":
+            self.collector = XimmioCollector(self.waste_collector, self.postcode, self.street_number, self.suffix)
+        elif self.waste_collector in ["mijnafvalwijzer", "afvalstoffendienstkalender"]:
+            self.collector = AfvalwijzerCollector(self.waste_collector, self.postcode, self.street_number, self.suffix)
+        elif self.waste_collector in COLLECTOR_URL.keys():
+            self.collector = OpzetCollector(self.waste_collector, self.postcode, self.street_number, self.suffix)
+        else:
+            _LOGGER.error("Waste collector not found!")
+
+    # @Throttle(MIN_TIME_BETWEEN_UPDATES)
+    def update(self):
+        self.collector.update()
+
+    @property
+    def data(self):
+        return self.collector.data
+
+
+class WasteCollector(metaclass=abc.ABCMeta):
+
+    def __init__(self, waste_collector, postcode, street_number, suffix):
         self.waste_collector = waste_collector
+        self.postcode = postcode
+        self.street_number = street_number
+        self.suffix = suffix
+        self.data = None
+
+    @abc.abstractmethod
+    def update(self):
+        pass
+
+
+class AfvalwijzerCollector(WasteCollector):
+
+    def update(self):
+        _LOGGER.debug('Updating Waste collection dates using Rest API')
+
+        fraction_id = 0
+        jsonUrl = 'https://json.{}.nl/?method=postcodecheck&postcode={}&street=&huisnummer={}&toevoeging={}&langs=nl'.format(self.waste_collector, self.postcode, self.street_number, self.suffix)
+        jsonResponse = requests.get(jsonUrl).json()
+        request_json = (jsonResponse['data']['ophaaldagen']['data'] + jsonResponse['data']['ophaaldagenNext']['data'])
+        if not request_json:
+            _LOGGER.error('No Waste data found!')
+        else:
+            COLLECTOR_WASTE_ID[self.waste_collector] = {}
+            sensor_dict = {}
+
+            for key in request_json:
+                fraction_id += 1
+                if key['date'] is not None and ((datetime.strptime(key['date'], '%Y-%m-%d') - datetime.today()).days + 1) >= 0:
+                    sensor_dict[str(fraction_id)] = [datetime.strptime(key['date'], '%Y-%m-%d'), key['type']]
+                else:
+                    continue
+                check_title = key['type'].lower()
+                title = ''
+
+                for dict_title in RENAME_TITLES:
+                    if dict_title in check_title:
+                        title = RENAME_TITLES[dict_title]
+                        break
+
+                if not title:
+                    title = check_title
+
+                if title not in COLLECTOR_WASTE_ID[self.waste_collector]:
+                    COLLECTOR_WASTE_ID[self.waste_collector][title] = [str(fraction_id)]
+                else:
+                    COLLECTOR_WASTE_ID[self.waste_collector][title].append(str(fraction_id))
+
+            self.data = sensor_dict
+
+
+class OpzetCollector(WasteCollector):
+
+    def __init__(self, waste_collector, postcode, street_number, suffix):
+        super(OpzetCollector, self).__init__(waste_collector, postcode, street_number, suffix)
         self.main_url = COLLECTOR_URL[self.waste_collector]
 
-    @Throttle(MIN_TIME_BETWEEN_UPDATES)
     def update(self):
         _LOGGER.debug('Updating Waste collection dates using Rest API')
 
@@ -269,6 +372,7 @@ class WasteData(object):
                 address_code = response[0]['bagId']
                 url = self.main_url + '/rest/adressen/' + address_code + '/afvalstromen'
                 request_json = requests.get(url).json()
+
                 if not request_json:
                     _LOGGER.error('No Waste data found!')
                 else:
@@ -301,6 +405,86 @@ class WasteData(object):
                             COLLECTOR_WASTE_ID[self.waste_collector][title].append(str(key['id']))
 
                     self.data = sensor_dict
+
+        except requests.exceptions.RequestException as exc:
+            _LOGGER.error('Error occurred while fetching data: %r', exc)
+            self.data = None
+            return False
+
+
+class XimmioCollector(WasteCollector):
+
+    def __init__(self, waste_collector, postcode, street_number, suffix):
+        super(XimmioCollector, self).__init__(waste_collector, postcode, street_number, suffix)
+        self.main_url = "https://wasteprod2api.ximmio.com"
+        self.company_code = "800bf8d7-6dd1-4490-ba9d-b419d6dc8a45"
+        self.address_id = None
+        self.__fetch_address()
+
+    def __fetch_address(self):
+        data = {
+            "postCode": self.postcode,
+            "houseNumber": self.street_number,
+            "companyCode": self.company_code
+        }
+        response = requests.post(
+            "{}/api/FetchAdress".format(self.main_url),
+            data=data).json()
+
+        if not response['dataList']:
+            _LOGGER.error('Address not found!')
+            return
+
+        self.address_id = response['dataList'][0]['UniqueId']
+
+    def update(self):
+        _LOGGER.debug('Updating Waste collection dates using Rest API')
+
+        try:
+            data = {
+                "uniqueAddressID": self.address_id,
+                "startDate": datetime.now().strftime('%Y-%m-%d'),
+                "endDate": (datetime.now() + timedelta(days=365)).strftime('%Y-%m-%d'),
+                "companyCode": self.company_code,
+            }
+            response = requests.post(
+                "{}/api/GetCalendar".format(self.main_url),
+                data=data).json()
+
+            if not response['dataList']:
+                _LOGGER.error('No Waste data found!')
+                return
+
+            sensor_dict = {}
+            COLLECTOR_WASTE_ID[self.waste_collector] = {}
+
+            fraction_id = 0
+            for pickup in response['dataList']:
+                for date in pickup['pickupDates']:
+                    fraction_id += 1
+
+                    sensor_dict[str(fraction_id)] = [
+                        datetime.strptime(date, '%Y-%m-%dT%H:%M:%S'),
+                        pickup['_pickupTypeText']
+                    ]
+
+                    check_title = pickup['_pickupTypeText'].lower()
+                    title = ''
+
+                    for dict_title in RENAME_TITLES:
+                        if dict_title in check_title:
+                            title = RENAME_TITLES[dict_title]
+                            break
+
+                    if not title:
+                        title = check_title
+
+                    if title not in COLLECTOR_WASTE_ID[self.waste_collector]:
+                        COLLECTOR_WASTE_ID[self.waste_collector][title] = [str(fraction_id)]
+                    else:
+                        COLLECTOR_WASTE_ID[self.waste_collector][title].append(str(fraction_id))
+
+            self.data = sensor_dict
 
         except requests.exceptions.RequestException as exc:
             _LOGGER.error('Error occurred while fetching data: %r', exc)
@@ -378,9 +562,9 @@ class WasteSensor(Entity):
 
                         self._official_name = pickup_info[1]
                         self._fraction_id = waste_id
-                        if self.built_in_icons and self.sensor_type in FRACTION_ICONS:
+                        if not self.disable_icons and self.built_in_icons and self.sensor_type in FRACTION_ICONS:
                             self._entity_picture = FRACTION_ICONS[self.sensor_type]
-                        elif self.disable_icons == 0:
+                        elif not self.disable_icons and 0 <= 2 < len(pickup_info):
                             self._entity_picture = pickup_info[2]
                         self._last_update = today.strftime('%d-%m-%Y %H:%M')
                         self._hidden = False

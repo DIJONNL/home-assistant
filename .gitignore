@@ -13,4 +13,5 @@ appdaemon/apps/controllerx/
 appdaemon/apps/__pycache__
 appdaemon/log/
 *google_translate.mp3
-www/community/zigbee2mqtt_networkmap/source.js
+www/community/**
+netdaemon/apps/**

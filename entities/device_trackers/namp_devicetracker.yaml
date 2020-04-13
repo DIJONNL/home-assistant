@@ -6,7 +6,7 @@
 #
 platform: nmap_tracker
 hosts: 192.168.1.0/24
-home_interval: 10
+home_interval: 60
 exclude:
      - 192.168.1.1
      - 192.168.1.3

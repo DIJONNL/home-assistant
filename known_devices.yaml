@@ -117,7 +117,7 @@ oppas_kinderen:
   picture:
   track: true
 
-  b4_e6_2d_fa_be_99:
+b4_e6_2d_fa_be_99:
   icon:
   mac: B4:E6:2D:FA:BE:99
   name: b4 e6 2d fa be 99
@@ -214,10 +214,10 @@ b8_b2_f8_5d_c9_10:
   name: 34 7c 25 c5 b0 f9
   picture:
   track: true
-10_29_59_b2_68_10:
-  hide_if_away: false
+
+24_41_8c_53_12_45:
   icon:
-  mac: 10:29:59:B2:68:10
-  name: 10_29_59_b2_68_10
+  mac: 24:41:8C:53:12:45
+  name: 24_41_8c_53_12_45
   picture:
   track: true
