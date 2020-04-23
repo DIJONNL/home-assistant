@@ -65,6 +65,7 @@ cards:
       - type: glance
         entities:
           - device_tracker.camera_foscam_c2_wifi
+          - switch.camera_foscam_c2_motion
       - type: horizontal-stack
         cards:            
           - type: custom:mini-graph-card
@@ -102,7 +103,12 @@ cards:
               - value: 70
                 color: red
               - value: 55
-                color: white  
+                color: white
+      - type: horizontal-stack
+        cards:
+          - type: picture-entity
+            entity: camera.camera_foscam_c2
+            camera_view: live
   - type: custom:vertical-stack-in-card
     title: Bathroom
     cards:

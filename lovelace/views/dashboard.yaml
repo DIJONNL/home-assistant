@@ -11,6 +11,7 @@ cards:
           - proximity.home_for_martijn
           - proximity.home_for_judith
           - sensor.hacs
+          - switch.adguard_safe_browsing
           - entity: input_boolean.guest_mode
             name: GuestMode
             show_state: false

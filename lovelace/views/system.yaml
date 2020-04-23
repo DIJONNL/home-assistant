@@ -11,6 +11,11 @@ cards:
     cards:
       - type: horizontal-stack
         cards:
+        - type: glance
+          entities:
+            - switch.adguard_protection
+            - switch.adguard_safe_browsing
+            - switch.adguard_safe_search
         - type: custom:mini-graph-card
           name: Up/Download
           entities:
