@@ -63,7 +63,8 @@ cards:
     title: Floor bedroom
     cards:
       - type: glance
-        entities: []
+        entities:
+          - device_tracker.camera_foscam_c2_wifi
       - type: horizontal-stack
         cards:            
           - type: custom:mini-graph-card

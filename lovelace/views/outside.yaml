@@ -20,4 +20,20 @@ cards:
     - entity: sensor.papier
     show_header_toggle: false
     title: Afvalkalender
+  - type: vertical-stack
+    cards:
+      - type: map
+        title: Martijn
+        aspect_ratio: 16x9
+        entities:
+          - device_tracker.iphone_van_martijn
+        hours_to_show: 48
+      - type: map
+        title: Judith
+        aspect_ratio: 16x9
+        entities:
+          - device_tracker.iphone_van_judith
+        hours_to_show: 48
+
+
 

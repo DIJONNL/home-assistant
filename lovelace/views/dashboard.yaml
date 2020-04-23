@@ -35,6 +35,26 @@ cards:
             - person.martijn
             - person.judith
             - device_tracker.oppas_kinderen
+      - type: map
+        entities:
+          - device_tracker.iphone_van_judith
+          - device_tracker.iphone_van_martijn
+        hours_to_show: 12
+  - type: custom:mini-media-player
+    entity: media_player.woonkamer
+    artwork: cover
+    source: icon
+    icon: mdi:spotify
+    hide:
+      power: true
+      icon: true
+      source: true
+    speaker_group:
+      platform: sonos
+      show_group_count: true
+      entities:
+        - entity_id: media_player.woonkamer
+          name: Sonos Woonkamer
   - type: custom:vertical-stack-in-card
     title: Lights
     cards:
@@ -128,21 +148,6 @@ cards:
             show_state: false
             show_name: true
             show_label: true
-  - type: custom:mini-media-player
-    entity: media_player.woonkamer
-    artwork: cover
-    source: icon
-    icon: mdi:spotify
-    hide:
-      power: true
-      icon: true
-      source: true
-    speaker_group:
-      platform: sonos
-      show_group_count: true
-      entities:
-        - entity_id: media_player.woonkamer
-          name: Sonos Woonkamer
   - type: custom:vertical-stack-in-card
     title: Weather
     cards:

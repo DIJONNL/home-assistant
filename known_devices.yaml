@@ -221,3 +221,24 @@ b8_b2_f8_5d_c9_10:
   name: 24_41_8c_53_12_45
   picture:
   track: true
+
+e4_b3_18_14_5d_f2:
+  icon:
+  mac: E4:B3:18:14:5D:F2
+  name: e4_b3_18_14_5d_f2
+  picture:
+  track: true
+
+camer_foscam_c2_utp:
+  icon: mdi:camera
+  mac: 00:62:6E:A2:EB:7D
+  name: foscam_c2
+  picture:
+  track: true
+
+camera_foscam_c2_wifi:
+  icon: mdi:camera
+  mac: 6C:21:A2:70:CD:04
+  name: camera_foscam_c2
+  picture:
+  track: true

@@ -12,9 +12,3 @@ condition: []
 action:
 - service: timer.start
   entity_id: timer.master_room
-- service: notify.all_devices
-  data_template:
-    title: Start Timer Master
-    message: >-
-      Master Timer
-      Timer set for {{ state_attr('timer.master_room','duration') }} minutes.
