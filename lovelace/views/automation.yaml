@@ -12,6 +12,7 @@ cards:
             - automation.living_room_turn_off_light_at_silent_hour
             - automation.turn_on_mediaplayer
             - automation.turn_off_mediaplayer
+            - automation.turn_off_mediaplayer_at_silent_hour
   - type: vertical-stack
     cards:
       - type: entities

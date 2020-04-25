@@ -229,16 +229,16 @@ e4_b3_18_14_5d_f2:
   picture:
   track: true
 
-camer_foscam_c2_utp:
+camer_foscam_floor_utp:
   icon: mdi:camera
   mac: 00:62:6E:A2:EB:7D
-  name: foscam_c2
+  name: foscam_floor
   picture:
   track: true
 
-camera_foscam_c2_wifi:
+camera_foscam_floor_wifi:
   icon: mdi:camera
   mac: 6C:21:A2:70:CD:04
-  name: camera_foscam_c2
+  name: camera_foscam_floor
   picture:
   track: true

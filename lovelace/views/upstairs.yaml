@@ -64,8 +64,7 @@ cards:
     cards:
       - type: glance
         entities:
-          - device_tracker.camera_foscam_c2_wifi
-          - switch.camera_foscam_c2_motion
+          - device_tracker.camera_foscam_floor_wifi
       - type: horizontal-stack
         cards:            
           - type: custom:mini-graph-card
@@ -107,8 +106,10 @@ cards:
       - type: horizontal-stack
         cards:
           - type: picture-entity
-            entity: camera.camera_foscam_c2
+            entity: camera.camera_foscam_floor
             camera_view: live
+            show_info: true
+            show_state: true
   - type: custom:vertical-stack-in-card
     title: Bathroom
     cards:

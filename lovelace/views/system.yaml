@@ -14,6 +14,8 @@ cards:
         - type: glance
           entities:
             - switch.adguard_protection
+            - switch.adguard_filtering
+            - switch.adguard_parental_control
             - switch.adguard_safe_browsing
             - switch.adguard_safe_search
         - type: custom:mini-graph-card

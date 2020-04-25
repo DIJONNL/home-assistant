@@ -11,12 +11,12 @@ logs:
     name: Log
     filename: /config/appdaemon/log/appdaemon.log
     log_generations: 1
-    log_size: 1024000
+    log_size: 1024
   diag_log:
     name: Diag
     filename: /config/appdaemon/log/diag.log
     log_generations: 1
-    log_size: 1024000
+    log_size: 1024
 
 appdaemon:
   latitude: !secret zone_home_latitude

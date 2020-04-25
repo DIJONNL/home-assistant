@@ -1,5 +1,6 @@
 
 .storage
+*.ignore
 .cloud
 .HA_VERSION
 .pip_progress
@@ -15,3 +16,4 @@ appdaemon/log/
 *google_translate.mp3
 www/community/**
 netdaemon/apps/**
+*.pyc

@@ -3,6 +3,13 @@ hello_world:
   module: hello
   class: HelloWorld
 
+foscamcamera_floor:
+  module: foscamcamera
+  class: foscamcamera
+  foscam_ip: !secret foscam_ip_floor
+  foscam_username: !secret foscam_username
+  foscam_password: !secret foscam_password
+
 bathroom_controller:
   module: controllerx
   class: E1810Controller
