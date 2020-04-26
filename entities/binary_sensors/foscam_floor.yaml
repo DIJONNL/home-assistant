@@ -1,0 +1,8 @@
+
+
+platform: template
+sensors:
+  foscam_floor_audio:
+    value_template: off
+  foscam_floor_motion:
+    value_template:  off

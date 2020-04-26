@@ -18,6 +18,8 @@ cards:
             - switch.adguard_parental_control
             - switch.adguard_safe_browsing
             - switch.adguard_safe_search
+      - type: horizontal-stack
+        cards:
         - type: custom:mini-graph-card
           name: Up/Download
           entities:
