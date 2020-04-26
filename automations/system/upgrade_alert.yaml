@@ -32,7 +32,7 @@ action:
         There is a Home Assistant upgrade for Hass.io pending!
         Version {{ states('sensor.version_available') }} just got released!
       notification_id: hassio_upgrade
-  - service: notify.MARTIJN
+  - service: notify.martijn
     data_template:
       title: Upgrade time!
       message: >-

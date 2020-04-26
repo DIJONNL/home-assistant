@@ -6,6 +6,7 @@ cards:
   - type: vertical-stack
     cards:
       - type: entities
+        title: Living Room
         show_header_toggle: false
         entities:
             - automation.living_room_turn_on_light_at_sunset
@@ -16,6 +17,7 @@ cards:
   - type: vertical-stack
     cards:
       - type: entities
+        title: Dining Room
         show_header_toggle: false
         entities:
             - automation.dining_room_turn_on_light_at_sunset
@@ -23,6 +25,14 @@ cards:
   - type: vertical-stack
     cards:
       - type: entities
+        title: Floor Bedroom
+        show_header_toggle: false
+        entities:
+            - automation.detection_floorbedroom_during_silent_hours
+  - type: vertical-stack
+    cards:
+      - type: entities
+        title: Master Bedroom
         show_header_toggle: false
         entities:
             - automation.start_timer_on_turn_on_light_at_master
@@ -30,6 +40,7 @@ cards:
   - type: vertical-stack
     cards:
       - type: entities
+        title: Bathroom
         show_header_toggle: false
         entities:
             - automation.turn_on_bathroom_light_when_there_is_movement
@@ -41,6 +52,7 @@ cards:
   - type: vertical-stack
     cards:
       - type: entities
+        title: Others
         show_header_toggle: false
         entities:
             - automation.leave_creche_in_the_morning
@@ -48,15 +60,11 @@ cards:
             - automation.zone_state_changed_tts
             - automation.leave_work_in_the_afternoon
             - automation.people_not_at_home
-  - type: vertical-stack
-    cards:
-      - type: entities
-        show_header_toggle: false
-        entities:
             - automation.stookalert_notification
   - type: vertical-stack
     cards:
       - type: entities
+        title: System
         show_header_toggle: false
         entities:
             - automation.system_upgrade_alert
@@ -64,3 +72,5 @@ cards:
             - automation.system_low_battery_alert
             - entity: input_datetime.house_silent_hours_start
             - entity: input_datetime.house_silent_hours_end
+            - entity: input_datetime.floor_silent_hours_start
+            - entity: input_datetime.floor_silent_hours_end

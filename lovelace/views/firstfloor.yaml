@@ -67,6 +67,7 @@ cards:
           - device_tracker.camera_foscam_floor_wifi
           - binary_sensor.foscam_floor_audio
           - binary_sensor.foscam_floor_motion
+          - entity: timer.floor_presence_detection
       - type: horizontal-stack
         cards:            
           - type: custom:mini-graph-card

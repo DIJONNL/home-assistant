@@ -1,0 +1,4 @@
+floor_silent_hours_start:
+  name: Floor Silent Hours Start
+  has_date: false
+  has_time: true

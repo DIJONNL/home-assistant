@@ -1,0 +1,4 @@
+floor_silent_hours_end:
+  name: Floor Silent Hours End
+  has_date: false
+  has_time: true

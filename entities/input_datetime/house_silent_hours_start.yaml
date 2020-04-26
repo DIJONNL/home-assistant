@@ -1,8 +1,4 @@
 ---
-# Stores the time on which our silent hours start
-# since we have kids, we don't have to take
-# into account the specific day...
-#
 house_silent_hours_start:
   name: House Silent Hours Start
   has_date: false
