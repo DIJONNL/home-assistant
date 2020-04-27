@@ -1,0 +1,3 @@
+input_boolean.foscam_floor_infrared:
+  friendly_name: IR
+  device_class: light

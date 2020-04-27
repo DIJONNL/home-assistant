@@ -29,6 +29,8 @@ cards:
         show_header_toggle: false
         entities:
             - automation.detection_floorbedroom_during_silent_hours
+            - automation.turn_on_ir_and_start_timer
+            - automation.turn_off_ir_when_timer_finished
   - type: vertical-stack
     cards:
       - type: entities
@@ -72,5 +74,5 @@ cards:
             - automation.system_low_battery_alert
             - entity: input_datetime.house_silent_hours_start
             - entity: input_datetime.house_silent_hours_end
-            - entity: input_datetime.floor_silent_hours_start
-            - entity: input_datetime.floor_silent_hours_end
+            - entity: input_datetime.kids_silent_hours_start
+            - entity: input_datetime.kids_silent_hours_end

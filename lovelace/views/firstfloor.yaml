@@ -68,6 +68,7 @@ cards:
           - binary_sensor.foscam_floor_audio
           - binary_sensor.foscam_floor_motion
           - entity: timer.floor_presence_detection
+          - input_boolean.foscam_floor_infrared
       - type: horizontal-stack
         cards:            
           - type: custom:mini-graph-card
@@ -112,7 +113,7 @@ cards:
             entity: camera.camera_foscam_floor
             camera_view: live
             show_info: true
-            show_state: true
+            show_state: false
   - type: custom:vertical-stack-in-card
     title: Bathroom
     cards:

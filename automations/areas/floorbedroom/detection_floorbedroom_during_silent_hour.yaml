@@ -12,27 +12,37 @@ condition:
     - condition: template
       value_template: >-
         {{
-          states('sensor.time')+":00"
-          >
-          states('input_datetime.floor_silent_hours_start')
-        }}
-    - condition: template
-      value_template: >-
-        {{
-          states('sensor.time')+":00"
-          <
-          states('input_datetime.floor_silent_hours_end')
+        (states('input_datetime.kids_silent_hours_start')
+        <
+        states('sensor.time')+":00"
+        and
+        states('sensor.time')+":00" 
+        <
+        states('input_datetime.house_silent_hours_start'))
+        or
+        (states('input_datetime.kids_silent_hours_end')
+        <
+        states('sensor.time')+":00"
+        and
+        states('sensor.time')+":00" 
+        < 
+        states('input_datetime.house_silent_hours_end'))
         }}
     - condition: state
       entity_id: timer.floor_presence_detection
-      state: 'idle'
+      state: idle
 action:
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.foscam_floor_infrared
+  - delay: 0:03
   - service: timer.start
     entity_id: timer.floor_presence_detection
   - service: notify.all_devices
     data:
-      message: Motion Detected in Floor's Bedroom
+      title: "Motion Detected Floor"
+      message: "Motion Detected in Floor's Bedroom"
       data:
+        sticky: true
         attachment:
           content-type: jpeg
         push:

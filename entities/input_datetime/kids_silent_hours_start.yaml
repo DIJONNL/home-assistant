@@ -1,0 +1,4 @@
+kids_silent_hours_start:
+  name: Kids silent hours start
+  has_date: false
+  has_time: true

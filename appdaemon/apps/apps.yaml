@@ -7,11 +7,13 @@ foscamcamera_floor:
   module: foscamcamera
   class: foscamcamera
   foscam_ip: !secret foscam_ip_floor
+  foscam_camera: device_tracker.camera_foscam_floor_wifi
   foscam_username: !secret foscam_username
   foscam_password: !secret foscam_password
   motion_entity: binary_sensor.foscam_floor_motion
   audio_entity: binary_sensor.foscam_floor_audio
-  interval: 15
+  infrared_entity: input_boolean.foscam_floor_infrared
+  interval: 30
 
 bathroom_controller:
   module: controllerx

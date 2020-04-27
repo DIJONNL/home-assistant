@@ -1,0 +1,3 @@
+binary_sensor.foscam_floor_audio:
+  friendly_name: Audio
+  device_class: sound
