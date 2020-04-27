@@ -45,7 +45,7 @@ class foscamcamera(hass.Hass):
             #set Motion Detection to Enable
             url = "http://%s:88//cgi-bin/CGIProxy.fcgi?cmd=setMotionDetectConfig1&isEnable=1&snapInterval=1&schedule0=281474976710655&schedule1=281474976710655&schedule2=281474976710655&schedule3=281474976710655&schedule4=281474976710655&schedule5=281474976710655&schedule6=281474976710655&x1=0&y1=0&width1=10000&height1=10000&sensitivity1=1&valid1=1&linkage=6&usr=%s&pwd=%s" % (self.ip, self.usr, self.pwd)
             response = requests.get(url)
-            time.sleep(0.1)
+            time.sleep(1)
             #setInfraLedConfig to Manual Mode
             url = "http://%s:88/cgi-bin/CGIProxy.fcgi?cmd=setInfraLedConfig&mode=1&usr=%s&pwd=%s" % (self.ip, self.usr, self.pwd)
             response = requests.get(url)

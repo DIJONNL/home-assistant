@@ -13,7 +13,7 @@ timer:
     duration: 900
   bathroom_ventilator:
     name: Bathroom 
-    duration: 1400
+    duration: 900
   floor_presence_detection:
     name: Floor Detection
-    duration: 150
+    duration: 300

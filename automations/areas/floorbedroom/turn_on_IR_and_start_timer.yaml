@@ -2,11 +2,8 @@ alias: turn_on_IR_and_start_timer
 trigger:
 - platform: state  
   entity_id: input_boolean.foscam_floor_infrared
-  to: 'on' 
-condition:
-- condition: state
-  entity_id: timer.floor_presence_detection
-  state: idle
+  to: 'on'
+condition: []
 action:
 - service: timer.start
   entity_id: timer.floor_presence_detection
