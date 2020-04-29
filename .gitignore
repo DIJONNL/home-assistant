@@ -15,5 +15,6 @@ appdaemon/apps/__pycache__
 appdaemon/log/
 *google_translate.mp3
 www/community/**
+www/cam_captures/**
 netdaemon/apps/**
 *.pyc

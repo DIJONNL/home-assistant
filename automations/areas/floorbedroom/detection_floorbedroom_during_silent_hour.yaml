@@ -35,14 +35,22 @@ action:
   - service: input_boolean.turn_on
     entity_id: input_boolean.foscam_floor_infrared
   - delay: 0:05
-  - service: notify.all_devices
+  - service: camera.snapshot
     data:
-      title: "Motion Detected Floor"
-      message: "Motion Detected in Floor's Bedroom"
-      data:
-        sticky: true
-        attachment:
-          content-type: jpeg
-        push:
-          category: camera
-        entity_id: camera.camera_foscam_floor
+      entity_id: camera.camera_foscam_floor
+      filename: "/config/www/cam_captures/floor_bedroom.jpg"
+  - service: camera.snapshot
+    data:
+      entity_id: camera.camera_foscam_floor
+      filename: "/config/www/cam_captures/floor_bedroom_{{ now ().year }}_{{ now ().month }}_{{ now ().day }}_{{ now ().hour }}_{{ now ().minute }}.jpg"
+  - service: notify.all_devices
+    data_template:
+        title: "Motion Detected"
+        message: "Floors Bedroom"
+        data:
+          sticky: true
+          attachment:
+            url: >-
+              {{ states("input_text.system_secrets_http_fullurl") }}/local/cam_captures/floor_bedroom.jpg
+            content-type: jpeg
+            hide-thumbnail: false

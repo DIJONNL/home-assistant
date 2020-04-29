@@ -6,6 +6,13 @@ path: system
 title: System
 icon: mdi:lan
 cards:
+  - type: vertical-stack
+    cards:
+      - type: entities
+        title: System Settings
+        show_header_toggle: false
+        entities:
+            - input_text.system_secrets_http_fullurl
   - type: custom:vertical-stack-in-card
     title: Network performance
     cards:
