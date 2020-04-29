@@ -16,5 +16,4 @@ views:
   - !include lovelace/views/firstfloor.yaml
   - !include lovelace/views/outside.yaml
   - !include lovelace/views/system.yaml
-  - !include lovelace/views/graphs.yaml
   - !include lovelace/views/automation.yaml

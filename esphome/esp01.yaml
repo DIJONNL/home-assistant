@@ -8,6 +8,7 @@ substitutions:
  name_xiaomi_02: XHT02
  name_xiaomi_03: XHT03
  name_xiaomi_04: XHT04
+ name_xiaomi_05: XHT05
 
 esphome:
   name: esp32
@@ -67,7 +68,15 @@ sensor:
       name: $name_xiaomi_04 Humidity
     battery_level:
       name: $name_xiaomi_04 Battery Level
- 
+  - platform: xiaomi_lywsdcgq
+    mac_address: 58:2D:34:39:C5:62
+    temperature:
+      name: $name_xiaomi_05 Temperature
+    humidity:
+      name: $name_xiaomi_05 Humidity
+    battery_level:
+      name: $name_xiaomi_05 Battery Level
+
 switch:
   - platform: restart
     name: esphome_esp01_restart

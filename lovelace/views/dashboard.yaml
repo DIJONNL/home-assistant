@@ -139,16 +139,6 @@ cards:
               - value: 50
                 color: white
   - type: custom:vertical-stack-in-card
-    title: Ventilator
-    cards:
-        - type: horizontal-stack
-          cards:
-          - type: "custom:button-card"
-            entity: light.shelly02_light
-            show_state: false
-            show_name: true
-            show_label: true
-  - type: custom:vertical-stack-in-card
     title: Weather
     cards:
         - type: custom:weather-card

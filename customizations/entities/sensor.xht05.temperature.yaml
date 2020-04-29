@@ -5,5 +5,5 @@
 # https://www.home-assistant.io/docs/configuration/customizing-devices/
 #
 sensor.xht05_temperature:
-  friendly_name: Diningroom 
+  friendly_name: Hugo 
   device_class: temperature
