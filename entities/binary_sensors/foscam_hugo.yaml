@@ -1,0 +1,6 @@
+platform: template
+sensors:
+  foscam_hugo_audio:
+    value_template: off
+  foscam_hugo_motion:
+    value_template: off

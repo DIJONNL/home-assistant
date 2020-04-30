@@ -1,0 +1,5 @@
+platform: foscam
+name: camera_foscam_hugo
+ip: !secret foscam_ip_hugo
+username: !secret foscam_username
+password: !secret foscam_password

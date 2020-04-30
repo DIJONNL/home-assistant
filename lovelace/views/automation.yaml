@@ -29,8 +29,17 @@ cards:
         show_header_toggle: false
         entities:
             - automation.detection_floorbedroom_during_silent_hours
-            - automation.turn_on_ir_and_start_timer
-            - automation.turn_off_ir_when_timer_finished
+            - automation.turn_on_ir_floor_and_start_timer
+            - automation.turn_off_ir_floor_when_timer_finished
+  - type: vertical-stack
+    cards:
+      - type: entities
+        title: Hugo Bedroom
+        show_header_toggle: false
+        entities:
+            - automation.detection_hugobedroom_during_silent_hours
+            - automation.turn_on_ir_hugo_and_start_timer
+            - automation.turn_off_ir_hugo_when_timer_finished
   - type: vertical-stack
     cards:
       - type: entities

@@ -15,6 +15,18 @@ foscamcamera_floor:
   infrared_entity: input_boolean.foscam_floor_infrared
   interval: 30
 
+foscamcamera_hugo:
+  module: foscamcamera
+  class: foscamcamera
+  foscam_ip: !secret foscam_ip_hugo
+  foscam_camera: device_tracker.camera_foscam_hugo_wifi
+  foscam_username: !secret foscam_username
+  foscam_password: !secret foscam_password
+  motion_entity: binary_sensor.foscam_hugo_motion
+  audio_entity: binary_sensor.foscam_hugo_audio
+  infrared_entity: input_boolean.foscam_hugo_infrared
+  interval: 15
+
 bathroom_controller:
   module: controllerx
   class: E1810Controller

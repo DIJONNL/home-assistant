@@ -39,9 +39,9 @@ cards:
           hour24: true
           line_color: var(--primary-color)
           color_thresholds:
-            - value: 21
+            - value: 25
               color: red
-            - value: 17
+            - value: 16
               color: white
         - type: custom:mini-graph-card
           name: Humidity
@@ -59,7 +59,7 @@ cards:
           color_thresholds:
             - value: 70
               color: red
-            - value: 55
+            - value: 40
               color: white
   - type: custom:vertical-stack-in-card
     title: Dining room

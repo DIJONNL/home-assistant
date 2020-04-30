@@ -1,4 +1,4 @@
-alias: turn_on_IR_and_start_timer
+alias: turn_on_IR_floor_and_start_timer
 trigger:
 - platform: state  
   entity_id: input_boolean.foscam_floor_infrared

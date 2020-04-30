@@ -27,13 +27,13 @@ cards:
         aspect_ratio: 16x9
         entities:
           - device_tracker.iphone_van_martijn
-        hours_to_show: 48
+        hours_to_show: 72
       - type: map
         title: Judith
         aspect_ratio: 16x9
         entities:
           - device_tracker.iphone_van_judith
-        hours_to_show: 48
+        hours_to_show: 72
 
 
 

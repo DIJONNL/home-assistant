@@ -26,7 +26,7 @@ cards:
         show_empty: false
         card:
           type: glance
-          title: People in Zone
+          title: Active in Zone
         filter:
           include: []
           exclude:
@@ -34,6 +34,9 @@ cards:
         entities:
             - person.martijn
             - person.judith
+            - device_tracker.mediaplayer_sonos_one_livingroom
+            - device_tracker.philips_television
+            - device_tracker.miele_wasmachine
             - device_tracker.oppas_kinderen
       - type: map
         entities:

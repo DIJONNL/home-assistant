@@ -1,10 +1,10 @@
-alias: detection_floorbedroom_during_silent_hours
+alias: detection_hugobedroom_during_silent_hours
 trigger:
 - platform: state
-  entity_id: binary_sensor.foscam_floor_audio
+  entity_id: binary_sensor.foscam_hugo_audio
   to: 'on'
 - platform: state
-  entity_id: binary_sensor.foscam_floor_motion
+  entity_id: binary_sensor.foscam_hugo_motion
   to: 'on'
 condition:
   condition: and
@@ -35,36 +35,36 @@ condition:
           entity_id: input_boolean.guest_mode
           state: 'on'
     - condition: state
-      entity_id: timer.floor_presence_detection
+      entity_id: timer.hugo_presence_detection
       state: idle
 action:
   - service: input_boolean.turn_on
-    entity_id: input_boolean.foscam_floor_infrared
+    entity_id: input_boolean.foscam_hugo_infrared
   - delay: 0:05
   - service: camera.snapshot
     data:
-      entity_id: camera.camera_foscam_floor
-      filename: "/config/www/cam_captures/floor_bedroom.jpg"
+      entity_id: camera.camera_foscam_hugo
+      filename: "/config/www/cam_captures/hugo_bedroom.jpg"
   - delay: 0:02
   - service: camera.snapshot
     data:
-      entity_id: camera.camera_foscam_floor
-      filename: "/config/www/cam_captures/floor_bedroom_{{ now ().year }}_{{ now ().month }}_{{ now ().day }}_{{ now ().hour }}_{{ now ().minute }}.jpg"
+      entity_id: camera.camera_foscam_hugo
+      filename: "/config/www/cam_captures/hugo_bedroom_{{ now ().year }}_{{ now ().month }}_{{ now ().day }}_{{ now ().hour }}_{{ now ().minute }}.jpg"
   - delay: 0:02
   - service: notify.all_devices
     data_template:
         title: Motion Detected
-        message: Floors Bedroom
+        message: Hugo Bedroom
         data:
           sticky: true
           attachment:
             url: >-
-              {{ states("input_text.system_secrets_http_fullurl") }}/local/cam_captures/floor_bedroom.jpg
+              {{ states("input_text.system_secrets_http_fullurl") }}/local/cam_captures/hugo_bedroom.jpg
             content-type: jpeg
             hide-thumbnail: false
   - service: notify.telegram_martijn
     data_template:
-      title: Floor Motion Detected
+      title: Hugo Motion Detected
       message: >-
-        Motion Detected  Audio: {{ states('binary_sensor.foscam_floor_audio') }}
-        Motion: {{ states('binary_sensor.foscam_floor_motion') }}.
+        Motion Detected  Audio: {{ states('binary_sensor.foscam_hugo_audio') }}
+        Motion: {{ states('binary_sensor.foscam_hugo_motion') }}.

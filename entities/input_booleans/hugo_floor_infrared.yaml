@@ -1,0 +1,3 @@
+foscam_hugo_infrared:
+  name: Infrared
+  initial: false

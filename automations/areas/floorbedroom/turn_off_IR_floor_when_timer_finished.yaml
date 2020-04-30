@@ -1,4 +1,4 @@
-alias: turn_off_IR_when_timer_finished
+alias: turn_off_IR_floor_when_timer_finished
 trigger:
 - platform: event
   event_type: timer.finished

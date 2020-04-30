@@ -17,3 +17,6 @@ timer:
   floor_presence_detection:
     name: Floor Detection
     duration: 300
+  hugo_presence_detection:
+    name: Hugo Detection
+    duration: 150

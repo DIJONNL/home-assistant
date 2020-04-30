@@ -37,7 +37,7 @@ cards:
             hour24: true
             line_color: var(--primary-color)
             color_thresholds:
-              - value: 22
+              - value: 28
                 color: red
               - value: 17
                 color: white
@@ -57,7 +57,7 @@ cards:
             color_thresholds:
               - value: 70
                 color: red
-              - value: 55
+              - value: 40
                 color: white  
   - type: custom:vertical-stack-in-card
     title: Floor bedroom
@@ -85,7 +85,7 @@ cards:
             hour24: true
             line_color: var(--primary-color)
             color_thresholds:
-              - value: 22
+              - value: 25
                 color: red
               - value: 17
                 color: white
@@ -105,7 +105,7 @@ cards:
             color_thresholds:
               - value: 70
                 color: red
-              - value: 55
+              - value: 40
                 color: white
       - type: horizontal-stack
         cards:
@@ -114,47 +114,61 @@ cards:
             camera_view: live
             show_info: true
             show_state: false
-  - type: custom:vertical-stack-in-card
-    title: Hugo bedroom
-    cards: 
+      - type: custom:vertical-stack-in-card
+        title: Hugo bedroom
+        cards: 
+          - type: glance
+            entities:
+              - device_tracker.camera_foscam_hugo_wifi
+              - binary_sensor.foscam_hugo_audio
+              - binary_sensor.foscam_hugo_motion
+              - entity: timer.hugo_presence_detection
+              - input_boolean.foscam_hugo_infrared
+          - type: horizontal-stack
+            cards:
+            - type: custom:mini-graph-card
+              name: Temperature
+              entities:
+                - sensor.xht05_temperature
+              location_icon: left
+              location_state: center
+              show:
+                fill: fade
+                extrema: true
+              height: 75
+              animate: true
+              hour24: true
+              line_color: var(--primary-color)
+              color_thresholds:
+                - value: 25
+                  color: red
+                - value: 17
+                  color: white
+            - type: custom:mini-graph-card
+              name: Humidity
+              entities:
+                - sensor.xht05_humidity
+              location_icon: left
+              location_state: center
+              show:
+                fill: fade
+                extrema: true
+              height: 75 
+              animate: true
+              hour24: true
+              line_color: var(--primary-color)
+              color_thresholds:
+                - value: 70
+                  color: red
+                - value: 40
+                  color: white
       - type: horizontal-stack
         cards:
-        - type: custom:mini-graph-card
-          name: Temperature
-          entities:
-            - sensor.xht05_temperature
-          location_icon: left
-          location_state: center
-          show:
-            fill: fade
-            extrema: true
-          height: 75
-          animate: true
-          hour24: true
-          line_color: var(--primary-color)
-          color_thresholds:
-            - value: 21
-              color: red
-            - value: 17
-              color: white
-        - type: custom:mini-graph-card
-          name: Humidity
-          entities:
-            - sensor.xht05_humidity
-          location_icon: left
-          location_state: center
-          show:
-            fill: fade
-            extrema: true
-          height: 75 
-          animate: true
-          hour24: true
-          line_color: var(--primary-color)
-          color_thresholds:
-            - value: 70
-              color: red
-            - value: 55
-              color: white
+          - type: picture-entity
+            entity: camera.camera_foscam_hugo
+            camera_view: live
+            show_info: true
+            show_state: false
   - type: custom:vertical-stack-in-card
     title: Bathroom
     cards:
@@ -181,7 +195,7 @@ cards:
             update_interval: 10
             line_color: var(--primary-color)
             color_thresholds:
-              - value: 22
+              - value: 25
                 color: red
               - value: 17
                 color: white
@@ -202,7 +216,7 @@ cards:
             color_thresholds:
               - value: 80
                 color: red
-              - value: 50
+              - value: 40
                 color: white  
       - type: horizontal-stack
         cards:
