@@ -19,4 +19,6 @@ timer:
     duration: 300
   hugo_presence_detection:
     name: Hugo Detection
-    duration: 150
+    duration: 300
+
+

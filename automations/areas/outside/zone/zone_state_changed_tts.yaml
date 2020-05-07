@@ -45,6 +45,6 @@ action:
   - service: script.sonos_say
     data_template:
       sonos_entity: media_player.woonkamer
-      message: "Zone {{ trigger.from_state.state }} is verlaten om {{ states('sensor.time') }} door {{ trigger.entity_id.split('_')[-1] }}."
+      message: "{{ trigger.entity_id.split('_')[-1] }} heeft zone {{ trigger.from_state.state }} verlaten om {{ states('sensor.time') }}."
       pre_delay: '00:00:05'
       post_delay: '00:00:20'

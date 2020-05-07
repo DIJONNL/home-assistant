@@ -12,14 +12,14 @@ trigger:
     entity_id: binary_sensor.people_home
     to: "off"
 action:
-  - service: homeassistant.turn_off
-    data:
-      entity_id: media_player.woonkamer
+  - service: media_player.turn_off
+    entity_id: media_player.woonkamer
   - service: light.turn_off
-    data:
-      entity_id: light.shelly02_light
+    entity_id: light.shelly02_light
   - service: homeassistant.turn_off
     entity_id: group.master_room
+  - service: switch.turn_off
+    entity_id: group.bathroom
   - service: notify.all_devices
     data_template:
       title: "People Not@Home"

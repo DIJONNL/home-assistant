@@ -17,7 +17,7 @@ condition:
   conditions:
     - condition: state
       entity_id: input_boolean.guest_mode
-      state: 'off'
+      state: 'Off'
 action:
   - service: homeassistant.turn_off
     entity_id: group.dining_room

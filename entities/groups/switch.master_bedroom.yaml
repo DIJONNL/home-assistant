@@ -5,7 +5,7 @@
 # Example configuration.yaml entry
 master_room:
   name: Master Room
-  icon: mdi:lightbulb-group-outline
+  icon: mdi:lightbulb
   entities:
     - switch.lcs03
     - switch.lcs04

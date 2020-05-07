@@ -5,7 +5,6 @@
 # Example configuration.yaml entry
 dining_room:
   name: Dining Room
-  icon: mdi:lightbulb-group-outline
+  icon: mdi:lightbulb
   entities:
-    - switch.lcs01
     - switch.lcs05

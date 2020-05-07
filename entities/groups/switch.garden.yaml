@@ -5,6 +5,6 @@
 # Example configuration.yaml entry
 garden:
   name: Garden
-  icon: mdi:lightbulb-group-outline
+  icon: mdi:lightbulb
   entities:
     - switch.shelly_01

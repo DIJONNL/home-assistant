@@ -1,0 +1,13 @@
+---
+#
+#
+#
+#
+platform: template
+sensors:
+  sun_elevation:
+    friendly_name: 'Sun Elevation'
+    value_template: >
+      {{ state_attr("sun.sun","elevation") }}
+    icon_template: mdi:elevation-rise
+    

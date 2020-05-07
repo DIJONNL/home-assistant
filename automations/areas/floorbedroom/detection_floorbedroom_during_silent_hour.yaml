@@ -33,7 +33,7 @@ condition:
             }}
         - condition: state
           entity_id: input_boolean.guest_mode
-          state: 'on'
+          state: 'On'
     - condition: state
       entity_id: timer.floor_presence_detection
       state: idle
@@ -45,7 +45,6 @@ action:
     data:
       entity_id: camera.camera_foscam_floor
       filename: "/config/www/cam_captures/floor_bedroom.jpg"
-  - delay: 0:02
   - service: camera.snapshot
     data:
       entity_id: camera.camera_foscam_floor

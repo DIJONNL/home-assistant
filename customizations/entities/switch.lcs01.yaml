@@ -5,6 +5,6 @@
 # https://www.home-assistant.io/docs/configuration/customizing-devices/
 #
 switch.lcs01:
-  friendly_name: Dining Room Light - Babyfoon
+  friendly_name: Floor Bedroom Light
   device_class: light
-  icon: mdi:spotlight
+  iconm: mdi:lightbulb

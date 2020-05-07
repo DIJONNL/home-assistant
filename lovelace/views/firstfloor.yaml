@@ -107,6 +107,11 @@ cards:
                 color: red
               - value: 40
                 color: white
+          - type: "custom:button-card"
+            entity: switch.lcs01
+            show_state: false
+            show_name: true
+            show_label: true
       - type: horizontal-stack
         cards:
           - type: picture-entity

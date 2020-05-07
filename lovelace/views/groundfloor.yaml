@@ -67,11 +67,6 @@ cards:
       - type: horizontal-stack
         cards:
         - type: "custom:button-card"
-          entity: switch.lcs01
-          show_state: false
-          show_name: true
-          show_label: true
-        - type: "custom:button-card"
           entity: switch.lcs05
           show_state: false
           show_name: true

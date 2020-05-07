@@ -9,7 +9,7 @@ cards:
         title: Living Room
         show_header_toggle: false
         entities:
-            - automation.living_room_turn_on_light_at_sunset
+            - automation.living_room_turn_on_light_at_sunelevation
             - automation.living_room_turn_off_light_at_silent_hour
             - automation.turn_on_mediaplayer
             - automation.turn_off_mediaplayer
@@ -20,7 +20,7 @@ cards:
         title: Dining Room
         show_header_toggle: false
         entities:
-            - automation.dining_room_turn_on_light_at_sunset
+            - automation.dining_room_turn_on_light_at_sunelevation
             - automation.dining_room_turn_off_light_at_silent_hour
   - type: vertical-stack
     cards:

@@ -17,11 +17,18 @@ cards:
           - entity: binary_sensor.people_home
             name: People@Home
             show_state: false
-      - type: entities
-        show_header_toggle: false
-        entities:
-          - sensor.nextsunrise
-          - sensor.nextsunset
+      - type: horizontal-stack
+        cards:
+          - type: entities
+            show_header_toggle: false
+            entities:
+              - sensor.nextsunrise
+              - sensor.nextsunset
+          - type: entities
+            show_header_toggle: false
+            entities:
+              - sensor.sun_azimuth
+              - sensor.sun_elevation
       - type: custom:auto-entities
         show_empty: false
         card:

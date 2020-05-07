@@ -29,10 +29,7 @@ condition:
           states('input_datetime.house_silent_hours_start')
           >
           states('sensor.time')+":00"
-        }}
-    - condition: template
-      value_template: >-
-        {{
+          and
           states('input_datetime.house_silent_hours_end')
           <
           states('sensor.time')+":00"
@@ -41,8 +38,8 @@ action:
   - service: media_player.turn_on
     entity_id: media_player.woonkamer
   - service: media_player.select_source
+    entity_id: media_player.woonkamer
     data:
-      entity_id: media_player.woonkamer
-      source: NPO Radio 2
-      volume_level: 0.3
+        source: "NPO Radio 2"
+    
 
