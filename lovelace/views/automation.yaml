@@ -78,6 +78,7 @@ cards:
         title: System
         show_header_toggle: false
         entities:
+            - automation.new_devices_tracker
             - automation.system_upgrade_alert
             - automation.zigbee_map_actualiseren
             - automation.system_low_battery_alert

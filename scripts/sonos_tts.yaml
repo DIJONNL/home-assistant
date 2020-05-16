@@ -17,7 +17,7 @@ sonos_say:
   - service: media_player.volume_set
     data_template:
       entity_id: "{{ sonos_entity }}"
-      volume_level: "{{ volume if volume else 0.4 }}" 
+      volume_level: "{{ volume if volume else 0.5 }}" 
   - service: tts.google_translate_say
     data_template:
       entity_id: "{{ sonos_entity }}"

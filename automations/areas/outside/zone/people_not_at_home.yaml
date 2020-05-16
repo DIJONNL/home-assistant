@@ -6,11 +6,12 @@
 # 2. Turn of the Ventilator on the Bathroom
 # 
 #
+# 
 alias: people_not_at_home
 trigger:
   - platform: state
     entity_id: binary_sensor.people_home
-    to: "off"
+    to: 'off'
 action:
   - service: media_player.turn_off
     entity_id: media_player.woonkamer

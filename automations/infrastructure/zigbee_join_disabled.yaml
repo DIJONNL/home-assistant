@@ -14,7 +14,7 @@ trigger:
       entity_id: timer.zigbee_permit_join
   - platform: state
     entity_id: switch.zigbee2mqtt_main_join
-    to: "off"
+    to: 'off'
 action:
   - service: timer.cancel
     data:

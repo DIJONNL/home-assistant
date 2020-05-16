@@ -28,6 +28,7 @@ HACS
 		- HACS: /config/www/community/vertical-stack-in-card
 		- HACS: /config/www/auto-entities
 		- HACS: /config/www/community/weather-card 
+		- HACS: Lovelace Buien Rain Card
 	- AppDaemon Apps
 		- ControllerX
 	

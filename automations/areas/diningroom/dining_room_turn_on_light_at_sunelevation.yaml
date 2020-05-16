@@ -7,7 +7,7 @@ trigger:
   - platform: numeric_state
     entity_id: sun.sun
     value_template: "{{ state_attr('sun.sun', 'elevation') }}"
-    below: 9.0
+    below: 7.75
 condition: []
 action:
 - service: homeassistant.turn_on

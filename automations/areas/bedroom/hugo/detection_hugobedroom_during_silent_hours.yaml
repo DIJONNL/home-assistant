@@ -45,11 +45,10 @@ action:
     data:
       entity_id: camera.camera_foscam_hugo
       filename: "/config/www/cam_captures/hugo_bedroom.jpg"
-  - service: camera.snapshot
-    data:
-      entity_id: camera.camera_foscam_hugo
-      filename: "/config/www/cam_captures/hugo_bedroom_{{ now ().year }}_{{ now ().month }}_{{ now ().day }}_{{ now ().hour }}_{{ now ().minute }}.jpg"
-  - delay: 0:02
+#  - service: camera.snapshot
+#    data:
+#      entity_id: camera.camera_foscam_hugo
+#      filename: "/config/www/cam_captures/hugo_bedroom_{{ now ().year }}_{{ now ().month }}_{{ now ().day }}_{{ now ().hour }}_{{ now ().minute }}.jpg"
   - service: notify.all_devices
     data_template:
         title: Motion Detected
@@ -61,9 +60,3 @@ action:
               {{ states("input_text.system_secrets_http_fullurl") }}/local/cam_captures/hugo_bedroom.jpg
             content-type: jpeg
             hide-thumbnail: false
-  - service: notify.telegram_martijn
-    data_template:
-      title: Hugo Motion Detected
-      message: >-
-        Motion Detected  Audio: {{ states('binary_sensor.foscam_hugo_audio') }}
-        Motion: {{ states('binary_sensor.foscam_hugo_motion') }}.

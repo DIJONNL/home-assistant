@@ -1,7 +1,28 @@
-84_0d_8e_5d_99_6a:
-  icon:
-  mac: 84:0D:8E:5D:99:6A
-  name: 84 0d 8e 5d 99 6a
+camer_foscam_floor_utp:
+  icon: mdi:camera
+  mac: 00:62:6E:A2:EB:7D
+  name: camera_foscam_floor_utp
+  picture:
+  track: false
+
+camera_foscam_floor_wifi:
+  icon: mdi:camera
+  mac: 6C:21:A2:70:CD:04
+  name: camera_foscam_floor
+  picture:
+  track: true
+
+camer_foscam_hugo_utp:
+  icon: mdi:camera
+  mac: 00:62:6E:ED:01:0B
+  name: camera_foscam_hugo_utp
+  picture:
+  track: false
+
+camera_foscam_hugo_wifi:
+  icon: mdi:camera
+  mac: 34:75:63:51:02:50
+  name: camera_foscam_hugo
   picture:
   track: true
 
@@ -10,35 +31,42 @@ smartplug_lcs_01:
   mac: C4:4F:33:90:79:D5
   name: smartplug_lcs_01
   picture:
-  track: true
+  track: false
 
 smartplug_lcs_02:
   icon:
   mac: C4:4F:33:8C:47:65
   name: smartplug_lcs_02
   picture:
-  track: true
+  track: false
 
-c4_4f_33_a9_1c_13:
+smartplug_lcs_03:
   icon:
   mac: C4:4F:33:A9:1C:13
-  name: c4 4f 33 a9 1c 13
+  name: smartplug_lcs_03
+  picture:
+  track: false
+
+smartplug_lcs_04:
+  icon:
+  mac: 84:0D:8E:5D:99:6A
+  name: smartplug_lcs_04
   picture:
   track: true
 
-60_01_94_cd_9c_89:
+smartplug_lcs_05:
   icon:
   mac: 60:01:94:CD:9C:89
-  name: 60 01 94 cd 9c 89
+  name: smartplug_lcs_05
   picture:
-  track: true
+  track: false
 
-c0_e8_62_3e_e6_23:
+shelly_02:
   icon:
-  mac: C0:E8:62:3E:E6:23
-  name: c0 e8 62 3e e6 23
+  mac: DC:4F:22:76:87:B1
+  name: shelly_02
   picture:
-  track: true
+  track: false
 
 macbook_air:
   icon: mdi:laptop-chromebook
@@ -59,13 +87,6 @@ ipad_floor:
   mac: E0:B9:BA:83:62:66
   name: iPad Floor
   picture: 
-  track: true
-
-84_0d_8e_5d_4b_88:
-  icon:
-  mac: 84:0D:8E:5D:4B:88
-  name: 84 0d 8e 5d 4b 88
-  picture:
   track: true
 
 philips_television:
@@ -96,163 +117,58 @@ mediaplayer_sonos_one_livingroom:
   picture: 
   track: true
 
-hostone:
-  icon:
-  mac:
-  name: hostone
-  picture:
-  track: true
-
 oppas_kinderen:
   icon:
   mac: 60:AB:67:8E:F6:9F
   name: Oppas
   picture:
   track: true
-
-10_29_59_b2_68_10:
+  
+84_0d_8e_5d_4b_88:
   icon:
-  mac: 10:29:59:B2:68:10
-  name: 10 29 59 b2 68 10
+  mac: 84:0D:8E:5D:4B:88
+  name: 84_0d_8e_5d_4b_88
   picture:
   track: true
 
-b4_e6_2d_fa_be_99:
+c0_e8_62_3e_e6_23:
   icon:
-  mac: B4:E6:2D:FA:BE:99
-  name: b4 e6 2d fa be 99
-  picture:
-  track: true
-
-30_cd_a7_8d_73_7d:
-  icon:
-  mac: 30:CD:A7:8D:73:7D
-  name: 30 cd a7 8d 73 7d
-  picture:
-  track: true
-
-e4_a4_71_20_99_96:
-  icon:
-  mac: E4:A4:71:20:99:96
-  name: e4 a4 71 20 99 96
-  picture:
-  track: true
-
-dc_4f_22_76_87_b1:
-  icon:
-  mac: DC:4F:22:76:87:B1
-  name: dc 4f 22 76 87 b1
-  picture:
-  track: true
-
-c4_4f_33_22_0d_e1:
-  icon:
-  mac: C4:4F:33:22:0D:E1
-  name: c4 4f 33 22 0d e1
-  picture:
-  track: true
-
-50_7a_c5_61_90_62:
-  icon:
-  mac: 50:7A:C5:61:90:62
-  name: 50 7a c5 61 90 62
+  mac: C0:E8:62:3E:E6:23
+  name: c0_e8_62_3e_e6_23
   picture:
   track: true
 
 cc_50_e3_96_12_40:
   icon:
   mac: CC:50:E3:96:12:40
-  name: cc 50 e3 96 12 40
-  picture:
-  track: true
-
-00_cd_fe_0e_5e_94:
-  icon:
-  mac: 00:CD:FE:0E:5E:94
-  name: 00 cd fe 0e 5e 94
-  picture:
-  track: true
-
-00_11_32_11_31_f9:
-  icon:
-  mac: 00:11:32:11:31:F9
-  name: 00 11 32 11 31 f9
-  picture:
-  track: true
-
-0c_08_b4_13_80_83:
-  icon:
-  mac: 0C:08:B4:13:80:83
-  name: 0c 08 b4 13 80 83
-  picture:
-  track: true
-
-4c_6b_e8_cc_ef_c2:
-  icon:
-  mac: 4C:6B:E8:CC:EF:C2
-  name: 4c 6b e8 cc ef c2
-  picture:
-  track: true
-
-b8_b2_f8_5d_c9_10:
-  icon:
-  mac: B8:B2:F8:5D:C9:10
-  name: b8 b2 f8 5d c9 10
+  name: cc_50_e3_96_12_40
   picture:
   track: true
 
 08_e6_89_7c_dc_20:
   icon:
   mac: 08:E6:89:7C:DC:20
-  name: 08 e6 89 7c dc 20
+  name: 08_e6_89_7c_dc_20
   picture:
   track: true
 
-34_7c_25_c5_b0_f9:
+4c_6b_e8_cc_ef_c2:
   icon:
-  mac: 34:7C:25:C5:B0:F9
-  name: 34 7c 25 c5 b0 f9
+  mac: 4C:6B:E8:CC:EF:C2
+  name: 4c_6b_e8_cc_ef_c2
   picture:
   track: true
 
-24_41_8c_53_12_45:
+b8_b2_f8_5d_c9_10:
   icon:
-  mac: 24:41:8C:53:12:45
-  name: 24_41_8c_53_12_45
+  mac: B8:B2:F8:5D:C9:10
+  name: b8_b2_f8_5d_c9_10
   picture:
   track: true
 
-e4_b3_18_14_5d_f2:
+0c_08_b4_13_80_83:
   icon:
-  mac: E4:B3:18:14:5D:F2
-  name: e4_b3_18_14_5d_f2
-  picture:
-  track: true
-
-camer_foscam_floor_utp:
-  icon: mdi:camera
-  mac: 00:62:6E:A2:EB:7D
-  name: camera_foscam_floor_utp
-  picture:
-  track: false
-
-camera_foscam_floor_wifi:
-  icon: mdi:camera
-  mac: 6C:21:A2:70:CD:04
-  name: camera_foscam_floor
-  picture:
-  track: true
-
-camer_foscam_hugo_utp:
-  icon: mdi:camera
-  mac: 00:62:6E:ED:01:0B
-  name: camera_foscam_hugo_utp
-  picture:
-  track: false
-
-camera_foscam_hugo_wifi:
-  icon: mdi:camera
-  mac: 34:75:63:51:02:50
-  name: camera_foscam_hugo
+  mac: 0C:08:B4:13:80:83
+  name: 0c_08_b4_13_80_83
   picture:
   track: true
