@@ -67,6 +67,7 @@ cards:
           - device_tracker.camera_foscam_floor_wifi
           - binary_sensor.foscam_floor_audio
           - binary_sensor.foscam_floor_motion
+          - timer.floor_bedroom_light
           - entity: timer.floor_presence_detection
           - input_boolean.foscam_floor_infrared
       - type: horizontal-stack

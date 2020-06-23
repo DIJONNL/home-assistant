@@ -1,0 +1,22 @@
+alias: detection_hugobedroom_during_silent_hours_sound
+trigger:
+- platform: state
+  entity_id: binary_sensor.foscam_hugo_audio
+  to: 'on'
+- platform: state
+  entity_id: binary_sensor.foscam_hugo_motion
+  to: 'on'
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: timer.hugo_presence_detection
+      state: active
+action:
+  - service: script.sonos_say
+    data_template:
+      sonos_entity: media_player.woonkamer
+      message: "Geluid of beweging Hugo"
+      pre_delay: '00:00:03'
+      post_delay: '00:00:03'
+      volume: '0.5'

@@ -1,0 +1,6 @@
+
+
+
+light.shelly01_light:
+  friendly_name: Garden
+  device_class: light

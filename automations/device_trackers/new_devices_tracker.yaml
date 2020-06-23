@@ -1,5 +1,4 @@
-id: new_devices_tracker
-alias: Notify for New devices
+alias: new_devices_tracker
 trigger:
 - platform: event
   event_type: device_tracker_new_device
@@ -10,5 +9,5 @@ action:
     title: New Device Discovered
     message: >
       New device Discovered:
-      {{trigger.event.data.host_name}}
-      ({{trigger.event.data.entity_id}})
+      {{ trigger.event.data.host_name if trigger.event.data.host_name is defined else "NA" }}
+      ({{ trigger.event.data.entity_id if trigger.event.data.entity_id is defined else "NA" }})

@@ -1,0 +1,9 @@
+
+
+platform: history_stats
+name: Time at work (Martijn)
+entity_id: device_tracker.iphone_van_martijn
+state: !secret werk_martijn_name
+type: time
+start: '{{ as_timestamp( now().replace(hour=0).replace(minute=0).replace(second=0) ) - now().weekday() * 86400 }}'
+end: '{{ now() }}'

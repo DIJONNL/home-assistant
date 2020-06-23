@@ -9,8 +9,7 @@ trigger:
 condition:
   condition: and
   conditions:
-    - condition:
-      condition: or
+    - condition: or
       conditions:
         - condition: template
           value_template: >-
@@ -22,14 +21,6 @@ condition:
             states('sensor.time')+":00" 
             <
             states('input_datetime.house_silent_hours_start'))
-            or
-            (states('input_datetime.kids_silent_hours_end')
-            <
-            states('sensor.time')+":00"
-            and
-            states('sensor.time')+":00" 
-            < 
-            states('input_datetime.house_silent_hours_end'))
             }}
         - condition: state
           entity_id: input_boolean.guest_mode
@@ -40,7 +31,7 @@ condition:
 action:
   - service: input_boolean.turn_on
     entity_id: input_boolean.foscam_floor_infrared
-  - delay: 0:05
+  - delay: 0:02
   - service: camera.snapshot
     data:
       entity_id: camera.camera_foscam_floor

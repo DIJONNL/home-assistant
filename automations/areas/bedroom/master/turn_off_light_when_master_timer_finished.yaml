@@ -2,7 +2,7 @@
 # This automation turn off the master_room light when 
 # the timer is finished.
 #
-alias: turn_off_light_when_timer_finished
+alias: turn_off_light_when_master_timer_finished
 trigger:
 - platform: event
   event_type: timer.finished

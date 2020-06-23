@@ -6,6 +6,13 @@ cards:
   - type: vertical-stack
     cards:
       - type: entities
+        title: Garden
+        show_header_toggle: false
+        entities:
+            - automation.garden_turn_off_light_at_silent_hour
+  - type: vertical-stack
+    cards:
+      - type: entities
         title: Living Room
         show_header_toggle: false
         entities:
@@ -29,6 +36,7 @@ cards:
         show_header_toggle: false
         entities:
             - automation.detection_floorbedroom_during_silent_hours
+            - automation.detection_floorbedroom_during_silent_hours_sound
             - automation.turn_on_ir_floor_and_start_timer
             - automation.turn_off_ir_floor_when_timer_finished
   - type: vertical-stack
@@ -38,6 +46,7 @@ cards:
         show_header_toggle: false
         entities:
             - automation.detection_hugobedroom_during_silent_hours
+            - automation.detection_hugobedroom_during_silent_hours_sound
             - automation.turn_on_ir_hugo_and_start_timer
             - automation.turn_off_ir_hugo_when_timer_finished
   - type: vertical-stack
@@ -47,7 +56,7 @@ cards:
         show_header_toggle: false
         entities:
             - automation.start_timer_on_turn_on_light_at_master
-            - automation.turn_off_light_when_timer_finished
+            - automation.turn_off_light_when_master_timer_finished
   - type: vertical-stack
     cards:
       - type: entities

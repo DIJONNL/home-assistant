@@ -1,0 +1,24 @@
+---
+  # This automation turns off the light in the garden at a specific configured time
+  # of Home Assistant for Hass.io is released.
+  #
+  #
+  alias: garden_turn_off_light_at_silent_hour
+  trigger:
+    - platform: template
+      value_template: >-
+        {{
+          states('input_datetime.house_silent_hours_start')
+          ==
+          states('sensor.time')+":00"
+        }}
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.guest_mode
+        state: 'off'
+  action:
+    - service: homeassistant.turn_off
+      entity_id: group.garden
+  

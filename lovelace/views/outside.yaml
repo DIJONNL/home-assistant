@@ -6,6 +6,7 @@ cards:
   - type: glance
     entities:
       - entity: binary_sensor.stookalert
+      - entity: sensor.time_at_work_martijn
   - type: custom:weather-card
     entity: weather.dark_sky
     icons: "/hacsfiles/weather-card/icons/"
@@ -27,13 +28,13 @@ cards:
         aspect_ratio: 16x9
         entities:
           - device_tracker.iphone_van_martijn
-        hours_to_show: 168
+        hours_to_show: 72
       - type: map
         title: Judith
         aspect_ratio: 16x9
         entities:
           - device_tracker.iphone_van_judith
-        hours_to_show: 168
+        hours_to_show: 72
 
 
 

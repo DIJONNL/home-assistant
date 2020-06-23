@@ -7,4 +7,4 @@ garden:
   name: Garden
   icon: mdi:lightbulb
   entities:
-    - switch.shelly_01
+    - light.shelly01_light

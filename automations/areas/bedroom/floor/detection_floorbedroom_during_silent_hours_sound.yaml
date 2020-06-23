@@ -1,0 +1,22 @@
+alias: detection_floorbedroom_during_silent_hours_sound
+trigger:
+- platform: state
+  entity_id: binary_sensor.foscam_floor_audio
+  to: 'on'
+- platform: state
+  entity_id: binary_sensor.foscam_floor_motion
+  to: 'on'
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: timer.floor_presence_detection
+      state: active
+action:
+  - service: script.sonos_say
+    data_template:
+      sonos_entity: media_player.woonkamer
+      message: "Geluid of beweging Floor"
+      pre_delay: '00:00:03'
+      post_delay: '00:00:03'
+      volume: '0.5'

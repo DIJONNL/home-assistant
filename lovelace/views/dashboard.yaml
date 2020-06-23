@@ -65,6 +65,18 @@ cards:
       entities:
         - entity_id: media_player.woonkamer
           name: Sonos Woonkamer
+  - type: horizontal-stack
+    cards:
+    - type: picture-entity
+      entity: camera.camera_foscam_floor
+      camera_view: live
+      show_info: false
+      show_state: false
+    - type: picture-entity
+      entity: camera.camera_foscam_hugo
+      camera_view: live
+      show_info: false
+      show_state: false
   - type: custom:vertical-stack-in-card
     title: Lights
     cards:
@@ -91,7 +103,7 @@ cards:
             entity: light.upstairs_bathroom
             show_state: false
             show_name: true
-            show_label: true 
+            show_label: true
         - type: horizontal-stack
           cards:
           - type: "custom:button-card"
@@ -155,10 +167,3 @@ cards:
           entity: weather.dark_sky
           icons: "/hacsfiles/weather-card/icons/"
           details: false
-  - type: 'custom:buien-rain-card'
-    long: 4.8945
-    lat: 52.3667
-    lineColor: 'rgba(89, 160, 238, 1)'
-    fillColor: 'rgba(89, 160, 238, 0.2)'
-    update_interval: 10
-    icon: 'mdi:weather-rainy'

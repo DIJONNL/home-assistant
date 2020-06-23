@@ -1,3 +1,101 @@
+wifi_extender:
+  icon: mdi:wifi
+  mac: 84:16:F9:32:13:AB
+  name: Wifi Extender
+  picture: 
+  track: false
+
+kd_49xd8077:
+  icon:
+  mac: BT_40:49:0F:58:94:C0
+  name: KD-49XD8077
+  picture:
+  track: false
+
+imac_van_eugene_plug:
+  icon:
+  mac: BT_40:A6:D9:F7:D2:53
+  name: iMac van Eugene Plug
+  picture:
+  track: false
+
+tv_ue32j5600:
+  icon:
+  mac: BT_38:01:95:E0:A0:FF
+  name: '[TV] UE32J5600'
+  picture:
+  track: false
+
+oppo_reno:
+  icon:
+  mac: BT_48:83:B4:7D:16:B0
+  name: OPPO Reno
+  picture:
+  track: false
+
+samsung_galaxy_xcover_4:
+  icon:
+  mac: BT_14:9F:3C:B8:48:34
+  name: Samsung Galaxy XCover 4
+  picture:
+  track: false
+
+iphone_2:
+  icon:
+  mac: BT_3C:CD:36:AA:AA:B0
+  name: iPhone
+  picture:
+  track: false
+
+iphone_hidde_plug:
+  icon:
+  mac: BT_C8:3C:85:75:A3:B1
+  name: iPhone hidde plug
+  picture:
+  track: false
+
+qcy_qs2:
+  icon:
+  mac: BT_1C:52:16:BF:2A:4C
+  name: QCY-QS2
+  picture:
+  track: false
+
+jvc_ha_kd9bt:
+  icon:
+  mac: BT_E8:07:BF:42:01:BA
+  name: JVC HA-KD9BT
+  picture:
+  track: false
+
+iphone:
+  icon:
+  mac: BT_DC:08:0F:55:BB:80
+  name: iPhone
+  picture:
+  track: false
+
+macbook_air_van_eugene:
+  icon:
+  mac: BT_9C:F3:87:B7:82:B3
+  name: MacBook Air van Eugene
+  picture:
+  track: false
+
+get_together_mini:
+  icon:
+  mac: BT_40:EF:4C:8E:2F:97
+  name: Get Together Mini
+  picture:
+  track: false
+
+srs_xb01:
+  icon:
+  mac: BT_F8:DF:15:55:6F:35
+  name: SRS-XB01
+  picture:
+  track: false
+
 camer_foscam_floor_utp:
   icon: mdi:camera
   mac: 00:62:6E:A2:EB:7D
@@ -61,6 +159,13 @@ smartplug_lcs_05:
   picture:
   track: false
 
+shelly_01:
+    icon:
+    mac: DC:4F:22:76:94:FB
+    name: shelly_01
+    picture:
+    track: false
+
 shelly_02:
   icon:
   mac: DC:4F:22:76:87:B1
@@ -89,6 +194,20 @@ ipad_floor:
   picture: 
   track: true
 
+iphone_pa_wifi:
+  icon:
+  mac: 50:7A:C5:61:90:62
+  name: iphone_pa_wifi
+  picture:
+  track: true
+
+iphone_martijn_wifi:
+  icon:
+  mac: B8:B2:F8:5D:C9:10
+  name: iphone_martijn_wifi
+  picture:
+  track: true
+
 philips_television:
   icon: mdi:television-classic
   mac: 1C:5A:6B:70:A8:05
@@ -96,12 +215,12 @@ philips_television:
   picture: 
   track: true
 
-wifi_extender:
-  icon: mdi:wifi
-  mac: 84:16:F9:32:13:AB
-  name: Wifi Extender
-  picture: 
-  track: false
+humax_mediaplayer:
+  icon: 
+  mac: 0C:08:B4:13:80:83
+  name: humax_mediaplayer
+  picture:
+  track: true
 
 esp32_groundfloor:
   icon: mdi:chip
@@ -123,7 +242,8 @@ oppas_kinderen:
   name: Oppas
   picture:
   track: true
-  
+
+
 84_0d_8e_5d_4b_88:
   icon:
   mac: 84:0D:8E:5D:4B:88
@@ -145,6 +265,13 @@ cc_50_e3_96_12_40:
   picture:
   track: true
 
+14_87_6a_c0_ac_b4:
+  icon:
+  mac: 14:87:6A:C0:AC:B4
+  name: 14_87_6a_c0_ac_b4
+  picture:
+  track: true
+
 08_e6_89_7c_dc_20:
   icon:
   mac: 08:E6:89:7C:DC:20
@@ -159,16 +286,65 @@ cc_50_e3_96_12_40:
   picture:
   track: true
 
-b8_b2_f8_5d_c9_10:
+10_29_59_b2_68_10:
   icon:
-  mac: B8:B2:F8:5D:C9:10
-  name: b8_b2_f8_5d_c9_10
+  mac: 10:29:59:B2:68:10
+  name: 10_29_59_b2_68_10
   picture:
   track: true
 
-0c_08_b4_13_80_83:
+34_7c_25_c5_b0_f9:
   icon:
-  mac: 0C:08:B4:13:80:83
-  name: 0c_08_b4_13_80_83
+  mac: 34:7C:25:C5:B0:F9
+  name: 34_7c_25_c5_b0_f9
+  picture:
+  track: true
+
+link_v_915_ls:
+  icon:
+  mac: BT_E4:04:39:9F:6F:14
+  name: LINK V-915-LS
+  picture:
+  track: true
+
+e4_b3_18_14_5d_f2:
+  icon:
+  mac: E4:B3:18:14:5D:F2
+  name: e4_b3_18_14_5d_f2
+  picture:
+  track: true
+
+galaxy_s9:
+  icon:
+  mac: BT_00:B5:D0:1A:CB:98
+  name: Galaxy S9
+  picture:
+  track: false
+
+muis_van_eugene_plug:
+  icon:
+  mac: BT_10:9A:DD:79:C3:3E
+  name: Muis van Eugene Plug
+  picture:
+  track: false
+
+98_2c_bc_29_51_99:
+  icon:
+  mac: 98:2C:BC:29:51:99
+  name: 98_2c_bc_29_51_99
+  picture:
+  track: true
+
+24_41_8c_53_12_45:
+  icon:
+  mac: 24:41:8C:53:12:45
+  name: 24_41_8c_53_12_45
+  picture:
+  track: true
+
+dc_a6_32_98_f8_ab:
+  icon:
+  mac: DC:A6:32:98:F8:AB
+  name: dc_a6_32_98_f8_ab
   picture:
   track: true
