@@ -348,3 +348,24 @@ dc_a6_32_98_f8_ab:
   name: dc_a6_32_98_f8_ab
   picture:
   track: true
+
+iphone_van_eva:
+  icon:
+  mac: BT_C0:A6:00:20:72:4A
+  name: 'iPhone van eva '
+  picture:
+  track: true
+
+30_cd_a7_8d_73_7d:
+  icon:
+  mac: 30:CD:A7:8D:73:7D
+  name: 30_cd_a7_8d_73_7d
+  picture:
+  track: true
+
+oppo_a5_2020:
+  icon:
+  mac: BT_B8:C9:B5:4B:59:34
+  name: OPPO A5 2020
+  picture:
+  track: true
