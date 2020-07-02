@@ -37,7 +37,7 @@ cards:
         filter:
           include: []
           exclude:
-            - state: not_home
+            - state: 'not_home'
         entities:
             - person.martijn
             - person.judith
@@ -45,11 +45,6 @@ cards:
             - device_tracker.philips_television
             - device_tracker.miele_wasmachine
             - device_tracker.oppas_kinderen
-      - type: map
-        entities:
-          - device_tracker.iphone_van_judith
-          - device_tracker.iphone_van_martijn
-        hours_to_show: 12
   - type: custom:mini-media-player
     entity: media_player.woonkamer
     artwork: cover
@@ -112,58 +107,14 @@ cards:
             show_name: true
             show_label: true 
   - type: custom:vertical-stack-in-card
-    title: Temperature & Humidity
-    cards:
-        - type: horizontal-stack
-          cards:
-          - type: custom:mini-graph-card
-            name: Temperature
-            entities:
-              - sensor.xht01_temperature
-              - sensor.xht02_temperature
-              - sensor.xht03_temperature
-              - sensor.xht04_temperature
-              - sensor.xht05_temperature
-            location_icon: left
-            location_state: center
-            show:
-              fill: fade
-              extrema: true
-            height: 75
-            animate: true
-            hour24: true
-            line_color: var(--primary-color)
-            color_thresholds:
-              - value: 22
-                color: red
-              - value: 17
-                color: white
-          - type: custom:mini-graph-card
-            name: Humidity
-            entities:
-              - sensor.xht01_humidity
-              - sensor.xht02_humidity
-              - sensor.xht03_humidity
-              - sensor.xht04_humidity
-              - sensor.xht05_humidity
-            location_icon: left
-            location_state: center
-            show:
-              fill: fade
-              extrema: true
-            height: 75
-            animate: true
-            hour24: true
-            line_color: var(--primary-color)
-            color_thresholds:
-              - value: 75
-                color: red
-              - value: 50
-                color: white
-  - type: custom:vertical-stack-in-card
     title: Weather
     cards:
         - type: custom:weather-card
-          entity: weather.dark_sky
+          entity: weather.voorschoten
           icons: "/hacsfiles/weather-card/icons/"
           details: false
+  - type: map
+    entities:
+      - device_tracker.iphone_van_judith
+      - device_tracker.iphone_van_martijn
+    hours_to_show: 12

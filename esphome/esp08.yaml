@@ -37,28 +37,28 @@ output:
     id: shelly_relay
 
 # Sync time with Home Assistant
-time:
-  - platform: homeassistant
-    id: homeassistant_time
+#time:
+#  - platform: homeassistant
+#    id: homeassistant_time
 
 # Text sensors with general information
-text_sensor:
-  - platform: version
-    name: "$name_shelly version"
-  - platform: wifi_info
-    ip_address:
-      name: "$name_shelly ip"
-    ssid:
-      name: "$name_shelly ssid"
-    bssid:
-      name: "$name_shelly bssid"
+#text_sensor:
+#  - platform: version
+#    name: "$name_shelly version"
+#  - platform: wifi_info
+#    ip_address:
+#      name: "$name_shelly ip"
+#    ssid:
+#      name: "$name_shelly ssid"
+#    bssid:
+#      name: "$name_shelly bssid"
 
-sensor:
-  - platform: wifi_signal
-    name: "$name_shelly wifi"
-    update_interval: 10s
-  - platform: uptime
-    name: "$name_shelly uptime"
+#sensor:
+#  - platform: wifi_signal
+#    name: "$name_shelly wifi"
+#    update_interval: 10s
+#  - platform: uptime
+#    name: "$name_shelly uptime"
                                        
 light:                                 
   - platform: binary                   

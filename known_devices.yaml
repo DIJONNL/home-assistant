@@ -150,7 +150,7 @@ smartplug_lcs_04:
   mac: 84:0D:8E:5D:99:6A
   name: smartplug_lcs_04
   picture:
-  track: true
+  track: false
 
 smartplug_lcs_05:
   icon:
@@ -227,7 +227,7 @@ esp32_groundfloor:
   mac: 30:AE:A4:99:B0:F4
   name: esp32_groundfloor
   picture: 
-  track: true
+  track: false
 
 mediaplayer_sonos_one_livingroom:
   icon: mdi:music
@@ -243,6 +243,13 @@ oppas_kinderen:
   picture:
   track: true
 
+esp32_upstairs:
+  icon: mdi:chip
+  mac: CC:50:E3:96:12:40
+  name: esp32_upstairs
+  picture:
+  track: false
+
 
 84_0d_8e_5d_4b_88:
   icon:
@@ -255,13 +262,6 @@ c0_e8_62_3e_e6_23:
   icon:
   mac: C0:E8:62:3E:E6:23
   name: c0_e8_62_3e_e6_23
-  picture:
-  track: true
-
-cc_50_e3_96_12_40:
-  icon:
-  mac: CC:50:E3:96:12:40
-  name: cc_50_e3_96_12_40
   picture:
   track: true
 
