@@ -1,6 +1,0 @@
----
-#
-# https://www.home-assistant.io/integrations/stookalert/
-#
-platform: stookalert
-province: !secret zone_home_province

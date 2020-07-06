@@ -79,8 +79,8 @@ cards:
             - automation.enter_creche_in_the_afternoon
             - automation.zone_state_changed_tts
             - automation.leave_work_in_the_afternoon
+            - automation.leave_work_reminder
             - automation.people_not_at_home
-            - automation.stookalert_notification
   - type: vertical-stack
     cards:
       - type: entities

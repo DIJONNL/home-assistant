@@ -5,7 +5,6 @@ icon: mdi:nature-people
 cards:
   - type: glance
     entities:
-      - entity: binary_sensor.stookalert
       - entity: sensor.time_at_work_martijn
   - type: custom:weather-card
     entity: weather.voorschoten

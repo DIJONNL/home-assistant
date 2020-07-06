@@ -6,21 +6,33 @@
 #
 recorder:
   # The number of days of history to keep in the recorder database
-  purge_keep_days: 1
+  purge_keep_days: 7
 
   # How often (in days) the purge task runs
-  #purge_interval: 1
+  purge_interval: 1
 
   commit_interval: 5
+
+  include:
+    domains:
+      - sensor
+      - switch
+      - media_player
+      - device_tracker
 
   exclude:
     domains:
       - automation
       - updater
+      - input_text
+      - input_datetime
+      - input_number
+      - input_select
+    entity_globs:
+      - sensor.weather_*
     entities:
       - sun.sun # Don't record sun data
       - sensor.last_boot # Comes from 'systemmonitor' sensor platform
       - sensor.date
       - sensor.sun_azimuth
       - sensor.sun_elevation
-
