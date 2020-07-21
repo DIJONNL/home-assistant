@@ -20,14 +20,21 @@ condition:
       before: sunrise
       before_offset: "01:30:00"
 action:
-- service: light.turn_on
+- service: script.turn_on_ikea_light
   data_template:
-    entity_id: "light.upstairs_bathroom"
-    brightness_pct: 50
-    transition: 1
-- delay: '00:00:01'
-- service: light.turn_on
+    # Variables that are passed on to the script:
+    entity: light.0x14b457fffed3b275_light
+    brightness_pct: 70
+    color_temp: 300
+- service: script.turn_on_ikea_light
   data_template:
-    entity_id: "light.upstairs_bathroom"
-    color_temp_pct: 50
-    transition: 5
+    # Variables that are passed on to the script:
+    entity: light.0x14b457fffed4b5f0_light
+    brightness_pct: 70
+    color_temp: 300
+- service: script.turn_on_ikea_light
+  data_template:
+    # Variables that are passed on to the script:
+    entity: light.0x90fd9ffffe678a86_light
+    brightness_pct: 70
+    color_temp: 300
