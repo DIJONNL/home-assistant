@@ -1,0 +1,32 @@
+description: Weather Rain Notification
+alias: weather_rain_notification
+trigger:
+  - platform: event
+    event_type: automation_reloaded
+  - platform: state
+    entity_id:
+      - sensor.brf_precipitation
+condition:
+  - condition: and
+    conditions:
+      - condition: template
+        value_template: >-
+          {{
+            states('sensor.brf_precipitation') > '0.5'
+          }}
+      - condition: template
+        value_template: >-
+          {{
+            states('input_datetime.house_silent_hours_start')
+            >
+            states('sensor.time')+":00"
+            and
+            states('input_datetime.house_silent_hours_end')
+            <
+            states('sensor.time')+":00"
+          }}
+action:
+  - service: notify.martijn
+    data_template:
+      title: "Weather Forecast"
+      message: "Rain: {{ states('sensor.brf_precipitation') }} mm. "

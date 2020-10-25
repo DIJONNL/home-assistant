@@ -22,15 +22,16 @@ class foscamcamera(hass.Hass):
         self.ip = self.args['foscam_ip']
         self.usr = self.args['foscam_username']
         self.pwd = self.args['foscam_password']
+        self.prerecord = self.args['prerecord']
+        self.prerecordtime = self.args['prerecordtime']
         self.interval = self.args['interval'] if 'interval' in self.args else 5
         self.log("Foscam Camera {} settings: User {} and Pwd {} with interval {}".format(self.ip, self.usr, self.pwd, self.interval))
-        self.current_status = None
         self.infrared_on = False
-        self.audio_status = [None, str(self.args['audio_entity'])]
-        self.motion_status = [None, str(self.args['motion_entity'])]
+        self.audio_entity = self.args['audio_entity']
+        self.motion_entity = self.args['motion_entity']
         self.listen_state(self.onInfraRedChange, str(self.args['infrared_entity']))
-        self.log("Audio Sensor Entity: {}".format(self.audio_status[1]))
-        self.log("Motion Sensor Entity: {}".format(self.motion_status[1]))
+        self.log("Audio Sensor Entity: {}".format(self.audio_entity))
+        self.log("Motion Sensor Entity: {}".format(self.motion_entity))
         #initialize the CGI Controller
         await self.init_controller(None)
         #start the app without IR.
@@ -46,6 +47,22 @@ class foscamcamera(hass.Hass):
             url = "http://%s:88//cgi-bin/CGIProxy.fcgi?cmd=setMotionDetectConfig1&isEnable=1&snapInterval=1&schedule0=281474976710655&schedule1=281474976710655&schedule2=281474976710655&schedule3=281474976710655&schedule4=281474976710655&schedule5=281474976710655&schedule6=281474976710655&x1=0&y1=0&width1=10000&height1=10000&sensitivity1=1&valid1=1&linkage=6&usr=%s&pwd=%s" % (self.ip, self.usr, self.pwd)
             response = requests.get(url)
             time.sleep(1)
+
+            #set the prerecord
+            url = "http://%s:88/cgi-bin/CGIProxy.fcgi?cmd=setAlarmRecordConfig&usr=%s&pwd=%s&isEnablePreRecord=%s&preRecordSecs=%s&alarmRecordSecs=10" % (self.ip, self.usr, self.pwd, self.prerecord, self.prerecordtime)
+            response = requests.get(url)
+            time.sleep(1)
+            
+            #set the autio volume to 100
+            url = "http://%s:88/cgi-bin/CGIProxy.fcgi?cmd=setAudioVolume&volume=100&usr=%s&pwd=%s" % (self.ip, self.usr, self.pwd)
+            response = requests.get(url)
+            time.sleep(1)
+
+            #get the record path and free space
+            #url = "http://%s:88/cgi-bin/CGIProxy.fcgi?cmd=getRecordPath&usr=%s&pwd=%s" % (self.ip, self.usr, self.pwd)
+            #response = requests.get(url)
+            #time.sleep(1)
+
             #setInfraLedConfig to Manual Mode
             url = "http://%s:88/cgi-bin/CGIProxy.fcgi?cmd=setInfraLedConfig&mode=1&usr=%s&pwd=%s" % (self.ip, self.usr, self.pwd)
             response = requests.get(url)
@@ -57,20 +74,11 @@ class foscamcamera(hass.Hass):
             url = "http://%s:88/cgi-bin/CGIProxy.fcgi?cmd=getDevState&usr=%s&pwd=%s" % (self.ip, self.usr, self.pwd)
             response = requests.get(url)
             doc = xmltodict.parse(response.content)['CGI_Result']
-            differences = []
-            if self.current_status is not None:
-                #search for the difference in keys
-                differences = [i for i in list(doc) if self.current_status.get(i) != doc.get(i)]
-            
-            if differences or self.current_status is None:
-                if self.current_status is not None:
-                    self.log("Difference in {}".format(str(differences)))
-                #process the current status
-                if 'motionDetectAlarm' in differences or self.current_status is None:
-                    await self.setMotionDetectStatus(doc['motionDetectAlarm'][0])
-                if 'soundAlarm' in differences or self.current_status is None:
-                    await self.setAudioStatus(doc['soundAlarm'][0])
-            self.current_status = doc
+            #process the results
+            if 'motionDetectAlarm' in doc:
+                await self.setMotionDetectStatus(doc['motionDetectAlarm'][0])
+            if 'soundAlarm' in doc:
+                await self.setAudioStatus(doc['soundAlarm'][0])
         except Exception as ex:
             self.log(str(ex), level="ERROR")
         finally:
@@ -83,7 +91,7 @@ class foscamcamera(hass.Hass):
             response = requests.get(url)
             self.infrared_on = True
         elif self.infrared_on:
-            # set infrared back to Monual mode
+            # set infrared back to Manual mode
             url = "http://%s:88/cgi-bin/CGIProxy.fcgi?cmd=setInfraLedConfig&mode=1&usr=%s&pwd=%s" % (self.ip, self.usr, self.pwd)
             response = requests.get(url)
             #wait a second to adjust
@@ -93,28 +101,20 @@ class foscamcamera(hass.Hass):
             response = requests.get(url)
             self.infrared_on = False
 
-    async def setAudioStatus(self, new_audio_status):
+    async def setAudioStatus(self, audio_status):
         try:
-            if self.audio_status[1] is not None and \
-                (self.audio_status[0] is None or \
-                (self.audio_status[0] is not None and self.audio_status[0] != new_audio_status)):
-                if new_audio_status in ["0","1"]:
-                    self.set_state(self.audio_status[1], state = "off")
-                else:
-                    self.set_state(self.audio_status[1], state = "on")  
-            self.audio_status[0] = new_audio_status
+            if audio_status in ["0","1"]:
+                self.set_state(self.audio_entity, state = "off")
+            else:
+                self.set_state(self.audio_entity, state = "on")  
         except Exception as ex:
             self.log("Exception while setting the audio status {}".format(ex))
     
-    async def setMotionDetectStatus(self, new_motion_status):
+    async def setMotionDetectStatus(self, motion_status):
         try:
-            if self.motion_status[1] is not None and \
-                (self.motion_status[0] is None or \
-                (self.motion_status[0] is not None and self.motion_status[0] != new_motion_status)):
-                if new_motion_status in ["0","1"]:
-                    self.set_state(self.motion_status[1], state = "off")
-                else:
-                    self.set_state(self.motion_status[1], state = "on")  
-            self.motion_status[0] = new_motion_status
+            if motion_status in ["0","1"]:
+                self.set_state(self.motion_entity, state = "off")
+            else:
+                self.set_state(self.motion_entity, state = "on")  
         except Exception as ex:
             self.log("Exception when setting the motion detection status {}".format(ex))

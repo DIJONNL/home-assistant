@@ -6,7 +6,7 @@
 alias: zigbee_map_actualiseren
 trigger:
   platform: time_pattern
-  minutes: '/10'
+  minutes: '/59'
   seconds: 00
 action:
   - service: zigbee2mqtt_networkmap.update

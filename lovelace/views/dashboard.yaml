@@ -10,12 +10,14 @@ cards:
         entities:
           - proximity.home_for_martijn
           - proximity.home_for_judith
-          - sensor.hacs
           - entity: input_boolean.guest_mode
             name: GuestMode
             show_state: false
           - entity: binary_sensor.people_home
             name: People@Home
+            show_state: false
+          - entity: binary_sensor.babyfoon
+            name: Babyfoon
             show_state: false
       - type: horizontal-stack
         cards:
@@ -43,6 +45,7 @@ cards:
             - person.judith
             - device_tracker.mediaplayer_sonos_one_livingroom
             - device_tracker.philips_television
+            - device_tracker.humax_mediaplayer
             - device_tracker.miele_wasmachine
             - device_tracker.oppas_kinderen
   - type: custom:mini-media-player
@@ -54,24 +57,13 @@ cards:
       power: true
       icon: true
       source: true
+      power_state: true
     speaker_group:
       platform: sonos
       show_group_count: true
       entities:
         - entity_id: media_player.woonkamer
           name: Sonos Woonkamer
-  - type: horizontal-stack
-    cards:
-    - type: picture-entity
-      entity: camera.camera_foscam_floor
-      camera_view: live
-      show_info: false
-      show_state: false
-    - type: picture-entity
-      entity: camera.camera_foscam_hugo
-      camera_view: live
-      show_info: false
-      show_state: false
   - type: custom:vertical-stack-in-card
     title: Lights
     cards:

@@ -10,6 +10,7 @@ cards:
         entities:
           - device_tracker.mediaplayer_sonos_one_livingroom
           - device_tracker.philips_television
+          - device_tracker.humax_mediaplayer
           - sensor.samsung_m2070_series
       - type: horizontal-stack
         cards:

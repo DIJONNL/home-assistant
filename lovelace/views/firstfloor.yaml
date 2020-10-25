@@ -64,7 +64,6 @@ cards:
     cards:
       - type: glance
         entities:
-          - device_tracker.camera_foscam_floor_wifi
           - binary_sensor.foscam_floor_audio
           - binary_sensor.foscam_floor_motion
           - timer.floor_bedroom_light
@@ -125,7 +124,6 @@ cards:
         cards: 
           - type: glance
             entities:
-              - device_tracker.camera_foscam_hugo_wifi
               - binary_sensor.foscam_hugo_audio
               - binary_sensor.foscam_hugo_motion
               - entity: timer.hugo_presence_detection
@@ -190,6 +188,7 @@ cards:
             name: Temperature
             entities:
               - sensor.xht04_temperature
+              - sensor.xht04_temperature_filtered
             location_icon: left
             location_state: center
             show:
@@ -209,6 +208,7 @@ cards:
             name: Humidity
             entities:
               - sensor.xht04_humidity
+              - sensor.xht04_humidity_filtered
             location_icon: left
             location_state: center
             show:

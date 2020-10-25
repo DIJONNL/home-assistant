@@ -1,8 +1,3 @@
----
-hello_world:
-  module: hello
-  class: HelloWorld
-
 foscamcamera_floor:
   module: foscamcamera
   class: foscamcamera
@@ -14,6 +9,8 @@ foscamcamera_floor:
   audio_entity: binary_sensor.foscam_floor_audio
   infrared_entity: input_boolean.foscam_floor_infrared
   interval: 30
+  prerecord: 0
+  prerecordtime: 5
 
 foscamcamera_hugo:
   module: foscamcamera
@@ -25,7 +22,9 @@ foscamcamera_hugo:
   motion_entity: binary_sensor.foscam_hugo_motion
   audio_entity: binary_sensor.foscam_hugo_audio
   infrared_entity: input_boolean.foscam_hugo_infrared
-  interval: 15
+  interval: 10
+  prerecord: 1
+  prerecordtime: 2
 
 bathroom_controller:
   module: controllerx
@@ -33,4 +32,3 @@ bathroom_controller:
   controller: sensor.0xccccccfffea59b57_action
   integration: z2m
   light: light.upstairs_bathroom
-  

@@ -1,0 +1,10 @@
+platform: filter
+name: xht04_humidity_filtered
+entity_id: sensor.xht04_humidity
+filters:
+  - filter: outlier
+    window_size: 3
+    radius: 3.0
+  - filter: lowpass
+    time_constant: 2
+    precision: 2

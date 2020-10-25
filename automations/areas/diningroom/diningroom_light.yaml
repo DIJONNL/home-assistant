@@ -1,0 +1,50 @@
+description: Automate the lighting in the diningroom based on time, type of day and availability
+alias: diningroom_light
+trigger:
+  - platform: homeassistant
+    event: start
+  - platform: event
+    event_type: automation_reloaded
+  - platform: numeric_state
+    entity_id: sun.sun
+    value_template: "{{ state_attr('sun.sun', 'elevation') }}"
+    below: 7.75
+  - platform: state
+    entity_id: input_boolean.guest_mode
+    to: 'off'
+  - platform: template
+    value_template: >-
+      {{
+        states('input_datetime.house_silent_hours_start')
+        <
+        states('sensor.time')+":00"
+      }}
+action:
+  choose:
+    - conditions:
+        - condition: template
+          value_template: >-
+            {{
+              state_attr('sun.sun', 'elevation')
+              <=
+              7.75
+              and
+              states('input_datetime.house_silent_hours_start')
+              >=
+              states('sensor.time')+ ":00"
+              or
+              (
+              states('input_boolean.guest_mode')
+              ==
+              'on'
+              and
+              states('input_datetime.house_silent_hours_start')
+              <
+              states('sensor.time')+":00")
+            }}
+      sequence:
+        - service: homeassistant.turn_on
+          entity_id: group.dining_room
+  default:
+    - service: homeassistant.turn_off
+      entity_id: group.dining_room

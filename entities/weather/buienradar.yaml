@@ -4,7 +4,6 @@
 #
 # Example configuration.yaml entry
 platform: buienradar
-name: !secret buienradar_station
 latitude: !secret zone_home_latitude
 longitude: !secret zone_home_longitude
 forecast: true

@@ -16,39 +16,30 @@ cards:
         title: Living Room
         show_header_toggle: false
         entities:
-            - automation.living_room_turn_on_light_at_sunelevation
-            - automation.living_room_turn_off_light_at_silent_hour
-            - automation.turn_on_mediaplayer
-            - automation.turn_off_mediaplayer
-            - automation.turn_off_mediaplayer_at_silent_hour
+            - automation.livingroom_light
+            - automation.livingroom_mediaplayer
   - type: vertical-stack
     cards:
       - type: entities
         title: Dining Room
         show_header_toggle: false
         entities:
-            - automation.dining_room_turn_on_light_at_sunelevation
-            - automation.dining_room_turn_off_light_at_silent_hour
+            - automation.diningroom_light
   - type: vertical-stack
     cards:
       - type: entities
         title: Floor Bedroom
         show_header_toggle: false
         entities:
-            - automation.detection_floorbedroom_during_silent_hours
-            - automation.detection_floorbedroom_during_silent_hours_sound
-            - automation.turn_on_ir_floor_and_start_timer
-            - automation.turn_off_ir_floor_when_timer_finished
+            - automation.bedroom_floor_babyfoon
+            - automation.bedroom_floor_light
   - type: vertical-stack
     cards:
       - type: entities
         title: Hugo Bedroom
         show_header_toggle: false
         entities:
-            - automation.detection_hugobedroom_during_silent_hours
-            - automation.detection_hugobedroom_during_silent_hours_sound
-            - automation.turn_on_ir_hugo_and_start_timer
-            - automation.turn_off_ir_hugo_when_timer_finished
+            - automation.bedroom_hugo_babyfoon
   - type: vertical-stack
     cards:
       - type: entities
@@ -79,8 +70,8 @@ cards:
             - automation.enter_creche_in_the_afternoon
             - automation.zone_state_changed_tts
             - automation.leave_work_in_the_afternoon
-            - automation.leave_work_reminder
             - automation.people_not_at_home
+            - automation.weather_rain_notification
   - type: vertical-stack
     cards:
       - type: entities
@@ -88,9 +79,7 @@ cards:
         show_header_toggle: false
         entities:
             - automation.new_devices_tracker
-            - automation.system_upgrade_alert
             - automation.zigbee_map_actualiseren
-            - automation.system_low_battery_alert
             - entity: input_datetime.house_silent_hours_start
             - entity: input_datetime.house_silent_hours_end
             - entity: input_datetime.kids_silent_hours_start

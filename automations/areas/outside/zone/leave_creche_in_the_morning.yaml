@@ -13,5 +13,3 @@ action:
     data:
       title: "Kids@Creche"
       message: "Kids at the creche @ {{ states('sensor.date_time') }}"
-      data:
-        sticky: 'false'

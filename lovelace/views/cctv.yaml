@@ -1,0 +1,13 @@
+title: Surveillance
+icon: mdi:cctv
+panel: true
+cards:
+  - type: custom:surveillance-card
+    thumb_interval: 15
+    update_interval: 2
+    focus_motion: true
+    cameras:
+      - entity: camera.camera_foscam_floor
+        motion_entity: binary_sensor.foscam_floor_motion
+      - entity: camera.camera_foscam_hugo
+        motion_entity: binary_sensor.foscam_hugo_motion

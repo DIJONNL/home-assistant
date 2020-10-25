@@ -5,6 +5,7 @@
 .HA_VERSION
 .pip_progress
 secrets.yaml
+ip_bans.yaml
 home-assistant.log
 home-assistant_v2.db
 home-assistant_v2.db-wal
@@ -18,3 +19,5 @@ www/community/**
 www/cam_captures/**
 netdaemon/apps/**
 *.pyc
+ip_bans.yaml
+zigbee.db

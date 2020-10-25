@@ -1,0 +1,65 @@
+description: Babyfoon functionality for Floor
+alias: bedroom_floor_babyfoon
+trigger:
+  - platform: homeassistant
+    event: start
+  - platform: event
+    event_type: automation_reloaded
+  - platform: state
+    entity_id:
+      - binary_sensor.foscam_floor_audio
+      - binary_sensor.foscam_floor_motion
+      - timer.floor_presence_detection
+action:
+  choose:
+    - conditions:
+      - condition: state
+        entity_id: 
+          - binary_sensor.babyfoon
+          - binary_sensor.foscam_floor_audio
+        state: "on"
+        for:
+          seconds: 30
+      - condition: state
+        entity_id: timer.floor_presence_detection
+        state: "active"
+      sequence:
+        - service: script.sonos_say
+          data_template:
+            sonos_entity: media_player.woonkamer
+            message: "Geluid bij Floor"
+            pre_delay: '00:00:02'
+            post_delay: '00:00:05'
+            volume: '0.4'
+    - conditions:
+      - condition: state
+        entity_id: 
+          - binary_sensor.babyfoon
+          - binary_sensor.foscam_floor_audio
+        state: "on"
+        for:
+          seconds: 15
+      - condition: state
+        entity_id: timer.floor_presence_detection
+        state: "idle"
+      sequence:
+        - service: timer.start
+          entity_id: timer.floor_presence_detection
+        - service: input_boolean.turn_on
+          entity_id: input_boolean.foscam_floor_infrared
+        - service: notify.all_devices
+          data:
+            message: Motion bij Floor
+            data:
+              attachment:
+                content-type: jpeg
+              push:
+                category: camera
+              entity_id: camera.camera_foscam_floor
+    - conditions:
+      - condition: state
+        entity_id: timer.floor_presence_detection
+        state: "idle"
+      sequence:
+        - service: input_boolean.turn_off
+          entity_id: input_boolean.foscam_floor_infrared

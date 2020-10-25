@@ -1,0 +1,3 @@
+sensor.xht04_humidity_filtered:
+  friendly_name: Bathroom Filtered
+  device_class: humidity

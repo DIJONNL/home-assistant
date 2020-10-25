@@ -6,7 +6,7 @@ trigger:
     event: "enter" #or leave
 condition:
   - condition: time
-    after: '12:00:00'
+    after: '14:00:00'
     before: '19:00:00'
 action:
   - service: notify.all_devices

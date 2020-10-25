@@ -1,0 +1,10 @@
+platform: filter
+name: xht04_temperature_filtered
+entity_id: sensor.xht04_temperature
+filters:
+  - filter: outlier
+    window_size: 2
+    radius: 2.0
+  - filter: time_simple_moving_average
+    window_size: "00:01"
+    precision: 2

@@ -35,16 +35,16 @@ time:
     id: homeassistant_time
 
 # Text sensors with general information
-text_sensor:
-  - platform: version
-    name: "$name_lcs version"
-  - platform: wifi_info
-    ip_address:
-      name: "$name_lcs ip"
-    ssid:
-      name: "$name_lcs ssid"
-    bssid:
-      name: "$name_lcs bssid"
+#text_sensor:
+#  - platform: version
+#    name: "$name_lcs version"
+#  - platform: wifi_info
+#    ip_address:
+#      name: "$name_lcs ip"
+#    ssid:
+#      name: "$name_lcs ssid"
+#    bssid:
+#      name: "$name_lcs bssid"
 
 binary_sensor:
 - platform: gpio
@@ -56,12 +56,12 @@ binary_sensor:
   on_press:
    - switch.toggle: relay
 
-sensor:
-  - platform: wifi_signal
-    name: "$name_lcs wifi_signal"
-    update_interval: 10s
-  - platform: uptime
-    name: "$name_lcs uptime"
+#sensor:
+#  - platform: wifi_signal
+#    name: "$name_lcs wifi_signal"
+#    update_interval: 10s
+#  - platform: uptime
+#    name: "$name_lcs uptime"
 
 switch:
   - platform: gpio

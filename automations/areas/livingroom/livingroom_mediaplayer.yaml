@@ -1,0 +1,66 @@
+description: Automate mediaplayer based on time, type of day and availability
+alias: livingroom_mediaplayer
+trigger:
+  - platform: homeassistant
+    event: start
+  - platform: event
+    event_type: automation_reloaded
+  - platform: state
+    entity_id:
+      - binary_sensor.people_home
+  - platform: state
+    entity_id: device_tracker.philips_television
+  - platform: time
+    at: "07:15:00"
+  - platform: time
+    at: "08:00:00"
+  - platform: template
+    value_template: >-
+      {{
+        states('input_datetime.house_silent_hours_end')
+        >
+        states('sensor.time')+":00"
+      }}
+  - platform: template
+    value_template: >-
+      {{
+        states('input_datetime.house_silent_hours_start')
+        <
+        states('sensor.time')+":00"
+      }}
+action:
+  choose:
+    - conditions:
+        - condition: state
+          entity_id: binary_sensor.people_home
+          state: 'on'
+        - condition: state
+          entity_id: device_tracker.philips_television
+          state: 'not_home'
+        - condition: template
+          value_template: >-
+            {{
+              states('input_datetime.house_silent_hours_start')
+              >=
+              states('sensor.time')+":00"
+              and
+              states('input_datetime.house_silent_hours_end')
+              <=
+              states('sensor.time')+ ":00" 
+            }}
+      sequence:
+        - service: media_player.turn_on
+          entity_id: media_player.woonkamer
+        - service: media_player.select_source
+          entity_id: media_player.woonkamer
+          data:
+              source: "NPO Radio 2"
+        - service: media_player.volume_set
+          entity_id: media_player.woonkamer
+          data:
+            volume_level: 0.17
+  default:
+    - service: media_player.media_pause
+      entity_id: media_player.woonkamer
+    - service: media_player.turn_off
+      entity_id: media_player.woonkamer

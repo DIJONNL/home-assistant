@@ -7,4 +7,4 @@
 guest_mode:
   name: Enables Guest Mode
   initial: false
-  icon: mdi:hotel
+  icon: mdi:bed-double

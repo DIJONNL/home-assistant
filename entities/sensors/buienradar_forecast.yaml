@@ -1,12 +1,13 @@
 platform: buienradar
-name: br
+name: brf
+timeframe: 60
 latitude: !secret zone_home_latitude
 longitude: !secret zone_home_longitude
 monitored_conditions:
-  - symbol
   - humidity
   - temperature
   - windspeed
   - pressure
   - precipitation
   - precipitation_forecast_average
+  - symbol

@@ -7,9 +7,7 @@
 # Views are actually include one by one, this to guarentee the order of
 # the tabs of the view in the UI.
 #
-title: Home Control Panel
-#resources: !include_dir_list lovelace/resources
-custom_header: !include lovelace/cards/custom_header.yaml
+title: VDW
 views:
   - !include lovelace/views/dashboard.yaml
   - !include lovelace/views/groundfloor.yaml
@@ -17,3 +15,4 @@ views:
   - !include lovelace/views/outside.yaml
   - !include lovelace/views/system.yaml
   - !include lovelace/views/automation.yaml
+  - !include lovelace/views/cctv.yaml

@@ -16,12 +16,12 @@ timer:
     duration: 900
   floor_presence_detection:
     name: Floor Detection
-    duration: 150
+    duration: 90
   floor_bedroom_light:
     name: Floor Light
     duration: 900
   hugo_presence_detection:
     name: Hugo Detection
-    duration: 150
+    duration: 90
 
 

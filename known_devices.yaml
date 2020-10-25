@@ -2,7 +2,7 @@ wifi_extender:
   icon: mdi:wifi
   mac: 84:16:F9:32:13:AB
   name: Wifi Extender
-  picture: 
+  picture:
   track: false
 
 kd_49xd8077:
@@ -22,7 +22,7 @@ imac_van_eugene_plug:
 tv_ue32j5600:
   icon:
   mac: BT_38:01:95:E0:A0:FF
-  name: '[TV] UE32J5600'
+  name: "[TV] UE32J5600"
   picture:
   track: false
 
@@ -160,11 +160,11 @@ smartplug_lcs_05:
   track: false
 
 shelly_01:
-    icon:
-    mac: DC:4F:22:76:94:FB
-    name: shelly_01
-    picture:
-    track: false
+  icon:
+  mac: DC:4F:22:76:94:FB
+  name: shelly_01
+  picture:
+  track: false
 
 shelly_02:
   icon:
@@ -177,21 +177,21 @@ macbook_air:
   icon: mdi:laptop-chromebook
   mac: 5C:F9:38:99:14:AA
   name: MacBook Air
-  picture: 
+  picture:
   track: true
 
 miele_wasmachine:
   icon: mdi:washing-machine
   mac: 00:1D:63:0A:65:2F
   name: Miele Wasmachine
-  picture: 
+  picture:
   track: true
 
 ipad_floor:
   icon: mdi:tablet-ipad
   mac: E0:B9:BA:83:62:66
   name: iPad Floor
-  picture: 
+  picture:
   track: true
 
 iphone_pa_wifi:
@@ -212,11 +212,11 @@ philips_television:
   icon: mdi:television-classic
   mac: 1C:5A:6B:70:A8:05
   name: Philips TV
-  picture: 
+  picture:
   track: true
 
 humax_mediaplayer:
-  icon: 
+  icon: mdi:television-box
   mac: 0C:08:B4:13:80:83
   name: humax_mediaplayer
   picture:
@@ -226,14 +226,14 @@ esp32_groundfloor:
   icon: mdi:chip
   mac: 30:AE:A4:99:B0:F4
   name: esp32_groundfloor
-  picture: 
+  picture:
   track: false
 
 mediaplayer_sonos_one_livingroom:
   icon: mdi:music
   mac: 48:A6:B8:D0:B3:4C
   name: Sonos One Livingroom
-  picture: 
+  picture:
   track: true
 
 oppas_kinderen:
@@ -249,7 +249,6 @@ esp32_upstairs:
   name: esp32_upstairs
   picture:
   track: false
-
 
 84_0d_8e_5d_4b_88:
   icon:
@@ -352,7 +351,7 @@ dc_a6_32_98_f8_ab:
 iphone_van_eva:
   icon:
   mac: BT_C0:A6:00:20:72:4A
-  name: 'iPhone van eva '
+  name: "iPhone van eva "
   picture:
   track: true
 
@@ -367,5 +366,677 @@ oppo_a5_2020:
   icon:
   mac: BT_B8:C9:B5:4B:59:34
   name: OPPO A5 2020
+  picture:
+  track: true
+
+a2_2b_00_1f_0e_ab:
+  name: a2_2b_00_1f_0e_ab
+  mac: A2:2B:00:1F:0E:AB
+  icon:
+  picture:
+  track: true
+
+92_87_bf_b3_03_5d:
+  name: 92_87_bf_b3_03_5d
+  mac: 92:87:BF:B3:03:5D
+  icon:
+  picture:
+  track: true
+
+92_45_ba_72_a8_7b:
+  name: 92_45_ba_72_a8_7b
+  mac: 92:45:BA:72:A8:7B
+  icon:
+  picture:
+  track: true
+
+6a_02_be_f4_fd_ff:
+  name: 6a_02_be_f4_fd_ff
+  mac: 6A:02:BE:F4:FD:FF
+  icon:
+  picture:
+  track: true
+
+72_34_14_e4_19_ae:
+  name: 72_34_14_e4_19_ae
+  mac: 72:34:14:E4:19:AE
+  icon:
+  picture:
+  track: true
+
+ble_b8_78_2e_4e_7c_62:
+  name: ble_b8_78_2e_4e_7c_62
+  mac: BLE_B8:78:2E:4E:7C:62
+  icon:
+  picture:
+  track: true
+
+ble_21_58_c3_45_ba_73:
+  name: ble_21_58_c3_45_ba_73
+  mac: BLE_21:58:C3:45:BA:73
+  icon:
+  picture:
+  track: true
+
+846b210e30c230aee9:
+  name: 846B210E30C230AEE9
+  mac: BLE_F3:33:71:FE:11:8F
+  icon:
+  picture:
+  track: true
+
+ble_03_f3_ee_cb_68_f5:
+  name: ble_03_f3_ee_cb_68_f5
+  mac: BLE_03:F3:EE:CB:68:F5
+  icon:
+  picture:
+  track: true
+
+ble_40_49_0f_58_94_c0:
+  name: ble_40_49_0f_58_94_c0
+  mac: BLE_40:49:0F:58:94:C0
+  icon:
+  picture:
+  track: true
+
+ble_38_01_95_e0_a0_ff:
+  name: ble_38_01_95_e0_a0_ff
+  mac: BLE_38:01:95:E0:A0:FF
+  icon:
+  picture:
+  track: true
+
+mj_ht_v1:
+  name: MJ_HT_V1
+  mac: BLE_58:2D:34:39:C5:62
+  icon:
+  picture:
+  track: true
+
+ble_59_92_1e_0c_a6_7e:
+  name: ble_59_92_1e_0c_a6_7e
+  mac: BLE_59:92:1E:0C:A6:7E
+  icon:
+  picture:
+  track: true
+
+mj_ht_v1_2:
+  name: MJ_HT_V1
+  mac: BLE_58:2D:34:35:D0:91
+  icon:
+  picture:
+  track: true
+
+mj_ht_v1_3:
+  name: MJ_HT_V1
+  mac: BLE_58:2D:34:35:CC:76
+  icon:
+  picture:
+  track: true
+
+mj_ht_v1_4:
+  name: MJ_HT_V1
+  mac: BLE_58:2D:34:35:CC:4A
+  icon:
+  picture:
+  track: true
+
+82_5b_36_8d_8c_2a:
+  name: 82_5b_36_8d_8c_2a
+  mac: 82:5B:36:8D:8C:2A
+  icon:
+  picture:
+  track: true
+
+ble_7a_fa_0d_79_ca_64:
+  name: ble_7a_fa_0d_79_ca_64
+  mac: BLE_7A:FA:0D:79:CA:64
+  icon:
+  picture:
+  track: true
+
+mj_ht_v1_5:
+  name: MJ_HT_V1
+  mac: BLE_58:2D:34:35:CB:C2
+  icon:
+  picture:
+  track: true
+
+ble_7e_c8_32_2d_b5_6d:
+  name: ble_7e_c8_32_2d_b5_6d
+  mac: BLE_7E:C8:32:2D:B5:6D
+  icon:
+  picture:
+  track: true
+
+ble_7a_6a_20_3a_c5_39:
+  name: ble_7a_6a_20_3a_c5_39
+  mac: BLE_7A:6A:20:3A:C5:39
+  icon:
+  picture:
+  track: true
+
+ble_61_21_57_8b_8c_74:
+  name: ble_61_21_57_8b_8c_74
+  mac: BLE_61:21:57:8B:8C:74
+  icon:
+  picture:
+  track: true
+
+3a_53_1e_5f_58_9a:
+  name: 3a_53_1e_5f_58_9a
+  mac: 3A:53:1E:5F:58:9A
+  icon:
+  picture:
+  track: true
+
+ble_47_a8_96_17_9d_98:
+  name: ble_47_a8_96_17_9d_98
+  mac: BLE_47:A8:96:17:9D:98
+  icon:
+  picture:
+  track: true
+
+ble_4d_e2_dc_67_c5_24:
+  name: ble_4d_e2_dc_67_c5_24
+  mac: BLE_4D:E2:DC:67:C5:24
+  icon:
+  picture:
+  track: true
+
+ble_79_45_72_a0_33_5a:
+  name: ble_79_45_72_a0_33_5a
+  mac: BLE_79:45:72:A0:33:5A
+  icon:
+  picture:
+  track: true
+
+ble_6c_96_cf_dd_f9_e8:
+  name: ble_6c_96_cf_dd_f9_e8
+  mac: BLE_6C:96:CF:DD:F9:E8
+  icon:
+  picture:
+  track: true
+
+ble_42_a6_27_71_95_ad:
+  name: ble_42_a6_27_71_95_ad
+  mac: BLE_42:A6:27:71:95:AD
+  icon:
+  picture:
+  track: true
+
+ble_6d_24_d6_42_f0_29:
+  name: ble_6d_24_d6_42_f0_29
+  mac: BLE_6D:24:D6:42:F0:29
+  icon:
+  picture:
+  track: true
+
+ble_42_06_82_86_9b_80:
+  name: ble_42_06_82_86_9b_80
+  mac: BLE_42:06:82:86:9B:80
+  icon:
+  picture:
+  track: true
+
+ble_66_e5_40_66_34_bf:
+  name: ble_66_e5_40_66_34_bf
+  mac: BLE_66:E5:40:66:34:BF
+  icon:
+  picture:
+  track: true
+
+ble_6a_86_e8_40_bd_d9:
+  name: ble_6a_86_e8_40_bd_d9
+  mac: BLE_6A:86:E8:40:BD:D9
+  icon:
+  picture:
+  track: true
+
+ble_49_44_10_92_d8_d5:
+  name: ble_49_44_10_92_d8_d5
+  mac: BLE_49:44:10:92:D8:D5
+  icon:
+  picture:
+  track: true
+
+ble_50_f9_ee_d9_8d_f3:
+  name: ble_50_f9_ee_d9_8d_f3
+  mac: BLE_50:F9:EE:D9:8D:F3
+  icon:
+  picture:
+  track: true
+
+redmi_note_8_pro:
+  name: Redmi Note 8 Pro
+  mac: BT_A4:4B:D5:B2:51:3A
+  icon:
+  picture:
+  track: true
+
+c2_53_af_4e_e1_d4:
+  name: c2_53_af_4e_e1_d4
+  mac: C2:53:AF:4E:E1:D4
+  icon:
+  picture:
+  track: true
+
+ble_67_cd_c1_ce_40_fa:
+  name: ble_67_cd_c1_ce_40_fa
+  mac: BLE_67:CD:C1:CE:40:FA
+  icon:
+  picture:
+  track: true
+
+w_speaker:
+  name: W-speaker
+  mac: BT_70:B3:83:83:AE:F6
+  icon:
+  picture:
+  track: true
+
+ble_61_e7_71_d4_21_26:
+  name: ble_61_e7_71_d4_21_26
+  mac: BLE_61:E7:71:D4:21:26
+  icon:
+  picture:
+  track: true
+
+ble_63_42_54_d9_50_14:
+  name: ble_63_42_54_d9_50_14
+  mac: BLE_63:42:54:D9:50:14
+  icon:
+  picture:
+  track: true
+
+ble_6a_35_e6_80_ea_72:
+  name: ble_6a_35_e6_80_ea_72
+  mac: BLE_6A:35:E6:80:EA:72
+  icon:
+  picture:
+  track: true
+
+n00zu:
+  name: N00ZU
+  mac: BLE_18:B4:30:E4:FC:C5
+  icon:
+  picture:
+  track: true
+
+ble_63_fc_ae_20_ea_44:
+  name: ble_63_fc_ae_20_ea_44
+  mac: BLE_63:FC:AE:20:EA:44
+  icon:
+  picture:
+  track: true
+
+ble_5c_f9_38_99_14_ab:
+  name: ble_5c_f9_38_99_14_ab
+  mac: BLE_5C:F9:38:99:14:AB
+  icon:
+  picture:
+  track: true
+
+tv_samsung_q9_series_55:
+  name: '[TV] Samsung Q9 Series (55)'
+  mac: BLE_FC:03:9F:D3:14:CD
+  icon:
+  picture:
+  track: true
+
+ble_5f_ea_0b_a0_25_25:
+  name: ble_5f_ea_0b_a0_25_25
+  mac: BLE_5F:EA:0B:A0:25:25
+  icon:
+  picture:
+  track: true
+
+ble_50_48_b8_52_7b_38:
+  name: ble_50_48_b8_52_7b_38
+  mac: BLE_50:48:B8:52:7B:38
+  icon:
+  picture:
+  track: true
+
+ble_70_d8_e9_5e_70_27:
+  name: ble_70_d8_e9_5e_70_27
+  mac: BLE_70:D8:E9:5E:70:27
+  icon:
+  picture:
+  track: true
+
+ble_5d_c2_0f_4e_ae_f9:
+  name: ble_5d_c2_0f_4e_ae_f9
+  mac: BLE_5D:C2:0F:4E:AE:F9
+  icon:
+  picture:
+  track: true
+
+ble_6d_a8_a8_32_56_36:
+  name: ble_6d_a8_a8_32_56_36
+  mac: BLE_6D:A8:A8:32:56:36
+  icon:
+  picture:
+  track: true
+
+ble_68_df_8b_4c_a2_15:
+  name: ble_68_df_8b_4c_a2_15
+  mac: BLE_68:DF:8B:4C:A2:15
+  icon:
+  picture:
+  track: true
+
+ble_40_de_54_86_7d_51:
+  name: ble_40_de_54_86_7d_51
+  mac: BLE_40:DE:54:86:7D:51
+  icon:
+  picture:
+  track: true
+
+ble_43_58_fc_b2_af_45:
+  name: ble_43_58_fc_b2_af_45
+  mac: BLE_43:58:FC:B2:AF:45
+  icon:
+  picture:
+  track: true
+
+ble_44_a4_b4_1b_28_af:
+  name: ble_44_a4_b4_1b_28_af
+  mac: BLE_44:A4:B4:1B:28:AF
+  icon:
+  picture:
+  track: true
+
+ble_57_63_4c_ee_94_af:
+  name: ble_57_63_4c_ee_94_af
+  mac: BLE_57:63:4C:EE:94:AF
+  icon:
+  picture:
+  track: true
+
+ble_67_cc_40_02_05_e1:
+  name: ble_67_cc_40_02_05_e1
+  mac: BLE_67:CC:40:02:05:E1
+  icon:
+  picture:
+  track: true
+
+ble_4e_36_8c_33_8d_c0:
+  name: ble_4e_36_8c_33_8d_c0
+  mac: BLE_4E:36:8C:33:8D:C0
+  icon:
+  picture:
+  track: true
+
+ble_63_d4_52_e8_71_d2:
+  name: ble_63_d4_52_e8_71_d2
+  mac: BLE_63:D4:52:E8:71:D2
+  icon:
+  picture:
+  track: true
+
+ble_4f_07_13_66_da_d1:
+  name: ble_4f_07_13_66_da_d1
+  mac: BLE_4F:07:13:66:DA:D1
+  icon:
+  picture:
+  track: true
+
+ble_53_2d_94_06_20_5b:
+  name: ble_53_2d_94_06_20_5b
+  mac: BLE_53:2D:94:06:20:5B
+  icon:
+  picture:
+  track: true
+
+ble_57_3a_8b_30_b5_6d:
+  name: ble_57_3a_8b_30_b5_6d
+  mac: BLE_57:3A:8B:30:B5:6D
+  icon:
+  picture:
+  track: true
+
+ble_70_38_20_5b_6a_6d:
+  name: ble_70_38_20_5b_6a_6d
+  mac: BLE_70:38:20:5B:6A:6D
+  icon:
+  picture:
+  track: true
+
+ble_7b_47_c9_85_e7_69:
+  name: ble_7b_47_c9_85_e7_69
+  mac: BLE_7B:47:C9:85:E7:69
+  icon:
+  picture:
+  track: true
+
+ble_55_22_47_fe_73_7f:
+  name: ble_55_22_47_fe_73_7f
+  mac: BLE_55:22:47:FE:73:7F
+  icon:
+  picture:
+  track: true
+
+ble_47_90_61_c0_80_17:
+  name: ble_47_90_61_c0_80_17
+  mac: BLE_47:90:61:C0:80:17
+  icon:
+  picture:
+  track: true
+
+ble_4b_44_0c_b2_8c_b0:
+  name: ble_4b_44_0c_b2_8c_b0
+  mac: BLE_4B:44:0C:B2:8C:B0
+  icon:
+  picture:
+  track: true
+
+ble_5e_0e_c8_c9_16_2e:
+  name: ble_5e_0e_c8_c9_16_2e
+  mac: BLE_5E:0E:C8:C9:16:2E
+  icon:
+  picture:
+  track: true
+
+ble_75_4a_fc_e4_8e_af:
+  name: ble_75_4a_fc_e4_8e_af
+  mac: BLE_75:4A:FC:E4:8E:AF
+  icon:
+  picture:
+  track: true
+
+ble_52_f7_61_2f_2c_8b:
+  name: ble_52_f7_61_2f_2c_8b
+  mac: BLE_52:F7:61:2F:2C:8B
+  icon:
+  picture:
+  track: true
+
+p8586:
+  name: P8586
+  mac: BT_F8:94:C2:A8:F0:1A
+  icon:
+  picture:
+  track: true
+
+ble_73_19_3c_a5_f5_a2:
+  name: ble_73_19_3c_a5_f5_a2
+  mac: BLE_73:19:3C:A5:F5:A2
+  icon:
+  picture:
+  track: true
+
+ble_78_68_3d_13_8a_84:
+  name: ble_78_68_3d_13_8a_84
+  mac: BLE_78:68:3D:13:8A:84
+  icon:
+  picture:
+  track: true
+
+76_37_79_dc_bc_09:
+  name: 76_37_79_dc_bc_09
+  mac: 76:37:79:DC:BC:09
+  icon:
+  picture:
+  track: true
+
+ble_60_4e_e4_df_6b_4c:
+  name: ble_60_4e_e4_df_6b_4c
+  mac: BLE_60:4E:E4:DF:6B:4C
+  icon:
+  picture:
+  track: true
+
+ble_4d_29_e3_53_06_76:
+  name: ble_4d_29_e3_53_06_76
+  mac: BLE_4D:29:E3:53:06:76
+  icon:
+  picture:
+  track: true
+
+ble_78_ad_9e_93_6a_3b:
+  name: ble_78_ad_9e_93_6a_3b
+  mac: BLE_78:AD:9E:93:6A:3B
+  icon:
+  picture:
+  track: true
+
+zwarte:
+  name: Zwarte
+  mac: BT_F8:DF:15:C2:20:04
+  icon:
+  picture:
+  track: true
+
+ble_59_3b_ce_3a_80_e6:
+  name: ble_59_3b_ce_3a_80_e6
+  mac: BLE_59:3B:CE:3A:80:E6
+  icon:
+  picture:
+  track: true
+
+ble_69_62_c5_bd_92_14:
+  name: ble_69_62_c5_bd_92_14
+  mac: BLE_69:62:C5:BD:92:14
+  icon:
+  picture:
+  track: true
+
+ble_58_e4_da_65_2a_fd:
+  name: ble_58_e4_da_65_2a_fd
+  mac: BLE_58:E4:DA:65:2A:FD
+  icon:
+  picture:
+  track: true
+
+ble_40_14_9b_dc_83_7d:
+  name: ble_40_14_9b_dc_83_7d
+  mac: BLE_40:14:9B:DC:83:7D
+  icon:
+  picture:
+  track: true
+
+ble_48_30_02_13_75_8e:
+  name: ble_48_30_02_13_75_8e
+  mac: BLE_48:30:02:13:75:8E
+  icon:
+  picture:
+  track: true
+
+ble_62_ae_ab_2a_9e_b5:
+  name: ble_62_ae_ab_2a_9e_b5
+  mac: BLE_62:AE:AB:2A:9E:B5
+  icon:
+  picture:
+  track: true
+
+galaxy_a50:
+  name: Galaxy A50
+  mac: BT_88:29:9C:C4:3F:90
+  icon:
+  picture:
+  track: true
+
+ble_71_58_20_57_a6_fd:
+  name: ble_71_58_20_57_a6_fd
+  mac: BLE_71:58:20:57:A6:FD
+  icon:
+  picture:
+  track: true
+
+ble_7e_56_7d_6e_88_f0:
+  name: ble_7e_56_7d_6e_88_f0
+  mac: BLE_7E:56:7D:6E:88:F0
+  icon:
+  picture:
+  track: true
+
+ble_1a_4b_32_c6_7b_db:
+  name: ble_1a_4b_32_c6_7b_db
+  mac: BLE_1A:4B:32:C6:7B:DB
+  icon:
+  picture:
+  track: true
+
+ble_42_51_9a_e4_63_51:
+  name: ble_42_51_9a_e4_63_51
+  mac: BLE_42:51:9A:E4:63:51
+  icon:
+  picture:
+  track: true
+
+ble_02_a4_12_58_94_e1:
+  name: ble_02_a4_12_58_94_e1
+  mac: BLE_02:A4:12:58:94:E1
+  icon:
+  picture:
+  track: true
+
+34_42_62_91_9c_f7:
+  name: 34_42_62_91_9c_f7
+  mac: 34:42:62:91:9C:F7
+  icon:
+  picture:
+  track: true
+
+ble_43_38_e5_f0_06_cc:
+  name: ble_43_38_e5_f0_06_cc
+  mac: BLE_43:38:E5:F0:06:CC
+  icon:
+  picture:
+  track: true
+
+ble_57_57_fa_3b_26_81:
+  name: ble_57_57_fa_3b_26_81
+  mac: BLE_57:57:FA:3B:26:81
+  icon:
+  picture:
+  track: true
+
+0e_e5_aa_b4_9a_96:
+  name: 0e_e5_aa_b4_9a_96
+  mac: 0E:E5:AA:B4:9A:96
+  icon:
+  picture:
+  track: true
+
+ble_67_7e_39_98_da_81:
+  name: ble_67_7e_39_98_da_81
+  mac: BLE_67:7E:39:98:DA:81
+  icon:
+  picture:
+  track: true
+
+ble_7c_a7_f9_69_4d_7c:
+  name: ble_7c_a7_f9_69_4d_7c
+  mac: BLE_7C:A7:F9:69:4D:7C
+  icon:
+  picture:
+  track: true
+
+ble_4d_5c_78_15_53_62:
+  name: ble_4d_5c_78_15_53_62
+  mac: BLE_4D:5C:78:15:53:62
+  icon:
   picture:
   track: true

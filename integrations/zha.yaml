@@ -1,0 +1,10 @@
+#
+# https://www.home-assistant.io/integrations/zha/
+#
+
+zha:
+  zigpy_config:
+    ota:
+      ikea_provider: true                        # Auto update Trådfri devices
+      ledvance_provider: false                    # Auto update LEDVANCE devices
+      #otau_directory: /path/to/your/ota/folder  # Utilize .ota files to update everything else

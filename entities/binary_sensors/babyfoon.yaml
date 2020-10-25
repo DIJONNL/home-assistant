@@ -1,0 +1,19 @@
+platform: template
+sensors:
+  babyfoon:
+    value_template: >-
+      {{
+        (
+          (states('input_datetime.kids_silent_hours_start')
+          <
+          states('sensor.time')+":00"
+          and
+          states('sensor.time')+":00" 
+          <
+          states('input_datetime.house_silent_hours_start'))
+          and
+          is_state("binary_sensor.people_home","on")
+        )
+        or
+        is_state("input_boolean.guest_mode", "on")
+      }}

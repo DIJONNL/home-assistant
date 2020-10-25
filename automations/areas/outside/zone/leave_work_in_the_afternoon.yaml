@@ -12,12 +12,10 @@ condition:
   condition: and
   conditions:
     - condition: time
-      after: '15:30:00'
-      before: '19:00:00'
+      after: "15:00:00"
+      before: "20:00:00"
 action:
   - service: notify.all_devices
     data:
       title: "{{ trigger.entity_id.split('_')[-1] }} left work"
       message: "{{ trigger.entity_id.split('_')[-1] }} left work at {{ states('sensor.date_time') }}."
-      data:
-        sticky: 'false'
