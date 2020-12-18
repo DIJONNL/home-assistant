@@ -5,14 +5,15 @@ trigger:
     event_type: automation_reloaded
   - platform: state
     entity_id:
-      - sensor.brf_precipitation
+      - sensor.br_precipitation
+      - sensor.br_precipitation_forecast_average
 condition:
   - condition: and
     conditions:
       - condition: template
         value_template: >-
           {{
-            states('sensor.brf_precipitation') > '0.5'
+            states('sensor.br_precipitation') > '0.5'
           }}
       - condition: template
         value_template: >-
@@ -29,4 +30,4 @@ action:
   - service: notify.martijn
     data_template:
       title: "Weather Forecast"
-      message: "Rain: {{ states('sensor.brf_precipitation') }} mm. "
+      message: "Rain: {{ states('sensor.br_precipitation') }} mm. Forecast: {{ states('sensor.br_precipitation_forecast_average') }}"

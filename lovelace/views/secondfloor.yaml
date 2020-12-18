@@ -1,0 +1,35 @@
+path: secondfloor
+title: Second Floor
+icon: mdi:stairs-up
+cards:
+  - type: custom:vertical-stack-in-card
+    title: Climate Control
+    cards:
+      - type: thermostat
+        entity: climate.vdw
+      - type: horizontal-stack
+        cards:
+          - type: glance
+            entities:
+              - entity: sensor.vdw_energy
+                name: Energy
+              - entity: climate.vdw
+                name: Climate Control
+          - type: custom:mini-graph-card
+            name: Temperature
+            entities:
+              - sensor.vdw_room_temperature
+            location_icon: left
+            location_state: center
+            show:
+              fill: fade
+              extrema: true
+            height: 100
+            animate: true
+            hour24: true
+            line_color: var(--primary-color)
+            color_thresholds:
+              - value: 24
+                color: red
+              - value: 17
+                color: white

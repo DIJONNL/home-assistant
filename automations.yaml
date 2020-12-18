@@ -1,1 +1,10 @@
-[]
+- id: '1607791034442'
+  alias: Motion-activated Switch
+  description: ''
+  use_blueprint:
+    path: tteck/motion_activated _switch.yaml
+    input:
+      no_motion_wait: '120'
+      motion_entity: binary_sensor.0xec1bbdfffeaf9cf0_occupancy
+      switch_target:
+        device_id: fd124c9c99934b37bd4d81a2c3dba803

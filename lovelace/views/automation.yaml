@@ -9,78 +9,95 @@ cards:
         title: Garden
         show_header_toggle: false
         entities:
-            - automation.garden_turn_off_light_at_silent_hour
+          - automation.garden_turn_off_light_at_silent_hour
   - type: vertical-stack
     cards:
       - type: entities
         title: Living Room
         show_header_toggle: false
         entities:
-            - automation.livingroom_light
-            - automation.livingroom_mediaplayer
+          - automation.livingroom_light
+          - automation.livingroom_mediaplayer
   - type: vertical-stack
     cards:
       - type: entities
         title: Dining Room
         show_header_toggle: false
         entities:
-            - automation.diningroom_light
+          - automation.diningroom_light
   - type: vertical-stack
     cards:
       - type: entities
         title: Floor Bedroom
         show_header_toggle: false
         entities:
-            - automation.bedroom_floor_babyfoon
-            - automation.bedroom_floor_light
+          - automation.bedroom_floor_babyfoon
+          - automation.bedroom_floor_light
   - type: vertical-stack
     cards:
       - type: entities
         title: Hugo Bedroom
         show_header_toggle: false
         entities:
-            - automation.bedroom_hugo_babyfoon
+          - automation.bedroom_hugo_babyfoon
   - type: vertical-stack
     cards:
       - type: entities
         title: Master Bedroom
         show_header_toggle: false
         entities:
-            - automation.start_timer_on_turn_on_light_at_master
-            - automation.turn_off_light_when_master_timer_finished
+          - automation.start_timer_on_turn_on_light_at_master
+          - automation.turn_off_light_when_master_timer_finished
   - type: vertical-stack
     cards:
       - type: entities
         title: Bathroom
         show_header_toggle: false
         entities:
-            - automation.turn_on_bathroom_light_when_there_is_movement
-            - automation.turn_off_bathroom_light_in_the_morning_when_there_is_nomovement
-            - automation.turn_off_bathroom_light_in_the_afternoon_when_there_is_nomovement
-            - automation.turn_on_ventilator_when_above_threshold
-            - automation.turn_off_ventilator_when_timer_finished
-            - input_number.bathroom_humidity_humid_threshold
+          - automation.turn_on_bathroom_light_when_there_is_movement
+          - automation.turn_off_bathroom_light_in_the_morning_when_there_is_nomovement
+          - automation.turn_off_bathroom_light_in_the_afternoon_when_there_is_nomovement
+          - input_number.bathroom_humidity_humid_threshold
+  - type: vertical-stack
+    cards:
+      - type: entities
+        title: Second Floor
+        show_header_toggle: false
+        entities:
+          - automation.secondfloor_climate
+          - entity: input_number.climate_control_min
+          - entity: input_number.climate_control_max
+  - type: vertical-stack
+    cards:
+      - type: entities
+        title: iOS Actions
+        show_header_toggle: false
+        entities:
+          - automation.licht_beneden_aan
+          - automation.licht_beneden_uit
+          - automation.parents_aan
+          - automation.guest_mode_aan
+          - automation.guest_mode_uit
   - type: vertical-stack
     cards:
       - type: entities
         title: Others
         show_header_toggle: false
         entities:
-            - automation.leave_creche_in_the_morning
-            - automation.enter_creche_in_the_afternoon
-            - automation.zone_state_changed_tts
-            - automation.leave_work_in_the_afternoon
-            - automation.people_not_at_home
-            - automation.weather_rain_notification
+          - automation.zone_state_changed_tts
+          - automation.leave_work_in_the_afternoon
+          - automation.people_not_at_home
+          - automation.weather_rain_notification
   - type: vertical-stack
     cards:
       - type: entities
         title: System
         show_header_toggle: false
         entities:
-            - automation.new_devices_tracker
-            - automation.zigbee_map_actualiseren
-            - entity: input_datetime.house_silent_hours_start
-            - entity: input_datetime.house_silent_hours_end
-            - entity: input_datetime.kids_silent_hours_start
-            - entity: input_datetime.kids_silent_hours_end
+          - automation.battery_alert
+          - automation.new_devices_tracker
+          - automation.zigbee_map_actualiseren
+          - entity: input_datetime.house_silent_hours_start
+          - entity: input_datetime.house_silent_hours_end
+          - entity: input_datetime.kids_silent_hours_start
+          - entity: input_datetime.kids_silent_hours_end

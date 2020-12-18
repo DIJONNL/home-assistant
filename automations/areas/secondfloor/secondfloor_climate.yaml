@@ -1,0 +1,141 @@
+description: Automate Climate Control
+alias: secondfloor_climate
+trigger:
+  - platform: homeassistant
+    event: start
+  - platform: event
+    event_type: automation_reloaded
+  - platform: state
+    entity_id:
+      - binary_sensor.people_home
+      - input_number.climate_control_min
+      - input_number.climate_control_max
+  - platform: time
+    at: input_datetime.house_silent_hours_end
+  - platform: time
+    at: input_datetime.house_silent_hours_start
+  - platform: template
+    value_template: >-
+      {{
+        states('sensor.vdw_room_temperature') | int
+        <=
+        (states('input_number.climate_control_min') | float)
+      }}
+  - platform: template
+    value_template: >-
+      {{
+        states('sensor.vdw_room_temperature') | int
+        >=
+        (states('input_number.climate_control_max') | float)
+      }}
+action:
+  - choose:
+      - conditions:
+          - condition: state
+            entity_id: binary_sensor.people_home
+            state: "on"
+          - condition: template
+            value_template: >-
+              {{
+                states('input_datetime.house_silent_hours_start')
+                >=
+                states('sensor.time')+":00"
+                and
+                states('input_datetime.house_silent_hours_end')
+                <=
+                states('sensor.time')+ ":00" 
+              }}
+          - condition: template
+            value_template: >-
+              {{
+                states('sensor.vdw_room_temperature') | float
+                <=
+                (states('input_number.climate_control_min') | float)
+              }}
+        sequence:
+          - service: climate.turn_on
+            entity_id: climate.vdw
+          - service: climate.set_hvac_mode
+            data:
+              entity_id: climate.vdw
+              hvac_mode: heat
+          - service: climate.set_temperature
+            data:
+              entity_id: climate.vdw
+              temperature: 19
+          - service: notify.martijn
+            data_template:
+              title: "Climate Control Heat"
+              message: "Enable"
+      - conditions:
+          - condition: state
+            entity_id: binary_sensor.people_home
+            state: "on"
+          - condition: template
+            value_template: >-
+              {{
+                states('input_datetime.house_silent_hours_start')
+                >=
+                states('sensor.time')+":00"
+                and
+                states('input_datetime.house_silent_hours_end')
+                <=
+                states('sensor.time')+ ":00" 
+              }}
+          - condition: template
+            value_template: >-
+              {{
+                states('sensor.vdw_room_temperature') | float
+                >=
+                (states('input_number.climate_control_max') | float)
+              }}
+        sequence:
+          - service: climate.turn_on
+            entity_id: climate.vdw
+          - service: climate.set_hvac_mode
+            data:
+              entity_id: climate.vdw
+              hvac_mode: cool
+          - service: climate.set_temperature
+            data_template:
+              entity_id: climate.vdw
+              temperature: 23
+          - service: notify.martijn
+            data_template:
+              title: "Climate Control Cool"
+              message: "Enable"
+      - conditions:
+          condition: or
+          conditions:
+            - condition: state
+              entity_id: binary_sensor.people_home
+              state: "off"
+            - condition: template
+              value_template: >-
+                {{
+                  states('input_datetime.house_silent_hours_start')
+                  <=
+                  states('sensor.time')+":00"
+                  or
+                  states('input_datetime.house_silent_hours_end')
+                  >=
+                  states('sensor.time')+":00"
+                }}
+            - condition: template
+              value_template: >-
+                {{
+                  states('sensor.vdw_room_temperature') | int
+                  >=
+                  (states('input_number.climate_control_min') | float) 
+                  and
+                  states('sensor.vdw_room_temperature') | int
+                  <=
+                  (states('input_number.climate_control_max') | float)
+                }}
+        sequence:
+          - service: climate.turn_off
+            entity_id: climate.vdw
+          - service: notify.martijn
+            data_template:
+              title: "Climate Control"
+              message: "Disable"

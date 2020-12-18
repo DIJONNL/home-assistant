@@ -1,0 +1,75 @@
+alias: battery_alert
+trigger:
+  - platform: time
+    at: "09:00:00"
+  - platform: time
+    at: "12:00:00"
+  - platform: time
+    at: "15:00:00"
+  - platform: time
+    at: "18:00:00"
+  - platform: event
+    event_type: automation_reloaded
+condition:
+  condition: or
+  conditions:
+    - condition: template
+      value_template: >-
+        {%- set threshold = 10 -%}
+        {%- for item in states.light if (item.attributes.battery_level is defined and item.attributes['battery_level'] | int < threshold) or ("battery" in item.name | lower and ((item.state | int < threshold and item.state|int != 0) or item.state | lower == "low" or item.state | lower == "unknown")) -%}
+        {%- if loop.first -%}
+        {{ true }}
+        {%- endif -%}
+        {%- endfor -%}
+    - condition: template
+      value_template: >-
+        {%- set threshold = 10 -%}
+        {%- for item in states.switch if (item.attributes.battery_level is defined and item.attributes['battery_level'] | int < threshold) or ("battery" in item.name | lower and ((item.state | int < threshold and item.state|int != 0) or item.state | lower == "low" or item.state | lower == "unknown")) -%}
+        {%- if loop.first -%}
+        {{ true }}
+        {%- endif -%}
+        {%- endfor -%}
+    - condition: template
+      value_template: >-
+        {%- set threshold = 10 -%}
+        {%- for item in states.sensor if (item.attributes.battery_level is defined and item.attributes['battery_level'] | int < threshold) or ("battery" in item.name | lower and ((item.state | int < threshold and item.state|int != 0) or item.state | lower == "low" or item.state | lower == "unknown")) -%}
+        {%- if loop.first -%}
+        {{ true }}
+        {%- endif -%}
+        {%- endfor -%}
+    - condition: template
+      value_template: >-
+        {%- set threshold = 10 -%}
+        {%- for item in states.zwave if (item.attributes.battery_level is defined and item.attributes['battery_level'] | int < threshold) or ("battery" in item.name | lower and ((item.state | int < threshold and item.state|int != 0) or item.state | lower == "low" or item.state | lower == "unknown")) -%}
+        {%- if loop.first -%}
+        {{ true }}
+        {%- endif -%}
+        {%- endfor -%}
+    - condition: template
+      value_template: >-
+        {%- set threshold = 10 -%}
+        {%- for item in states.lock if (item.attributes.battery_level is defined and item.attributes['battery_level'] | int < threshold) or ("battery" in item.name | lower and ((item.state | int < threshold and item.state|int != 0) or item.state | lower == "low" or item.state | lower == "unknown")) -%}
+        {%- if loop.first -%}
+        {{ true }}
+        {%- endif -%}
+        {%- endfor -%}
+action:
+  - service: notify.martijn
+    data_template:
+      title: "Battery Alert"
+      message: >-
+        {%- set threshold = 10 -%}
+        {%- set domains = [states.light, states.switch, states.sensor, states.zwave, states.lock ] -%}
+        {%- for domain in domains -%}
+        {%- if loop.first -%}
+        The following devices have low battery levels:
+        {%- endif -%}
+        {%- for item in domain if (item.attributes.battery_level is defined and item.attributes['battery_level'] | int < threshold) or ("battery" in item.name | lower and ((item.state | int < threshold and item.state|int != 0) or item.state | lower == "low" or item.state | lower == "unknown")) -%}
+        {%- if (item.attributes.battery_level is defined and item.attributes['battery_level'] | int < threshold) %}
+        {{ item.name }} ({{ item.attributes['battery_level'] }}),
+        {% endif -%}
+        {%- if "battery" in item.name | lower and ((item.state | int < threshold and item.state|int != 0) or item.state | lower == "low" or item.state | lower == "unknown") -%}
+        {{ item.name }} ({{ item.state }}),
+        {% endif -%}
+        {%- endfor -%}
+        {%- endfor -%}

@@ -1,0 +1,9 @@
+# Example configuration.yaml entry, limiting the metrics to production only
+platform: enphase_envoy
+name: Enphase
+ip_address: !secret enphase_ip
+monitored_conditions:
+  - production
+  - daily_production
+  - seven_days_production
+  - lifetime_production

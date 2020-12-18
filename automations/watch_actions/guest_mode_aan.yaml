@@ -1,0 +1,10 @@
+description: Guest Mode Aan
+alias: guest_mode_aan
+trigger:
+  - platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: guest_mode_aan
+action:
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.guest_mode

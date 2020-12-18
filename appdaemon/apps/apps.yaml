@@ -26,6 +26,10 @@ foscamcamera_hugo:
   prerecord: 1
   prerecordtime: 2
 
+tradfristate:
+  module: tradfristate
+  class: tradfristate
+
 bathroom_controller:
   module: controllerx
   class: E1810Controller

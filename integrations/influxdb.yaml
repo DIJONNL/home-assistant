@@ -1,0 +1,34 @@
+# Example filter to include specified domains and exclude specified entities
+# https://www.home-assistant.io/integrations/influxdb/
+#
+# Includes, no excludes - only include specified entities
+influxdb:
+  host: a0d7b954-influxdb
+  port: 8086
+  database: !secret influxdb_db
+  username: !secret influxdb_username
+  password: !secret influxdb_password
+  max_retries: 3
+  tags:
+    instance: prod
+    source: hass
+  include:
+    domains:
+      - person
+    entities:
+      - device_tracker.iphone_van_martijn
+      - device_tracker.iphone_van_judith
+      - weather.home
+      - binary_sensor.people_home
+      - binary_sensor.workday
+      - climate.vdw
+      - sensor.nextsunrise
+      - sensor.nextsunset
+      - sensor.enphaseenvoy_current_energy_production
+      - sensor.enphaseenvoy_today_s_energy_production
+      - sensor.enphaseenvoy_last_seven_days_energy_production
+      - sensor.enphaseenvoy_lifetime_energy_production
+    entity_globs:
+      - binary_sensor.*_occupancy
+      - sensor.xht*
+      - sens.vdw_*

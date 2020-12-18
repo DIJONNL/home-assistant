@@ -1,0 +1,10 @@
+description: Parents Aan
+alias: parents_aan
+trigger:
+  - platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: parents_aan
+action:
+  - service: homeassistant.turn_on
+    entity_id: group.master_room

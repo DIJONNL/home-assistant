@@ -33,6 +33,9 @@ HACS
 		- ControllerX
 	
 
+BluePrint : https://gist.github.com/tteck
+
+
 Add-ons
 	- Adguard Home
 	- AppDaemon 4
@@ -54,5 +57,4 @@ lights
 5x lcs
 1x tuya
 
-Ventilator
 1x shelly 01

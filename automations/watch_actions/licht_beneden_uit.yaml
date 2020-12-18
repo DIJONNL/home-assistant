@@ -1,0 +1,12 @@
+description: Manual turn of the light downstairs
+alias: licht_beneden_uit
+trigger:
+  - platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: licht_beneden_uit
+action:
+  - service: homeassistant.turn_off
+    entity_id: group.living_room
+  - service: homeassistant.turn_off
+    entity_id: group.dining_room

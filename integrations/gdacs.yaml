@@ -1,0 +1,9 @@
+gdacs:
+  categories:
+    - Drought
+    - Earthquake
+    - Flood
+    - Tropical Cyclone
+    - Tsunami
+    - Volcano
+  radius: 2500

@@ -30,6 +30,7 @@ recorder:
     entity_globs:
       - sensor.weather_*
       - device_tracker.camera_*
+      - device_tracker.ble_*
       - sensor.adguard_*
       - switch.adguard_*
       - sensor.date_time*

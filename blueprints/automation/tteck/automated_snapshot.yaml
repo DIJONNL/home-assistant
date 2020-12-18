@@ -1,0 +1,43 @@
+blueprint:
+  name: Automated Snapshot
+  description: Create a full snapshot at a given time every day.
+  domain: automation
+  input:
+    trigger_time:
+      name: Snapshot creation time
+      selector:
+        time: {}
+    send_notification:
+      name: Send notification
+      description: Sends a notification to a device if enabled.
+      selector:
+        boolean: {}
+      default: false
+    notify_device:
+      name: Device to notify
+      description: Device needs to run the official Home Assistant app to receive
+        notifications.
+      selector:
+        device:
+          integration: mobile_app
+      default: ''
+  source_url: https://gist.github.com/tteck/b2c27756e10765390f86f1f2f62872f4
+mode: single
+max_exceeded: silent
+variables:
+  send_notification: !input 'send_notification'
+trigger:
+- platform: time
+  at: !input 'trigger_time'
+action:
+- service: hassio.snapshot_full
+  data:
+    name: Automated backup {{ now().strftime('%F') }}
+- choose:
+  - conditions: '{{ send_notification }}'
+    sequence:
+    - device_id: !input 'notify_device'
+      domain: mobile_app
+      type: notify
+      message: Home Assistant full backup created. {{ now().strftime('%F') }}
+      title: Automated Backup

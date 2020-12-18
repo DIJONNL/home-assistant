@@ -9,12 +9,12 @@ proximity:
   home_for_martijn:
     devices:
       - device_tracker.iphone_van_martijn
-    tolerance: 50
+    tolerance: 25
     unit_of_measurement: m
   home_for_judith:
     devices:
       - device_tracker.iphone_van_judith
-    tolerance: 50
+    tolerance: 25
     unit_of_measurement: m
 
       

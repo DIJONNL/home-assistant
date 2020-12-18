@@ -2,8 +2,6 @@
 #
 # When nobody is at home make sure that:
 #
-# 1. The Media Player is disabled 
-# 2. Turn of the Ventilator on the Bathroom
 # 
 #
 # 
@@ -17,8 +15,6 @@ action:
     entity_id: media_player.woonkamer
   - service: media_player.turn_off
     entity_id: media_player.woonkamer
-  - service: light.turn_off
-    entity_id: light.shelly02_light
   - service: homeassistant.turn_off
     entity_id: group.master_room
   - service: homeassistant.turn_off

@@ -1,0 +1,6 @@
+climate_control_min:
+  name: Climate Control Minimum
+  initial: 16
+  min: 10
+  max: 19
+  step: 0.5

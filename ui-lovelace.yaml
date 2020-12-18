@@ -12,7 +12,7 @@ views:
   - !include lovelace/views/dashboard.yaml
   - !include lovelace/views/groundfloor.yaml
   - !include lovelace/views/firstfloor.yaml
+  - !include lovelace/views/secondfloor.yaml
   - !include lovelace/views/outside.yaml
   - !include lovelace/views/system.yaml
   - !include lovelace/views/automation.yaml
-  - !include lovelace/views/cctv.yaml

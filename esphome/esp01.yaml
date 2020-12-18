@@ -50,32 +50,32 @@ sensor:
       name: $name_xiaomi_02 Temperature
     humidity:
       name: $name_xiaomi_02 Humidity
-    #battery_level:
-    #  name: $name_xiaomi_02 Battery Level
+    battery_level:
+      name: $name_xiaomi_02 Battery Level
   - platform: xiaomi_lywsdcgq
     mac_address: 58:2D:34:35:D0:91
     temperature:
       name: $name_xiaomi_03 Temperature
     humidity:
       name: $name_xiaomi_03 Humidity
-    #battery_level:
-    #  name: $name_xiaomi_03 Battery Level
+    battery_level:
+      name: $name_xiaomi_03 Battery Level
   - platform: xiaomi_lywsdcgq
     mac_address: 58:2D:34:35:CC:4A
     temperature:
       name: $name_xiaomi_04 Temperature
     humidity:
       name: $name_xiaomi_04 Humidity
-    #battery_level:
-    #  name: $name_xiaomi_04 Battery Level
+    battery_level:
+      name: $name_xiaomi_04 Battery Level
   - platform: xiaomi_lywsdcgq
     mac_address: 58:2D:34:39:C5:62
     temperature:
       name: $name_xiaomi_05 Temperature
     humidity:
       name: $name_xiaomi_05 Humidity
-    #battery_level:
-    #  name: $name_xiaomi_05 Battery Level
+    battery_level:
+      name: $name_xiaomi_05 Battery Level
 
 switch:
   - platform: restart
@@ -86,28 +86,4 @@ time:
   - platform: homeassistant
     id: homeassistant_time
 
-# Text sensors with general information
-#text_sensor:
-#  - platform: version
-#    name: esphome_esp01_version
-#  - platform: wifi_info
-#    ip_address:
-#      name: esphome_esp01_ip
-#      icon: "mdi:ip"
-#    ssid:
-#      name: esphome_esp01_ssid
-#    bssid:
-#      name: esphome_esp01_bssid
-      
 esp32_ble_tracker:
-
-#sun:
-#  latitude: !secret zone_home_latitude
-#  longitude: !secret zone_home_longitude
-#  on_sunrise:
-#    - then:
-#        - logger.log: Good morning!
-#  on_sunset:
-#    - then:
-#        - logger.log: Good evening!
-        

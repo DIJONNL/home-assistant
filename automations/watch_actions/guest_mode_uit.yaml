@@ -1,0 +1,10 @@
+description: Guest Mode Uit
+alias: guest_mode_uit
+trigger:
+  - platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: guest_mode_uit
+action:
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.guest_mode

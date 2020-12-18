@@ -2,7 +2,7 @@
 path: dashboard
 title: Dashboard
 icon: mdi:home-assistant
-cards: 
+cards:
   - type: custom:vertical-stack-in-card
     title: Overview
     cards:
@@ -39,15 +39,12 @@ cards:
         filter:
           include: []
           exclude:
-            - state: 'not_home'
+            - state: "not_home"
         entities:
-            - person.martijn
-            - person.judith
-            - device_tracker.mediaplayer_sonos_one_livingroom
-            - device_tracker.philips_television
-            - device_tracker.humax_mediaplayer
-            - device_tracker.miele_wasmachine
-            - device_tracker.oppas_kinderen
+          - person.martijn
+          - person.judith
+          - device_tracker.iphone_susan_wifi
+          - device_tracker.oppas_kinderen
   - type: custom:mini-media-player
     entity: media_player.woonkamer
     artwork: cover
@@ -67,45 +64,60 @@ cards:
   - type: custom:vertical-stack-in-card
     title: Lights
     cards:
-        - type: horizontal-stack
-          cards:
+      - type: horizontal-stack
+        cards:
           - type: "custom:button-card"
             entity: group.living_room
             show_state: false
             show_name: true
-            show_label: true 
+            show_label: true
           - type: "custom:button-card"
             entity: group.dining_room
             show_state: false
             show_name: true
-            show_label: true 
-        - type: horizontal-stack
-          cards:
+            show_label: true
+      - type: horizontal-stack
+        cards:
           - type: "custom:button-card"
             entity: group.master_room
             show_state: false
             show_name: true
-            show_label: true 
+            show_label: true
           - type: "custom:button-card"
             entity: light.upstairs_bathroom
             show_state: false
             show_name: true
             show_label: true
-        - type: horizontal-stack
-          cards:
+      - type: horizontal-stack
+        cards:
           - type: "custom:button-card"
             entity: group.garden
             show_state: false
             show_name: true
-            show_label: true 
+            show_label: true
   - type: custom:vertical-stack-in-card
     title: Weather
     cards:
-        - type: custom:weather-card
-          entity: weather.voorschoten
-          icons: "/hacsfiles/weather-card/icons/"
-          details: false
+      - type: custom:weather-card
+        entity: weather.voorschoten
+        icons: "/hacsfiles/weather-card/icons/"
+        details: false
+  - type: custom:vertical-stack-in-card
+    title: Energy 
+    cards:
+      - type: glance
+        entities:
+          - entity: sensor.enphaseenvoy_current_energy_production
+            name: Current
+          - entity: sensor.enphaseenvoy_today_s_energy_production
+            name: Today
+          - entity: sensor.enphaseenvoy_lifetime_energy_production
+            name: LifeTime
+          - entity: sensor.vdw_energy
+            name: Airco
   - type: map
+    geo_location_sources:
+      - gdacs
     entities:
       - device_tracker.iphone_van_judith
       - device_tracker.iphone_van_martijn
